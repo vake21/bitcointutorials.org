@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Wallet Tutorials</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-banner">
+        <div class="banner-content">
+            <div class="bitcoin-logo">₿</div>
+            <h1 class="site-title">Bitcoin Tutorials</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="controls">
+            <div class="sort-controls">
+                <label for="sort-by">Sort by:</label>
+                <select id="sort-by">
+                    <option value="date">Date</option>
+                    <option value="creator">Creator</option>
+                    <option value="title">Title</option>
+                </select>
+                <button id="sort-order">↓ Desc</button>
+            </div>
+            
+            <div class="filter-controls">
+                <label for="creator-filter">Filter by Creator:</label>
+                <select id="creator-filter">
+                    <option value="">All Creators</option>
+                </select>
+                
+                <label for="tag-filter">Filter by Tag:</label>
+                <select id="tag-filter">
+                    <option value="">All Tags</option>
+                </select>
+            </div>
+            
+        </div>
+
+        <div id="video-grid" class="video-grid">
+            <!-- Videos will be populated here by JavaScript -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

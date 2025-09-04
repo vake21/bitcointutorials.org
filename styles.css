@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #000000;
+}
+
+.site-banner {
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.site-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.03"/><circle cx="20" cy="80" r="0.5" fill="%23ffffff" opacity="0.03"/><circle cx="80" cy="20" r="0.5" fill="%23ffffff" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.bitcoin-logo {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ff7f00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+.site-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    letter-spacing: -1px;
+    font-family: 'Arial', sans-serif;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.controls {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.sort-controls, .filter-controls, .import-export-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-controls {
+    gap: 1rem;
+}
+
+.import-export-controls {
+    gap: 0.5rem;
+}
+
+.template-link {
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #ecf0f1;
+    transition: background 0.3s ease;
+}
+
+.template-link:hover {
+    background: #d5dbdb;
+}
+
+label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+select, button {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+select option[value=""] {
+    font-weight: 900;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    min-width: 80px;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.video-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #000;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.thumbnail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.video-thumbnail:hover .thumbnail-image {
+    transform: scale(1.05);
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.video-thumbnail:hover .play-button {
+    background: rgba(255, 0, 0, 0.8);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-info {
+    padding: 1.5rem;
+}
+
+.video-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.video-creator {
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.video-date {
+    color: #95a5a6;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.video-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Category-based tag colors */
+.tag-signing-devices {
+    background: #ff7f00;
+}
+
+.tag-software-wallets {
+    background: #007bff;
+    color: #ffffff;
+}
+
+.tag-bitcoin-nodes {
+    background: #800080;
+    color: #ffffff;
+}
+
+.tag-mining {
+    background: #ff0000;
+    color: #ffffff;
+}
+
+.tag-lightning-network {
+    background: #ffff00;
+}
+
+.tag-privacy-security {
+    background: #008000;
+    color: #ffffff;
+}
+
+.tag-advanced-features {
+    background: #ffd8a8;
+}
+
+.tag-services-exchanges {
+    background: #20b2aa;
+    color: #ffffff;
+}
+
+.tag-tokens {
+    background: #ffc0cb;
+}
+
+.tag-ecash {
+    background: #daa520;
+    color: #ffffff;
+}
+
+.clickable-tag {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.clickable-tag:hover {
+    background: #ffcc80;
+    transform: scale(1.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ff9800;
+    color: #333;
+}
+
+.clickable-creator {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+    padding: 0.1rem 0.2rem;
+    border-radius: 3px;
+}
+
+.clickable-creator:hover {
+    background: #ffd8a8;
+    border-bottom: 1px solid #ff9800;
+    transform: scale(1.05);
+    color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+    .site-banner {
+        padding: 1.5rem 1rem;
+    }
+    
+    .banner-content {
+        gap: 1rem;
+    }
+    
+    .bitcoin-logo {
+        font-size: 2.5rem;
+    }
+    
+    .site-title {
+        font-size: 2rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .sort-controls, .filter-controls {
+        flex-wrap: wrap;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -49,3 +49,8 @@ The site is built around a **video grid**, populated from a simple CSV file of Y
 - CSVs can be **imported or exported**, making it simple to grow the database of tutorials over time  
 
 ---
+
+## License
+- **Code:** [Apache 2.0](LICENSE)  
+- **Content:** [CC BY 4.0](CONTENT_LICENSE)  
+- **Branding:** See [TRADEMARK](TRADEMARK) – logo and site name are not open licensed.  

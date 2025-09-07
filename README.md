@@ -1,6 +1,7 @@
 # BitcoinTutorials.org
 
 **BitcoinTutorials.org** is a community-driven library of video tutorials designed to help people learn how to use Bitcoin tools effectively and securely.  
+
 Whether you are brand new to Bitcoin or an experienced Bitcoiner exploring advanced features, this site organizes tutorials into clear categories and makes them easy to filter, search, and explore.
 
 ---

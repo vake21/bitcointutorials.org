@@ -8,10 +8,7 @@
 </head>
 <body>
     <header class="site-banner">
-        <div class="banner-content">
-            <div class="bitcoin-logo">₿</div>
-            <h1 class="site-title">Bitcoin Tutorials</h1>
-        </div>
+        <img src="banner.png" alt="Bitcoin Tutorials" class="banner-image">
     </header>
 
     <main>
@@ -36,6 +33,13 @@
                 <select id="tag-filter">
                     <option value="">All Tags</option>
                 </select>
+            </div>
+            
+            <div class="import-export-controls">
+                <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
+                <button id="import-btn">Import CSV</button>
+                <button id="export-btn">Export CSV</button>
+                <a href="video_template.csv" download class="template-link">Download Template</a>
             </div>
             
         </div>

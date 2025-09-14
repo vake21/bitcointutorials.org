@@ -1,13 +1,13 @@
 // Tag categories definition
 const tagCategories = {
     "Signing Devices": ["ColdCard Q", "ColdCard MK(1-4)", "Jade", "Jade Plus", "Krux", "Trezor One", "Trezor T", "Trezor Safe(3/5)", "Ledger Flex", "KeepKey", "SeedSigner", "Passport Core", "Keystone", "Tapsigner", "Seedkeeper", "Satochip", "Specter DIY", "Specter Shield", "KeyFlint", "BitBox", "Bitkey", "Ledger Nano(S/X)", "Satodime", "Satscard", "OneKey", "Signing Devices (General)", "Opendime", "Frostsnap"],
-    "Software Wallets": ["Sparrow", "Electrum", "BlueWallet", "Ginger", "Wasabi", "Phoenix", "Zeus", "Muun", "Nunchuk", "Liana", "Blockstream BTC Wallet", "Ashigaru", "Aqua", "Bitcoin Core Wallet", "Bitcoin Keeper", "JAM", "Envoy", "Fedi", "Minibits", "Mercury", "Nutstash", "Samourai", "Proton", "Specter Desktop", "Blitz", "Blixt", "Breez", "Cake", "Joltz", "Mutiny", "Theya", "Speed", "Yeti", "Zebedee", "Lily", "Wallet of Satoshi"],
-    "Bitcoin Nodes": ["Bitcoin Core", "Bitcoin Knots", "Umbrel", "Start9", "Bitcoin Core Node", "Citadel", "Fully Noded", "Raspiblitz", "RoninDojo", "Parmanode", "Electrum Rust Server (Electrs)", "Ubuntu Node Box", "MyNode"],
-    "Mining": ["Avalon Nano 3S", "NerdAxe", "Bitaxe", "Braiins Mini Miner", "DATUM", "Futurebit"],
-    "Lightning Network": ["Lightning", "Thunderhub", "Alby", "LND", "Lightning Node Connect", "LNbits", "Ride The Lightning", "Voltage", "Core Lightning", "Bolt Ring", "Boltz", "Pool", "Loop"],
-    "Privacy/Security": ["Coinjoin (Wabisabi)", "Non-KYC", "Verifying Downloads", "Air-Gapped", "Seed Phrases", "UTXO Management", "SeedQR", "Coinjoin (Whirlpool)", "Coinjoin (JoinMarket)", "Dojo", "Silent Payments", "Payjoin", "Statechains", "Encrypted Backups"],
-    "Advanced Features": ["Multisig", "Child Seeds (BIP 85)", "Paynyms (BIP 47)", "Timelocks", "FROST", "Border Wallet", "Child Pays For Parent (CPFP)", "Replace By Fee (RBF)", "Miniscript", "Shamir's Secret Sharing", "Seed XOR", "Gettxoutsetinfo (Audit Supply)", "Taproot Assets", "PSBT"],
-    "Services/Exchanges": ["Bitcoin Well", "Hodl Hodl", "Kraken", "BTCPay Server", "Debifi", "Azteco", "Bisq", "Casa", "Unchained/Caravan", "Bittr", "Bitrefill", "Fountain", "Strike", "Spike to Spike", "LEDN", "Anchorwatch/Trident", "IBEXPay", "Robosats", "Peach", "Coinos", "Shakepay"],
+    "Software Wallets": ["Sparrow", "Electrum", "BlueWallet", "Ginger", "Wasabi", "Phoenix", "Zeus", "Muun", "Nunchuk", "Liana", "Blockstream BTC Wallet", "Ashigaru", "Aqua", "Bitcoin Core Wallet", "Bitcoin Keeper", "JAM", "Envoy", "Fedi", "Minibits", "Mercury", "Nutstash", "Samourai", "Proton", "Specter Desktop", "Blitz", "Blixt", "Breez", "Cake", "Joltz", "Mutiny", "Theya", "Speed", "Yeti", "Zebedee", "Lily", "Wallet of Satoshi", "Cashu.me", "Simple Bitcoin Wallet"],
+    "Bitcoin Nodes": ["Bitcoin Core", "Bitcoin Knots", "Umbrel", "Start9", "Bitcoin Core Node", "Citadel", "Fully Noded", "Raspiblitz", "RoninDojo", "Parmanode", "Electrum Rust Server (Electrs)", "Ubuntu Node Box", "MyNode", "Ashigaru Dojo", "Fulcrum", "Bitcoin Node Box"],
+    "Mining": ["Avalon Nano", "NerdAxe", "Bitaxe", "Braiins Mini Miner", "DATUM", "Futurebit"],
+    "Lightning Network": ["Lightning", "Thunderhub", "Alby", "Lightning Network Daemon (LND)", "Lightning Node Connect", "LNbits", "Ride The Lightning", "Voltage", "Core Lightning", "Bolt Ring", "Boltz", "Pool", "Loop"],
+    "Privacy/Security": ["Coinjoin (Wabisabi)", "Non-KYC", "Verifying Downloads", "Seed Phrases (General)", "UTXO Management", "SeedQR", "Coinjoin (Whirlpool)", "Coinjoin (JoinMarket)", "Silent Payments", "Payjoin", "Statechains", "Encrypted Backups"],
+    "Advanced Features": ["Multisig", "Child Seeds (BIP 85)", "Paynyms (BIP 47)", "Timelocks", "FROST", "Border Wallet", "Child Pays For Parent (CPFP)", "Replace By Fee (RBF)", "Shamir's Secret Sharing", "Seed XOR", "Gettxoutsetinfo (Audit Supply)", "Taproot Assets", "PSBT"],
+    "Services/Exchanges": ["Bitcoin Well", "Hodl Hodl", "Kraken", "BTCPay Server", "Debifi", "Azteco", "Bisq", "Casa", "Unchained/Caravan", "Bittr", "Bitrefill", "Fountain", "Strike", "Spike to Spike", "LEDN", "Anchorwatch/Trident", "IBEXPay", "Robosats", "Peach", "Coinos", "Shakepay", "River", "Bull Bitcoin"],
     "Tokens": ["Liquid", "USDT", "Testnet"],
     "Ecash": ["Fedimints", "Cashu"]
 };
@@ -77,19 +77,21 @@ function populateFilters() {
         const categoryTags = tagCategories[categoryName].filter(tag => allTags.includes(tag));
         
         if (categoryTags.length > 0) {
-            // Add category header
-            const optgroup = document.createElement('optgroup');
-            optgroup.label = categoryName;
+            // Add category header as disabled option
+            const categoryHeader = document.createElement('option');
+            categoryHeader.textContent = `── ${categoryName.toUpperCase()} ──`;
+            categoryHeader.disabled = true;
+            categoryHeader.className = `category-header category-${categoryName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+            tagFilter.appendChild(categoryHeader);
             
             // Add tags within this category
             categoryTags.sort().forEach(tag => {
                 const option = document.createElement('option');
                 option.value = tag;
-                option.textContent = tag;
-                optgroup.appendChild(option);
+                option.textContent = `  ${tag}`;
+                option.className = 'category-item';
+                tagFilter.appendChild(option);
             });
-            
-            tagFilter.appendChild(optgroup);
         }
     });
     

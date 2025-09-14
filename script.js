@@ -24,9 +24,6 @@ const sortBy = document.getElementById('sort-by');
 const sortOrderBtn = document.getElementById('sort-order');
 const creatorFilter = document.getElementById('creator-filter');
 const tagFilter = document.getElementById('tag-filter');
-const csvFileInput = document.getElementById('csv-file-input');
-const importBtn = document.getElementById('import-btn');
-const exportBtn = document.getElementById('export-btn');
 
 // Initialize the application
 function init() {
@@ -315,54 +312,7 @@ function parseCSVLine(line) {
     return result;
 }
 
-// Import videos from CSV
-function importVideosFromCSV(file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        try {
-            const csvContent = e.target.result;
-            const newVideos = parseCSV(csvContent);
-            
-            // Add new videos to the existing data
-            videoData.push(...newVideos);
-            
-            // Refresh the interface
-            populateFilters();
-            applyFiltersAndSort();
-            
-            alert(`Successfully imported ${newVideos.length} videos!`);
-        } catch (error) {
-            alert('Error importing CSV: ' + error.message);
-        }
-    };
-    reader.readAsText(file);
-}
 
-// Export videos to CSV
-function exportVideosToCSV() {
-    const headers = ['title', 'creator', 'date', 'youtubeId', 'tags'];
-    let csvContent = headers.join(',') + '\n';
-    
-    videoData.forEach(video => {
-        const row = [
-            `"${video.title}"`,
-            `"${video.creator}"`,
-            video.date,
-            video.youtubeId,
-            `"${video.tags.join(',')}"`
-        ];
-        csvContent += row.join(',') + '\n';
-    });
-    
-    // Create and download the file
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'bitcoin_tutorials.csv';
-    a.click();
-    window.URL.revokeObjectURL(url);
-}
 
 // Setup event listeners
 function setupEventListeners() {
@@ -376,17 +326,6 @@ function setupEventListeners() {
         applyFiltersAndSort();
     });
     
-    importBtn.addEventListener('click', () => {
-        csvFileInput.click();
-    });
-    
-    csvFileInput.addEventListener('change', (e) => {
-        if (e.target.files.length > 0) {
-            importVideosFromCSV(e.target.files[0]);
-        }
-    });
-    
-    exportBtn.addEventListener('click', exportVideosToCSV);
 }
 
 // Initialize when DOM is loaded

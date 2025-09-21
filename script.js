@@ -50,6 +50,46 @@ function loadDefaultCSV() {
             setupEventListeners();
         });
 }
+// Function to clean up redundant "Lightning" tags from video data
+function cleanupLightningTags(videoData) {
+    // Software wallets that support Lightning transactions (keep "Lightning" tag for these)
+    const lightningWallets = new Set([
+        "BlueWallet", "Phoenix", "Zeus", "Muun", "Breez", "Blixt", "Mutiny",
+        "Wallet of Satoshi", "Zebedee", "Speed", "Joltz", "Minibits",
+        "Mercury", "Aqua", "Yeti", "Theya"
+    ]);
+    
+    // All Lightning Network category tags (excluding the generic "Lightning" tag)
+    const lightningNetworkTags = new Set([
+        "Thunderhub", "Alby", "Lightning Network Daemon (LND)", 
+        "Lightning Node Connect", "LNbits", "Ride The Lightning", 
+        "Voltage", "Core Lightning", "Bolt Ring", "Boltz", "Pool", "Loop"
+    ]);
+    
+    return videoData.map(video => {
+        // Create a copy of the video object
+        const updatedVideo = { ...video };
+        
+        // Check if video has "Lightning" tag
+        if (video.tags.includes("Lightning")) {
+            // Check if video has any other Lightning Network tags
+            const hasOtherLightningTags = video.tags.some(tag => lightningNetworkTags.has(tag));
+            
+            // Check if video is about a software wallet that supports Lightning
+            const isLightningWallet = video.tags.some(tag => lightningWallets.has(tag));
+            
+            // Remove "Lightning" tag if:
+            // 1. It has other Lightning Network tags AND
+            // 2. It's NOT specifically about a Lightning-supporting software wallet
+            if (hasOtherLightningTags && !isLightningWallet) {
+                updatedVideo.tags = video.tags.filter(tag => tag !== "Lightning");
+                console.log(`Removed redundant "Lightning" tag from: ${video.title}`);
+            }
+        }
+        
+        return updatedVideo;
+    });
+}
 
 // Populate filter dropdowns
 function populateFilters() {
@@ -287,8 +327,11 @@ function parseCSV(csvContent) {
             videos.push(video);
         }
     }
-    return videos;
+    
+    // Apply Lightning tag cleanup before returning
+    return cleanupLightningTags(videos);
 }
+
 
 // Parse a single CSV line handling quoted values
 function parseCSVLine(line) {

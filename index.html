@@ -10,8 +10,21 @@
     <header class="site-banner">
         <img src="banner.png" alt="Bitcoin Tutorials" class="banner-image">
     </header>
-
     <main>
+        <!-- NEW SEARCH CONTAINER -->
+        <div class="search-container">
+            <div class="search-input-container">
+                <input type="search" id="search-input" placeholder="Search for tags or creators..." autocomplete="off">
+                <div class="search-icon">🔍</div>
+                <div class="clear-search" id="clear-search">×</div>
+            </div>
+            <div class="search-suggestions" id="search-suggestions"></div>
+        </div>
+        
+        <!-- NEW ACTIVE FILTERS DISPLAY -->
+        <div class="active-filters" id="active-filters"></div>
+        
+        <!-- YOUR EXISTING CONTROLS -->
         <div class="controls">
             <div class="sort-controls">
                 <label for="sort-by">Sort by:</label>
@@ -34,15 +47,12 @@
                     <option value="">All Tags</option>
                 </select>
             </div>
-            
-            
         </div>
-
+        
         <div id="video-grid" class="video-grid">
             <!-- Videos will be populated here by JavaScript -->
         </div>
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>

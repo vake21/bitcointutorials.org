@@ -38,10 +38,202 @@ main {
     padding: 2rem;
 }
 
+/* Search Container Styles */
+.search-container {
+    margin: 0 0 2rem 0;
+    position: relative;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 1rem;
+}
+
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 45px 12px 40px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+#search-input {
+    width: 100%;
+    padding: 12px 45px 12px 40px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Hide default browser search clear button */
+#search-input::-webkit-search-cancel-button,
+#search-input::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+#search-input::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+#search-input:focus {
+    border-color: #f7931a;
+    box-shadow: 0 0 10px rgba(247, 147, 26, 0.3);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    color: #666;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+.clear-search {
+    position: absolute;
+    right: 15px;
+    color: #999;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    transition: all 0.2s ease;
+}
+
+.clear-search:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    transform: scale(1.1);
+}
+
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.suggestion-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-text {
+    flex-grow: 1;
+    font-family: Arial, sans-serif;
+}
+
+.suggestion-type {
+    font-size: 12px;
+    color: #666;
+    background-color: #e9ecef;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.suggestion-type.creator {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.suggestion-type.tag {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+/* Active Filters */
+.active-filters {
+    margin: 0 0 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 24px;
+    justify-content: center;
+}
+
+.active-filter {
+    background-color: #f7931a;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-remove {
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.filter-remove:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
 .controls {
     background: white;
     padding: 1.5rem;
-    margin: -1px 0 2rem 0;
+    margin: 0 0 2rem 0;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
@@ -168,57 +360,6 @@ button {
 
 button:hover {
     background: #2980b9;
-}
-
-/* Color-coded category headers - preserved for when browsers support it */
-.category-signing-devices {
-    background: #ff7f00 !important;
-    color: #000000 !important;
-}
-
-.category-software-wallets {
-    background: #007bff !important;
-    color: #ffffff !important;
-}
-
-.category-bitcoin-nodes {
-    background: #800080 !important;
-    color: #ffffff !important;
-}
-
-.category-mining {
-    background: #ff0000 !important;
-    color: #ffffff !important;
-}
-
-.category-lightning-network {
-    background: #ffff00 !important;
-    color: #000000 !important;
-}
-
-.category-privacy-security {
-    background: #008000 !important;
-    color: #ffffff !important;
-}
-
-.category-advanced-features {
-    background: #ffd8a8 !important;
-    color: #000000 !important;
-}
-
-.category-services-exchanges {
-    background: #20b2aa !important;
-    color: #ffffff !important;
-}
-
-.category-tokens {
-    background: #ffc0cb !important;
-    color: #000000 !important;
-}
-
-.category-ecash {
-    background: #daa520 !important;
-    color: #ffffff !important;
 }
 
 .video-grid {
@@ -403,16 +544,80 @@ button:hover {
         transform: scale(1.15) translateY(4px);
     }
     
+    main {
+        padding: 1rem;
+    }
+    
+    .search-container {
+        margin: 0 0 1.5rem 0;
+        padding: 0.75rem;
+    }
+    
+    #search-input {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 10px 40px 10px 35px;
+    }
+    
+    .search-icon {
+        left: 12px;
+        font-size: 14px;
+    }
+    
+    .clear-search {
+        right: 12px;
+        width: 18px;
+        height: 18px;
+        font-size: 16px;
+    }
+    
     .controls {
         flex-direction: column;
         align-items: stretch;
+        padding: 1rem;
     }
     
     .sort-controls, .filter-controls {
         flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .active-filters {
+        justify-content: center;
     }
     
     .video-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .video-info {
+        padding: 1rem;
+    }
+    
+    .suggestion-item {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        margin: 0 0 1rem 0;
+        padding: 0.5rem;
+    }
+    
+    #search-input {
+        padding: 8px 35px 8px 30px;
+        font-size: 14px;
+    }
+    
+    .active-filter {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    
+    .filter-remove {
+        width: 14px;
+        height: 14px;
+        font-size: 10px;
     }
 }

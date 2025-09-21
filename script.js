@@ -14,9 +14,13 @@ const tagCategories = {
 
 // Your video database - add your own tutorials here
 const videoData = [];
-
 let currentVideos = [...videoData];
 let sortAscending = false;
+
+// Search functionality variables
+let activeFilters = new Set();
+let allTags = [];
+let allCreators = [];
 
 // DOM elements
 const videoGrid = document.getElementById('video-grid');
@@ -24,6 +28,10 @@ const sortBy = document.getElementById('sort-by');
 const sortOrderBtn = document.getElementById('sort-order');
 const creatorFilter = document.getElementById('creator-filter');
 const tagFilter = document.getElementById('tag-filter');
+const searchInput = document.getElementById('search-input');
+const searchSuggestions = document.getElementById('search-suggestions');
+const clearSearchBtn = document.getElementById('clear-search');
+const activeFiltersContainer = document.getElementById('active-filters');
 
 // Initialize the application
 function init() {
@@ -38,6 +46,7 @@ function loadDefaultCSV() {
             const newVideos = parseCSV(csvContent);
             videoData.push(...newVideos);
             currentVideos = [...videoData];
+            initializeSearchData();
             populateFilters();
             renderVideos(currentVideos);
             setupEventListeners();
@@ -45,10 +54,173 @@ function loadDefaultCSV() {
         .catch(error => {
             console.error('Error loading default CSV:', error);
             // Continue with empty data if CSV fails to load
+            initializeSearchData();
             populateFilters();
             renderVideos(currentVideos);
             setupEventListeners();
         });
+}
+
+// Initialize search data arrays
+function initializeSearchData() {
+    allTags = [...new Set(videoData.flatMap(video => video.tags))].sort();
+    allCreators = [...new Set(videoData.map(video => video.creator))].sort();
+}
+
+// Search functionality
+function performSearch(query) {
+    if (!query.trim()) {
+        currentVideos = [...videoData];
+        renderVideos(currentVideos);
+        return;
+    }
+
+    const searchTerm = query.toLowerCase().trim();
+    const filteredVideos = videoData.filter(video => {
+        const titleMatch = video.title.toLowerCase().includes(searchTerm);
+        const creatorMatch = video.creator.toLowerCase().includes(searchTerm);
+        const tagMatch = video.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+        return titleMatch || creatorMatch || tagMatch;
+    });
+
+    currentVideos = sortVideos(filteredVideos, sortBy.value, sortAscending);
+    renderVideos(currentVideos);
+}
+
+// Generate search suggestions
+function generateSuggestions(query) {
+    if (!query.trim()) {
+        hideSuggestions();
+        return;
+    }
+
+    const searchTerm = query.toLowerCase().trim();
+    const suggestions = [];
+
+    // Add matching creators
+    allCreators.forEach(creator => {
+        if (creator.toLowerCase().includes(searchTerm)) {
+            suggestions.push({ text: creator, type: 'creator' });
+        }
+    });
+
+    // Add matching tags
+    allTags.forEach(tag => {
+        if (tag.toLowerCase().includes(searchTerm)) {
+            suggestions.push({ text: tag, type: 'tag' });
+        }
+    });
+
+    // Limit to 8 suggestions
+    const limitedSuggestions = suggestions.slice(0, 8);
+    displaySuggestions(limitedSuggestions);
+}
+
+// Display search suggestions
+function displaySuggestions(suggestions) {
+    if (suggestions.length === 0) {
+        hideSuggestions();
+        return;
+    }
+
+    searchSuggestions.innerHTML = '';
+    suggestions.forEach(suggestion => {
+        const suggestionElement = document.createElement('div');
+        suggestionElement.className = 'suggestion-item';
+        suggestionElement.innerHTML = `
+            <span class="suggestion-text">${suggestion.text}</span>
+            <span class="suggestion-type ${suggestion.type}">${suggestion.type}</span>
+        `;
+        
+        suggestionElement.addEventListener('click', () => {
+            searchInput.value = suggestion.text;
+            addActiveFilter(suggestion.text, suggestion.type);
+            hideSuggestions();
+            applyActiveFilters();
+        });
+        
+        searchSuggestions.appendChild(suggestionElement);
+    });
+    
+    searchSuggestions.style.display = 'block';
+}
+
+// Hide search suggestions
+function hideSuggestions() {
+    searchSuggestions.style.display = 'none';
+}
+
+// Add active filter
+function addActiveFilter(filterText, filterType) {
+    if (!activeFilters.has(filterText)) {
+        activeFilters.add(filterText);
+        updateActiveFiltersDisplay();
+    }
+}
+
+// Remove active filter
+function removeActiveFilter(filterText) {
+    activeFilters.delete(filterText);
+    updateActiveFiltersDisplay();
+    applyActiveFilters();
+}
+
+// Update active filters display
+function updateActiveFiltersDisplay() {
+    activeFiltersContainer.innerHTML = '';
+    activeFilters.forEach(filter => {
+        const filterElement = document.createElement('div');
+        filterElement.className = 'active-filter';
+        filterElement.innerHTML = `
+            <span>${filter}</span>
+            <span class="filter-remove" data-filter="${filter}">×</span>
+        `;
+        activeFiltersContainer.appendChild(filterElement);
+    });
+
+    // Add event listeners to remove buttons
+    document.querySelectorAll('.filter-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            removeActiveFilter(e.target.dataset.filter);
+        });
+    });
+}
+
+// Apply active filters
+function applyActiveFilters() {
+    if (activeFilters.size === 0) {
+        currentVideos = [...videoData];
+    } else {
+        currentVideos = videoData.filter(video => {
+            return Array.from(activeFilters).some(filter => {
+                const filterLower = filter.toLowerCase();
+                return video.title.toLowerCase().includes(filterLower) ||
+                       video.creator.toLowerCase().includes(filterLower) ||
+                       video.tags.some(tag => tag.toLowerCase().includes(filterLower));
+            });
+        });
+    }
+    
+    currentVideos = sortVideos(currentVideos, sortBy.value, sortAscending);
+    renderVideos(currentVideos);
+}
+
+// Clear all filters
+function clearAllFilters() {
+    activeFilters.clear();
+    searchInput.value = '';
+    creatorFilter.value = '';
+    tagFilter.value = '';
+    updateActiveFiltersDisplay();
+    currentVideos = [...videoData];
+    applyFiltersAndSort();
+    hideSuggestions();
+    toggleClearButton();
+}
+
+// Toggle clear search button visibility
+function toggleClearButton() {
+    clearSearchBtn.style.display = searchInput.value.trim() ? 'flex' : 'none';
 }
 
 // Populate filter dropdowns
@@ -65,13 +237,13 @@ function populateFilters() {
         option.textContent = creator;
         creatorFilter.appendChild(option);
     });
-
+    
     // Organize tags by categories
-    const allTags = [...new Set(videoData.flatMap(video => video.tags))];
+    const allTagsInData = [...new Set(videoData.flatMap(video => video.tags))];
     
     // Create categorized options
     Object.keys(tagCategories).forEach(categoryName => {
-        const categoryTags = tagCategories[categoryName].filter(tag => allTags.includes(tag));
+        const categoryTags = tagCategories[categoryName].filter(tag => allTagsInData.includes(tag));
         
         if (categoryTags.length > 0) {
             // Add category header as disabled option
@@ -91,8 +263,6 @@ function populateFilters() {
             });
         }
     });
-    
-    // Note: "Other" category has been removed - uncategorized tags will not be displayed
 }
 
 // Render videos to the grid
@@ -200,8 +370,8 @@ function createVideoCard(video) {
         tagElement.addEventListener('click', (e) => {
             e.preventDefault();
             const tagName = tagElement.getAttribute('data-tag');
-            tagFilter.value = tagName;
-            applyFiltersAndSort();
+            addActiveFilter(tagName, 'tag');
+            applyActiveFilters();
         });
     });
     
@@ -210,8 +380,8 @@ function createVideoCard(video) {
     creatorElement.addEventListener('click', (e) => {
         e.preventDefault();
         const creatorName = creatorElement.getAttribute('data-creator');
-        creatorFilter.value = creatorName;
-        applyFiltersAndSort();
+        addActiveFilter(creatorName, 'creator');
+        applyActiveFilters();
     });
     
     return card;
@@ -245,7 +415,7 @@ function sortVideos(videos, sortBy, ascending = true) {
     });
 }
 
-// Filter videos
+// Filter videos (legacy dropdown support)
 function filterVideos(videos, creatorFilter, tagFilter) {
     return videos.filter(video => {
         const creatorMatch = !creatorFilter || video.creator === creatorFilter;
@@ -254,7 +424,7 @@ function filterVideos(videos, creatorFilter, tagFilter) {
     });
 }
 
-// Apply current filters and sorting
+// Apply current filters and sorting (legacy dropdown support)
 function applyFiltersAndSort() {
     let filteredVideos = filterVideos(
         videoData,
@@ -312,10 +482,9 @@ function parseCSVLine(line) {
     return result;
 }
 
-
-
 // Setup event listeners
 function setupEventListeners() {
+    // Legacy dropdown filters
     sortBy.addEventListener('change', applyFiltersAndSort);
     creatorFilter.addEventListener('change', applyFiltersAndSort);
     tagFilter.addEventListener('change', applyFiltersAndSort);
@@ -326,6 +495,45 @@ function setupEventListeners() {
         applyFiltersAndSort();
     });
     
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value;
+        toggleClearButton();
+        generateSuggestions(query);
+        
+        // Real-time search with debouncing
+        clearTimeout(searchInput.searchTimeout);
+        searchInput.searchTimeout = setTimeout(() => {
+            if (activeFilters.size === 0) {
+                performSearch(query);
+            }
+        }, 300);
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+                addActiveFilter(query, 'search');
+                applyActiveFilters();
+            }
+            hideSuggestions();
+        } else if (e.key === 'Escape') {
+            hideSuggestions();
+            searchInput.blur();
+        }
+    });
+
+    // Clear search button
+    clearSearchBtn.addEventListener('click', clearAllFilters);
+
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+            hideSuggestions();
+        }
+    });
 }
 
 // Initialize when DOM is loaded

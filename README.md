@@ -23,8 +23,8 @@ The site is built around a **video grid**, populated from a simple CSV file of Y
 - **Filtering** – Users can filter videos by **creator** or by **tag**  
 - **Tag Categories** – Tutorials are grouped into clear categories such as:  
   - 🔑 Signing Devices  
-  - 💻 Software Wallets  
-  - 🖥 Bitcoin Nodes  
+  - 💻 Wallets  
+  - 🖥 Nodes & Servers
   - ⚡ Lightning Network  
   - 🛡 Privacy & Security  
   - 🧩 Advanced Features  

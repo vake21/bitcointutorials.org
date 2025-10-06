@@ -453,7 +453,7 @@ function getSocialIconsHTML(filterKey) {
         iconsHTML += `<img src="github.jpg" class="social-icon social-icon-img" data-url="${info.github}" alt="GitHub" title="GitHub">`;
     }
     if (info.twitter) {
-        iconsHTML += `<img src="x.jpg" class="social-icon social-icon-img" data-url="${info.twitter}" alt="X/Twitter" title="X/Twitter">`;
+        iconsHTML += `<img src="X.png" class="social-icon social-icon-img" data-url="${info.twitter}" alt="X/Twitter" title="X/Twitter">`;
     }
     if (info.nostr) {
         iconsHTML += `<img src="nostr.jpg" class="social-icon social-icon-img" data-url="${info.nostr}" alt="Nostr" title="Nostr">`;

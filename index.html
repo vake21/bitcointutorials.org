@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="site-banner">
-        <img src="banner.png" alt="Bitcoin Tutorials" class="banner-image">
+    <header class="site-header">
+        <div class="header-content">
+            <span class="header-icon">🧭</span>
+            <h1 class="header-title">bitcointutorials.org</h1>
+            <span class="header-icon">🔦</span>
+        </div>
     </header>
 
     <main>
@@ -46,7 +50,6 @@
                             <button id="sort-order">↓ Desc</button>
                         </div>
 
-
                     </div>
 
                     <!-- VIDEO COUNT AND BITCOIN DATA -->
@@ -54,6 +57,7 @@
                         <div class="video-count" id="video-count">
                             <span id="video-count-number">0</span> videos available
                         </div>
+                        <button id="clear-all-filters-btn" class="clear-all-filters-btn">Clear All Filters</button>
                         <div class="bitcoin-price" id="bitcoin-price">
                             <span class="bitcoin-symbol">₿</span>
                             $<span id="price-value">Loading...</span>
@@ -73,6 +77,22 @@
             </div>
         </div>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <h3>🧭 About</h3>
+            <p><strong>bitcointutorials.org</strong> collects practical, step-by-step guides for using Bitcoin wallets, nodes, and privacy tools — all from trusted public sources. The goal is to make learning Bitcoin hands-on and easy to follow.</p>
+
+            <h3>🤝 Contribute</h3>
+            <p>This site is open-source and community-built. If you spot a missing tutorial or want to add your own, submit it on
+                <a href="https://github.com/vake21/bitcointutorials.org" target="_blank" rel="noopener noreferrer">GitHub</a>.
+            </p>
+
+            <p class="footer-note">
+                All linked videos belong to their creators. This site is independent and non-commercial.
+            </p>
+        </div>
+    </footer>
 
     <!-- Video Modal -->
     <div id="video-modal" class="video-modal">

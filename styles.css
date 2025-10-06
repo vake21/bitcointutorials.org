@@ -4,38 +4,91 @@
     box-sizing: border-box;
 }
 
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Times New Roman', Times, serif;
     line-height: 1.6;
     color: #333;
-    background-image: url('wallpaper.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #000000;
     margin: 0;
     padding: 0;
+    max-width: 100%;
 }
 
-.site-banner {
+.site-header {
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0;
+    background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    padding: 2rem 0;
+    box-shadow: 0 4px 20px rgba(247, 147, 26, 0.3);
+    border-bottom: 2px solid #f7931a;
+    position: relative;
+}
+
+.site-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(247, 147, 26, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.header-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #f7931a;
     margin: 0;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-shadow:
+        0 0 20px rgba(247, 147, 26, 0.8),
+        0 0 40px rgba(247, 147, 26, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(180deg, #f7931a 0%, #ff9f3a 50%, #f7931a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.banner-image {
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
-    display: block;
-    transform: scale(1.3) translateY(6px);
+.header-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(247, 147, 26, 0.6));
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
 }
 
 main {
-    max-width: 1400px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     padding: 2rem;
+    box-sizing: border-box;
 }
 
 .main-container {
@@ -47,8 +100,6 @@ main {
 .tags-sidebar {
     width: 250px;
     padding: 0.75rem 1.5rem 1.5rem 1.5rem;
-    max-height: calc(100vh - 4rem);
-    overflow-y: auto;
     position: sticky;
     top: 2rem;
 }
@@ -146,6 +197,19 @@ main {
     border: 1px solid transparent;
     background: #f8f9fa;
     color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-tag .tag-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+
+.sidebar-tag .category-emoji-fallback {
+    font-size: 14px;
+    margin-right: 6px;
 }
 
 .sidebar-tag:hover {
@@ -174,11 +238,11 @@ main {
 }
 
 .category-title.category-wallets {
-    background: #007bff;
+    background: #5dade2;
 }
 
 .category-title.category-wallets::before {
-    content: "📱";
+    content: "💳";
 }
 
 .category-title.category-nodes---servers {
@@ -190,7 +254,7 @@ main {
 }
 
 .category-title.category-mining {
-    background: #ff0000;
+    background: #008000;
 }
 
 .category-title.category-mining::before {
@@ -207,7 +271,7 @@ main {
 }
 
 .category-title.category-privacy---security {
-    background: #008000;
+    background: #ff0000;
 }
 
 .category-title.category-privacy---security::before {
@@ -215,29 +279,29 @@ main {
 }
 
 .category-title.category-advanced-features {
-    background: #ffd8a8;
+    background: #c0c0c0;
     color: #000000;
 }
 
 .category-title.category-advanced-features::before {
-    content: "⚙️";
+    content: "🚀";
 }
 
 .category-title.category-services---exchanges {
-    background: #20b2aa;
+    background: #007bff;
 }
 
 .category-title.category-services---exchanges::before {
-    content: "🏪";
+    content: "🏢";
 }
 
 .category-title.category-tokens {
-    background: #ffc0cb;
+    background: #c71585;
     color: #000000;
 }
 
 .category-title.category-tokens::before {
-    content: "🪙";
+    content: "💰";
 }
 
 .category-title.category-ecash {
@@ -245,7 +309,7 @@ main {
 }
 
 .category-title.category-ecash::before {
-    content: "💰";
+    content: "💵";
 }
 
 /* Active tag colors matching their categories (darker versions) */
@@ -255,7 +319,7 @@ main {
 }
 
 .sidebar-tag.active.tag-wallets {
-    background: #004080;
+    background: #3498db;
 }
 
 .sidebar-tag.active.tag-nodes---servers {
@@ -263,7 +327,7 @@ main {
 }
 
 .sidebar-tag.active.tag-mining {
-    background: #990000;
+    background: #004400;
 }
 
 .sidebar-tag.active.tag-lightning-network {
@@ -272,20 +336,20 @@ main {
 }
 
 .sidebar-tag.active.tag-privacy---security {
-    background: #004400;
+    background: #cc0000;
 }
 
 .sidebar-tag.active.tag-advanced-features {
-    background: #ffb366;
+    background: #a0a0a0;
     color: #000000;
 }
 
 .sidebar-tag.active.tag-services---exchanges {
-    background: #148a8a;
+    background: #004080;
 }
 
 .sidebar-tag.active.tag-tokens {
-    background: #ff99b3;
+    background: #a0126e;
     color: #000000;
 }
 
@@ -392,7 +456,6 @@ main {
     border-bottom: 1px solid #f0f0f0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     transition: background-color 0.2s ease;
 }
 
@@ -451,7 +514,7 @@ main {
 }
 
 .suggestion-tag.tag-mining {
-    background: #ff0000;
+    background: #008000;
 }
 
 .suggestion-tag.tag-lightning-network {
@@ -459,19 +522,19 @@ main {
 }
 
 .suggestion-tag.tag-privacy---security {
-    background: #008000;
+    background: #ff0000;
 }
 
 .suggestion-tag.tag-advanced-features {
-    background: #ffd8a8;
+    background: #c0c0c0;
 }
 
 .suggestion-tag.tag-services---exchanges {
-    background: #20b2aa;
+    background: #5dade2;
 }
 
 .suggestion-tag.tag-tokens {
-    background: #ffc0cb;
+    background: #c71585;
 }
 
 .suggestion-tag.tag-ecash {
@@ -510,6 +573,30 @@ main {
     min-width: 200px;
 }
 
+.clear-all-filters-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.clear-all-filters-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+.clear-all-filters-btn:active {
+    transform: translateY(0);
+}
+
 .bitcoin-price, .bitcoin-block {
     min-width: 120px;
 }
@@ -540,7 +627,62 @@ main {
     flex-wrap: wrap;
     gap: 6px;
     min-height: 20px;
-    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Container for filter pill + info box */
+.filter-with-infobox-container {
+    display: grid;
+    grid-template-columns: minmax(auto, 400px) 1fr;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.filter-with-infobox-container > .active-filter {
+    justify-self: start;
+}
+
+/* Filter Info Box */
+.filter-info-box {
+    background-color: #ffffff;
+    color: #333;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 2px solid #000000;
+    max-width: 600px;
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.info-box-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: #666;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.info-box-close:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+    transform: scale(1.1);
 }
 
 .active-filter {
@@ -558,13 +700,54 @@ main {
     border: 4px solid #000000;
 }
 
+/* Social icons inside filter pills */
+.social-icons-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-left: 0.75rem;
+}
+
+.social-icon {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    font-size: 1.3rem;
+}
+
+.social-icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 3px;
+}
+
+.social-icon-img[src="youtube.jpeg"] {
+    width: 40px;
+    height: 40px;
+}
+
+.active-filter.creator .social-icon-img[src="youtube.jpeg"] {
+    width: 32px;
+    height: 32px;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    opacity: 0.85;
+}
+
+.social-icon:active {
+    transform: scale(1.1);
+}
+
 /* Active filter colors matching their categories */
 .active-filter.tag-signing-devices {
     background-color: #ff7f00;
 }
 
 .active-filter.tag-wallets {
-    background-color: #007bff;
+    background-color: #5dade2;
 }
 
 .active-filter.tag-nodes---servers {
@@ -572,7 +755,7 @@ main {
 }
 
 .active-filter.tag-mining {
-    background-color: #ff0000;
+    background-color: #008000;
 }
 
 .active-filter.tag-lightning-network {
@@ -581,20 +764,20 @@ main {
 }
 
 .active-filter.tag-privacy---security {
-    background-color: #008000;
+    background-color: #ff0000;
 }
 
 .active-filter.tag-advanced-features {
-    background-color: #ffd8a8;
+    background-color: #c0c0c0;
     color: #000000;
 }
 
 .active-filter.tag-services---exchanges {
-    background-color: #20b2aa;
+    background-color: #007bff;
 }
 
 .active-filter.tag-tokens {
-    background-color: #ffc0cb;
+    background-color: #c71585;
     color: #000000;
 }
 
@@ -608,6 +791,8 @@ main {
     background: #ffffff !important;
     color: #000000 !important;
     border: 4px solid #000000 !important;
+    font-size: 18px;
+    padding: 12px 20px;
 }
 
 .filter-remove {
@@ -630,10 +815,16 @@ main {
 }
 
 .sticky-header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 100;
     margin-bottom: 2rem;
+    background: #000000;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    width: 100%;
 }
 
 .controls {
@@ -694,6 +885,149 @@ select, button {
     font-size: 1rem;
 }
 
+/* Import/Export Buttons */
+#import-btn, #export-btn, #import-filter-info-btn {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#import-btn:hover, #export-btn:hover, #import-filter-info-btn:hover {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#import-btn:active, #export-btn:active, #import-filter-info-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon container in search suggestions */
+.suggestion-icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    min-width: 32px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.suggestion-icon-container .creator-icon,
+.suggestion-icon-container .tag-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+/* Category emoji fallback in suggestions */
+.suggestion-icon-container {
+    font-size: 18px;
+}
+
+/* Full-width category colors for tag suggestions */
+.suggestion-item.tag-suggestion {
+    position: relative;
+}
+
+.suggestion-item.tag-suggestion .suggestion-icon-container,
+.suggestion-item.tag-suggestion .suggestion-text {
+    position: relative;
+    z-index: 1;
+}
+
+.suggestion-item.tag-suggestion .suggestion-text {
+    padding-left: 0;
+}
+
+/* Tag suggestion background colors */
+.suggestion-item.tag-suggestion.tag-signing-devices {
+    background: #ff7f00 !important;
+    color: #000000;
+}
+
+.suggestion-item.tag-suggestion.tag-wallets {
+    background: #5dade2 !important;
+    color: #ffffff;
+}
+
+.suggestion-item.tag-suggestion.tag-nodes---servers {
+    background: #9966cc !important;
+    color: #ffffff;
+}
+
+.suggestion-item.tag-suggestion.tag-mining {
+    background: #008000 !important;
+    color: #ffffff;
+}
+
+.suggestion-item.tag-suggestion.tag-lightning-network {
+    background: #ffff00 !important;
+    color: #000000;
+}
+
+.suggestion-item.tag-suggestion.tag-privacy---security {
+    background: #ff0000 !important;
+    color: #ffffff;
+}
+
+.suggestion-item.tag-suggestion.tag-advanced-features {
+    background: #c0c0c0 !important;
+    color: #000000;
+}
+
+.suggestion-item.tag-suggestion.tag-services---exchanges {
+    background: #007bff !important;
+    color: #ffffff;
+}
+
+.suggestion-item.tag-suggestion.tag-tokens {
+    background: #c71585 !important;
+    color: #000000;
+}
+
+.suggestion-item.tag-suggestion.tag-ecash {
+    background: #daa520 !important;
+    color: #ffffff;
+}
+
+/* Creator icon in filter pills */
+.creator-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+/* Tag icon in filter pills and video cards */
+.tag-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+/* Category emoji fallback */
+.category-emoji-fallback {
+    font-size: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
 select option[value=""] {
     font-weight: 900;
     color: #2c3e50;
@@ -713,7 +1047,7 @@ select option[value=""] {
 }
 
 .category-wallets {
-    background: #007bff !important;
+    background: #5dade2 !important;
     color: #000000 !important;
 }
 
@@ -723,7 +1057,7 @@ select option[value=""] {
 }
 
 .category-mining {
-    background: #ff0000 !important;
+    background: #008000 !important;
     color: #000000 !important;
 }
 
@@ -733,22 +1067,22 @@ select option[value=""] {
 }
 
 .category-privacy---security {
-    background: #008000 !important;
+    background: #ff0000 !important;
     color: #000000 !important;
 }
 
 .category-advanced-features {
-    background: #ffd8a8 !important;
+    background: #c0c0c0 !important;
     color: #000000 !important;
 }
 
 .category-services---exchanges {
-    background: #20b2aa !important;
+    background: #007bff !important;
     color: #000000 !important;
 }
 
 .category-tokens {
-    background: #ffc0cb !important;
+    background: #c71585 !important;
     color: #000000 !important;
 }
 
@@ -890,7 +1224,7 @@ button:hover {
 }
 
 .tag-wallets {
-    background: #007bff;
+    background: #5dade2;
     color: #000000;
 }
 
@@ -900,7 +1234,7 @@ button:hover {
 }
 
 .tag-mining {
-    background: #ff0000;
+    background: #008000;
     color: #000000;
 }
 
@@ -910,21 +1244,23 @@ button:hover {
 }
 
 .tag-privacy---security {
-    background: #008000;
+    background: #ff0000;
     color: #000000;
 }
 
 .tag-advanced-features {
-    background: #ffd8a8;
+    background: #c0c0c0;
+    color: #000000;
 }
 
 .tag-services---exchanges {
-    background: #20b2aa;
+    background: #007bff;
     color: #000000;
 }
 
 .tag-tokens {
-    background: #ffc0cb;
+    background: #c71585;
+    color: #000000;
 }
 
 .tag-ecash {
@@ -960,9 +1296,41 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    .banner-image {
-        height: 100px;
-        transform: scale(1.15) translateY(4px);
+    .site-header {
+        padding: 1.5rem 0;
+    }
+
+    .header-title {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .header-icon {
+        font-size: 1.8rem;
+    }
+
+    .header-content {
+        gap: 1rem;
+    }
+
+    .filter-with-infobox-container {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .filter-info-box {
+        max-width: 100%;
+        min-width: auto;
+        font-size: 0.9rem;
+        padding: 0.85rem 1.2rem;
+    }
+
+    .info-box-close {
+        top: 6px;
+        right: 8px;
+        width: 22px;
+        height: 22px;
+        font-size: 18px;
     }
 
     main {
@@ -992,6 +1360,10 @@ button:hover {
 
     .tag-category {
         margin-bottom: 0;
+    }
+
+    .sticky-header {
+        padding-top: 0.5rem;
     }
 
     .controls {
@@ -1140,6 +1512,41 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+    .site-header {
+        padding: 1rem 0;
+    }
+
+    .header-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    .header-icon {
+        font-size: 1.5rem;
+    }
+
+    .header-content {
+        gap: 0.75rem;
+    }
+
+    .filter-info-box {
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+        line-height: 1.5;
+    }
+
+    .info-box-close {
+        top: 4px;
+        right: 6px;
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+    }
+
+    .sticky-header {
+        padding-top: 0.25rem;
+    }
+
     .controls {
         padding: 0.75rem;
         gap: 0.75rem;
@@ -1172,4 +1579,50 @@ button:hover {
         height: 14px;
         font-size: 10px;
     }
+}
+
+/* Footer Styles */
+.site-footer {
+    background: linear-gradient(180deg, #000000 0%, #1a1a1a 80%, #000000 100%);
+    color: #f0f0f0;
+    padding: 2rem 1.5rem;
+    border-top: 2px solid #f7931a;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    box-shadow: 0 -4px 20px rgba(247, 147, 26, 0.2);
+}
+
+.site-footer h3 {
+    color: #f7931a;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.site-footer p {
+    max-width: 700px;
+    margin: 0.25rem auto 1rem;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.site-footer a {
+    color: #f7931a;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.site-footer a:hover {
+    border-bottom: 1px solid #f7931a;
+    color: #ffb347;
+}
+
+.footer-note {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 1.5rem;
 }

@@ -1,0 +1,14 @@
+The name BitcoinTutorials.org, the associated logo, and any related branding, design elements, or graphical marks are trademarks of Vake.
+
+These marks are not covered by the open-source software or content licenses in this repository and may not be used without prior written permission.
+
+You may not:
+	•	Use the name, logo, or branding in a way that suggests endorsement or sponsorship by [Your Name/Org].
+	•	Reproduce or modify the logo or branding for your own project.
+	•	Impersonate Vake or misrepresent affiliation.
+
+You may:
+	•	Use the project’s code under the terms of the Apache 2.0 License.
+	•	Use the project’s content under the terms of the CC BY 4.0 License.
+
+This separation ensures that while the code and content are free and open for anyone to use, the identity of the project cannot be misused.

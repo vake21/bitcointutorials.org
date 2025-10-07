@@ -21,17 +21,17 @@ The site is built around a **video grid**, populated from a simple CSV file of Y
 
 - **Sorting** – Tutorials can be sorted by **date, creator, or title**  
 - **Filtering** – Users can filter videos by **creator** or by **tag**  
-- **Tag Categories** – Tutorials are grouped into clear categories such as:  
-  - 🔑 Signing Devices  
-  - 💻 Wallets  
-  - 🖥 Nodes & Servers
-  - ⚡ Lightning Network  
-  - 🛡 Privacy & Security  
-  - 🧩 Advanced Features  
-  - 🏦 Services & Exchanges  
-  - ⛏ Mining  
-  - 🪙 Tokens  
-  - 💸 Ecash  
+- **Tag Categories** – Tutorials are grouped into clear categories such as:
+  - 🔐 Signing Devices
+  - 💳 Wallets
+  - 🖥️ Nodes & Servers
+  - ⛏️ Mining
+  - ⚡ Lightning Network
+  - 🏢 Services & Exchanges
+  - 💰 Tokens
+  - 💵 Ecash
+  - 🛡️ Privacy & Security
+  - 🚀 Advanced Features  
 
 ---
 

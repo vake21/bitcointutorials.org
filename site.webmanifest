@@ -1,0 +1,28 @@
+{
+    "name": "Bitcoin Tutorials",
+    "short_name": "BTC Tutorials",
+    "description": "Practical, step-by-step guides for using Bitcoin wallets, nodes, and privacy tools",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#f7931a",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "65x61",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

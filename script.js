@@ -46,6 +46,7 @@ const videoIframe = document.getElementById('video-iframe');
 const videoModalTitle = document.getElementById('video-modal-title');
 const videoModalCreator = document.getElementById('video-modal-creator');
 const videoModalClose = document.querySelector('.video-modal-close');
+const headerBanner = document.getElementById('header-banner');
 
 // Bitcoin API functions
 async function fetchBitcoinPrice() {
@@ -1347,6 +1348,9 @@ function setupEventListeners() {
 
     // Clear all filters button
     clearAllFiltersBtn.addEventListener('click', clearAllFilters);
+
+    // Header banner click - clear all filters and refresh
+    headerBanner.addEventListener('click', clearAllFilters);
 
     // Video modal event listeners
     videoModalClose.addEventListener('click', closeVideoModal);

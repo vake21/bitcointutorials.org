@@ -46,6 +46,7 @@ body {
     gap: 2rem;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
 .header-title {

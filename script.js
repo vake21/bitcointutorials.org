@@ -1013,7 +1013,7 @@ function getCategoryIcon(tag) {
         "Privacy & Security": "🛡️",
         "Advanced Features": "🚀",
         "Services & Exchanges": "🏢",
-        "Tokens": "💰",
+        "Tokens": "🪙",
         "Ecash": "💵"
     };
 

@@ -28,7 +28,7 @@ The site is built around a **video grid**, populated from a simple CSV file of Y
   - ⛏️ Mining
   - ⚡ Lightning Network
   - 🏢 Services & Exchanges
-  - 💰 Tokens
+  - 🪙 Tokens
   - 💵 Ecash
   - 🛡️ Privacy & Security
   - 🚀 Advanced Features  

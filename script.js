@@ -1443,8 +1443,8 @@ function getCreatorImageFilename(creatorName) {
 // Check if creator has an image and return the img tag or empty string
 function getCreatorIcon(creatorName) {
     const filenameBase = getCreatorImageFilename(creatorName);
-    // Look for images in the "creator icons" folder, try png, jpg, then jpeg
-    return `<img src="creator icons/${filenameBase}.png" alt="${creatorName}" class="creator-icon" onerror="this.src='creator icons/${filenameBase}.jpg'; this.onerror=function(){this.src='creator icons/${filenameBase}.jpeg'; this.onerror=function(){this.style.display='none'};};">`;
+    // Look for images in the "creator icons" folder (png only)
+    return `<img src="creator icons/${filenameBase}.png" alt="${creatorName}" class="creator-icon" onerror="this.style.display='none';">`;
 }
 
 // Generate tag image base filename from tag name
@@ -1458,16 +1458,16 @@ function getTagImageFilename(tagName) {
 // Check if tag has an image and return the img tag or empty string
 function getTagIcon(tagName) {
     const filenameBase = getTagImageFilename(tagName);
-    // Look for images in the "tag icons" folder, try png, jpg, then jpeg
-    return `<img src="tag icons/${filenameBase}.png" alt="${tagName}" class="tag-icon" onerror="this.src='tag icons/${filenameBase}.jpg'; this.onerror=function(){this.src='tag icons/${filenameBase}.jpeg'; this.onerror=function(){this.style.display='none'};};">`;
+    // Look for images in the "tag icons" folder (png only)
+    return `<img src="tag icons/${filenameBase}.png" alt="${tagName}" class="tag-icon" onerror="this.style.display='none';">`;
 }
 
 // Get tag icon with category emoji fallback
 function getTagIconWithFallback(tagName) {
     const filenameBase = getTagImageFilename(tagName);
     const categoryEmoji = getCategoryIcon(tagName);
-    // Try tag icon first (png, jpg, jpeg), fall back to category emoji if not found
-    return `<img src="tag icons/${filenameBase}.png" alt="${tagName}" class="tag-icon" onerror="this.src='tag icons/${filenameBase}.jpg'; this.onerror=function(){this.src='tag icons/${filenameBase}.jpeg'; this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='inline'};};">` +
+    // Try tag icon first (png only), fall back to category emoji if not found
+    return `<img src="tag icons/${filenameBase}.png" alt="${tagName}" class="tag-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">` +
            `<span class="category-emoji-fallback" style="display:none;">${categoryEmoji}</span>`;
 }
 

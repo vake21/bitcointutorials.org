@@ -12,6 +12,53 @@ const tagCategories = {
     "Advanced Features": ["Timelocks", "FROST", "Border Wallet", "Child Pays For Parent (CPFP)", "Replace By Fee (RBF)", "Gettxoutsetinfo (Audit Supply)", "Taproot Assets", "Partially Signed Bitcoin Transactions (PSBT)", "Statechains"]
 };
 
+// Available tag icons - update this list when adding new icon files
+// To regenerate: ls "tag icons" | sed 's/.png$//' | sort
+const availableTagIcons = new Set([
+    "alby", "anchorwatchtrident", "aqua", "ashigaru", "ashigaru-dojo", "avalon-nano", "azteco",
+    "bisq", "bitaroo", "bitaxe", "bitbox", "bitcoin-core", "bitcoin-core-wallet", "bitcoin-keeper",
+    "bitcoin-knots", "bitcoin-node-box", "bitcoin-well", "bitkey", "bitrefill", "bittr", "blitz",
+    "blixt", "blockstream-app", "bluewallet", "bolt-ring", "boltz", "braiins-mini-miner", "braiins-pool",
+    "breez", "btcpay-server", "bull-bitcoin", "cake", "casa", "cashu", "cashume", "citadel", "coinos",
+    "coldcard-mk1-4", "coldcard-q", "core-lightning", "datum", "debifi", "electrum",
+    "electrum-rust-server-electrs", "enuts", "envoy", "fedi", "fedimint", "fountain", "frostsnap",
+    "fulcrum", "fully-noded", "futurebit", "ginger", "hodl-hodl", "ibexpay", "jade", "jade-plus",
+    "jam", "joltz", "keepkey", "keystone", "kraken", "krux", "ledger-flex", "ledger-nanosx", "ledn",
+    "liana", "lightning-network-daemon-lnd", "lightning-node-connect", "lily", "liquid", "lnbits",
+    "loop", "mempoolspace-accelerator", "mercury", "minibits", "mutiny", "muun", "mynode", "nerdaxe",
+    "nunchuk", "nutstash", "onekey", "opendime", "parmanode", "passport-core", "peach", "phoenix",
+    "pool", "proton", "raspiblitz", "ride-the-lightning", "river", "robosats", "ronindojo", "satochip",
+    "satodime", "satscard", "seedkeeper", "seedsigner", "shakepay", "spark", "sparrow", "specter-desktop",
+    "specter-diy", "speed", "spike-to-spike", "start9", "strike", "tapsigner", "testnet", "theya",
+    "thunderhub", "trezor-one", "trezor-safe35", "trezor-t", "ubuntu-node-box", "umbrel",
+    "unchainedcaravan", "usdt", "voltage", "wasabi", "yeti", "zebedee", "zeus"
+]);
+
+// Available creator icons - update this list when adding new icon files
+// To regenerate: ls "creator icons" | sed 's/.png$//' | sort
+const availableCreatorIcons = new Set([
+    "402-payment-required", "88-sats-radio", "adam-obrien", "adam-soltys", "ai-invests", "altair-technology",
+    "anchorwatch", "andrew-with-laser-eyes", "area-bitcoin-english", "arman-the-parman", "avalon-support",
+    "avoidbit", "bb-2k16", "bitbagger", "bitbox", "bitcoin-brandon", "bitcoin-classroom", "bitcoin-daytrader",
+    "bitcoin-education", "bitcoin-learning", "bitcoin-magazine", "bitcoin-not-crypto", "bitcoin-quickies",
+    "bitcoin-takeover", "bitcoin-unlocked", "bitcoiner-malaysia", "bithyve", "bitsoloplayer-official",
+    "blkbox-trading", "blockchain-academics", "blockdyor", "blockstream", "btc-sessions", "btcpay-server",
+    "bull-bitcoin", "cake-wallet", "canadian-bitcoiners", "chris-bagnell", "coinkite", "corner-culture",
+    "crrdlx", "crypto-blick", "crypto-bull", "crypto-friday", "crypto-guide", "crypto-moose", "cryptojar",
+    "curiousinventor", "dairebtc", "darren-honeysett", "davani", "elestio", "explore-crypto", "foundation",
+    "frostsnap", "getbittr", "ginger-wallet", "guy-swann", "hardcore-bitcoiner", "ian-major", "imineblocks",
+    "jbinzala", "jonathan-levi", "justh0dl", "kahoobb", "keepkey", "kevin-mulcrone", "kf-chan", "l33t-guy",
+    "laine", "ledn", "liana-wallet", "lightning-labs", "lnbits", "lukes-tech", "ministry-of-nodes",
+    "money-reimagined", "moneyzg", "mynode", "natalie-brunell", "nico-moran", "ocean", "paul-lamb", "peach",
+    "piecover-btc", "pioneering-freedom", "plan-b-network", "rabid-mining", "red-panda-mining", "rhett-reisman",
+    "robotechy", "ronindojo", "ryan-matta", "ryan-scribner", "saniexp", "satashi21", "satoshi-radio-global",
+    "seedsigner", "southern-bitcoiner", "sovereign-money", "specter", "tanleybench", "tech-express", "tftc",
+    "the-bitcoin-hardware-store", "the-cryptodad", "the-hobbyist-miner", "the-social-guide", "the-space",
+    "thebtccourse", "theya", "tj-free", "trezor", "unchained", "understanding-bitcoin", "vasker-media",
+    "voltage", "vortex-bitcoin", "voskcoin", "wandering-maverick", "wantclue", "wasabi-wallet",
+    "wicked-smart-bitcoin", "wizardsardine", "yeti-bitcoin-wallet"
+]);
+
 // Your video database - add your own tutorials here
 const videoData = [];
 let currentVideos = [...videoData];
@@ -1443,8 +1490,14 @@ function getCreatorImageFilename(creatorName) {
 // Check if creator has an image and return the img tag or empty string
 function getCreatorIcon(creatorName) {
     const filenameBase = getCreatorImageFilename(creatorName);
-    // Look for images in the "creator icons" folder (png only)
-    return `<img src="creator icons/${filenameBase}.png" alt="${creatorName}" class="creator-icon" onerror="this.style.display='none';">`;
+
+    // Check if icon exists before trying to load it (eliminates 404 requests)
+    if (availableCreatorIcons.has(filenameBase)) {
+        return `<img src="creator icons/${filenameBase}.png" alt="${creatorName}" class="creator-icon" onerror="this.style.display='none';">`;
+    } else {
+        // No icon exists - return empty string
+        return '';
+    }
 }
 
 // Generate tag image base filename from tag name
@@ -1458,17 +1511,30 @@ function getTagImageFilename(tagName) {
 // Check if tag has an image and return the img tag or empty string
 function getTagIcon(tagName) {
     const filenameBase = getTagImageFilename(tagName);
-    // Look for images in the "tag icons" folder (png only)
-    return `<img src="tag icons/${filenameBase}.png" alt="${tagName}" class="tag-icon" onerror="this.style.display='none';">`;
+
+    // Check if icon exists before trying to load it (eliminates 404 requests)
+    if (availableTagIcons.has(filenameBase)) {
+        return `<img src="tag icons/${filenameBase}.png" alt="${tagName}" class="tag-icon" onerror="this.style.display='none';">`;
+    } else {
+        // No icon exists - return empty string
+        return '';
+    }
 }
 
 // Get tag icon with category emoji fallback
 function getTagIconWithFallback(tagName) {
     const filenameBase = getTagImageFilename(tagName);
     const categoryEmoji = getCategoryIcon(tagName);
-    // Try tag icon first (png only), fall back to category emoji if not found
-    return `<img src="tag icons/${filenameBase}.png" alt="${tagName}" class="tag-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">` +
-           `<span class="category-emoji-fallback" style="display:none;">${categoryEmoji}</span>`;
+
+    // Check if icon exists before trying to load it (eliminates 404 requests)
+    if (availableTagIcons.has(filenameBase)) {
+        // Icon exists - load it with hidden emoji fallback
+        return `<img src="tag icons/${filenameBase}.png" alt="${tagName}" class="tag-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">` +
+               `<span class="category-emoji-fallback" style="display:none;">${categoryEmoji}</span>`;
+    } else {
+        // No icon exists - show emoji directly (no img tag, no 404 request)
+        return `<span class="category-emoji-fallback">${categoryEmoji}</span>`;
+    }
 }
 
 

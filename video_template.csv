@@ -76,7 +76,7 @@ Connect Hardware Wallet to Your Own Node with Sparrow,Bitcoin Not Crypto,2025-05
 Key Teleport,Coinkite,2025-05-01,Bg0r0DQVcDg,ColdCard Q
 Ginger Wallet in 2 Minutes,Ginger Wallet,2025-04-30,Bzfp8m4KFFs,Ginger
 Multisig Recovery Trick,Pioneering Freedom,2025-04-30,WUcH4ljfhs8,"Sparrow,Multisig,ColdCard Q,Keystone"
-Create a Multisig Wallet with Sparrow and BTCPay Server,BTCPay Server,2025-04-30,oTvgIBlLW44,"BTCPay Server,Multisig,Trezor T"
+Create a Multisig Wallet with Sparrow and BTCPay Server,BTCPay Server,2025-04-30,oTvgIBlLW44,"BTCPay Server,Multisig,Trezor T,Sparrow"
 How to Set Up a Bitcoin Node with Raspberry Pi & MyNode,Andrew with Laser Eyes,2025-04-29,9FE4mTr_6EI,"MyNode,Sparrow"
 How to Secure Your Company's Bitcoin Treasury with Theya for Business,Theya,2025-04-28,mgJktCL-iNU,"Theya,Trezor Safe(3/5),Ledger Nano(S/X),Multisig"
 Bitcoin Multisig Guide: 2-of-3 ColdCard + Keystone Setup with Sparrow Wallet,Pioneering Freedom,2025-04-24,wloTHcNmzJU,"Multisig,Sparrow,ColdCard Q"
@@ -470,8 +470,8 @@ How to Create Bitcoin Wallet: Blockstream Green,Blockstream,2023-04-17,dxi4aRDCY
 How to Set up a 2FA Protected Account: Blockstream Green,Blockstream,2023-04-17,CyCQjjSYIBY,Blockstream App
 Tapsigner (NFC) Bitcoin Wallet Tutorial,theBTCcourse,2023-04-13,sP2sTyHqXQU,"Tapsigner,Nunchuk"
 Border Wallets: Storing Bitcoin in Your Brain,BTC Sessions,2023-04-12,wHQrvCGVkTw,"Border Wallet,Sparrow"
-How-to-use B2X: A Complete Guide,LEDN,2023-04-10,LJvPaskv2RU,LEDN
-How-to-use: Bitcoin-backed loans,LEDN,2023-04-10,ia5Id2_mCLQ,LEDN
+How-to-use B2X: A Complete Guide,Ledn,2023-04-10,LJvPaskv2RU,Ledn
+How-to-use: Bitcoin-backed loans,Ledn,2023-04-10,ia5Id2_mCLQ,Ledn
 "ColdCard Hardware Wallet Tutorial- Secure, Send & Receive Bitcoin",theBTCcourse,2023-04-06,0rVce24dVJQ,"ColdCard MK(1-4),Sparrow"
 Setting Up SeedQR with Blockstream Jade,Blockstream,2023-04-04,Kx7fHgfUZ6w,"Jade,SeedQR"
 "ColdCard MK4 Tutorial, Review & Setup with Specter Wallet",Darren Honeysett,2023-04-04,cNo6TwMA4mg,"ColdCard MK(1-4),Specter Desktop"
@@ -636,7 +636,7 @@ Mercury Wallet- Using Bitcoin Statechains for Privacy,BTC Sessions,2021-12-07,Sl
 Jade Bitcoin Hardware Wallet Tutorial,Blockchain Academics,2021-12-06,Bn9tLQFlUwM,"Jade,Blockstream App"
 How to Buy Non-KYC Bitcoin from a Bitcoin ATM,Ian Major,2021-11-18,DnheitmOalQ,Non-KYC
 "CoinOS Wallet: Bitcoin On-Chain, Liquid, and Lightning ",BTC Sessions,2021-11-15,6wmtPKLeZH0,"Liquid,Lightning"
-LEDN Review,Darren Honeysett,2021-11-12,GZqW3FMScQU,LEDN
+Ledn Review,Darren Honeysett,2021-11-12,GZqW3FMScQU,Ledn
 Specter Wallet Tutorial- Bitcoin Multisig with Your Own Node,Ian Major,2021-11-05,L07FOsLBVm4,"Specter Desktop,Verifying Downloads,Umbrel,ColdCard MK(1-4),Multisig"
 How to Perform Coin Control in Caravan: Manual UTXO Selection,Unchained,2021-11-03,_9AWfndN-YU,"Unchained/Caravan,UTXO Management,Multisig"
 How to Backup and Restore Multisig Wallets (w/ Sparrow and Specter),BTC Sessions,2021-10-26,_X5LygNovLU,"Specter Desktop,Sparrow,Multisig"
@@ -654,12 +654,12 @@ Passport Wallet Tutorial- Using a Passphrase,Foundation,2021-09-28,xo6UULwmgMw,P
 Zebedee Bitcoin Wallet Tutorial,BTC Sessions,2021-09-27,gPGzq01B9Qc,"Zebedee,Lightning"
 Passport Wallet Tutorial- BlueWallet Set Up (Single Signature),Foundation,2021-09-27,8bh7ydaDFQo,"Passport Core,BlueWallet"
 Passport Wallet Tutorial- Restoring From Seed,Foundation,2021-09-27,hEozTm1EZ-c,Passport Core
-Passport Wallet Tutorial- Restoring From Backup File,Foundation,2021-09-27,oSy_HXfJTw4,Passport Core
+Passport Wallet Tutorial- Restoring From Backup File,Foundation,2021-09-27,oSy_HXfJTw4,"Passport Core,Encrypted Backups"
 Sparrow Wallet Tutorial: The Ultimate Bitcoin Desktop Wallet,Ian Major,2021-09-27,GSHyKTigNQY,"Sparrow, Verifying Downloads,Umbrel"
 Keystone Bitcoin Only Firmware (Cold Storage Hardware Wallet),Crypto Guide,2021-09-23,lBMY8S3nPl0,"Keystone,Seed Phrases (General),BlueWallet,Electrum"
 SeedXOR & ColdCard,Coinkite,2021-09-22,Vl1KHT_-h_Q,"ColdCard MK(1-4),Seed XOR"
 Assembling Your Umbrel Bitcoin Node in 30 Minutes! (Raspberry Pi),Ian Major,2021-09-20,sK4x3UkxI-k,Umbrel
-LEDN- Bitcoin Backed Loans and Savings,BTC Sessions,2021-09-14,I_31ftbRv7U,LEDN
+Ledn- Bitcoin Backed Loans and Savings,BTC Sessions,2021-09-14,I_31ftbRv7U,Ledn
 Breez Wallet: Flexibility & Sovereignty for the Bitcoin Lightning Network,Ian Major,2021-09-06,Z_yiPM2gzk0,"Breez,Lightning"
 Single-Sig Bitcoin Wallet with SeedSigner & Specter Desktop,SeedSigner,2021-08-26,LPqvdQ2gSzs,"SeedSigner,Specter Desktop"
 Generate Seed Checksum Word & SeedQR Manual Transcription,SeedSigner,2021-08-24,c1-PqTNx1vc,"SeedSigner,Seed Phrases (General),SeedQR"

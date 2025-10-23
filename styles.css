@@ -21,11 +21,18 @@ body {
 
 .site-header {
     width: 100%;
-    background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    background: #0a1628;
     padding: 2rem 0;
     box-shadow: 0 4px 20px rgba(247, 147, 26, 0.3);
     border-bottom: 2px solid #f7931a;
     position: relative;
+    background-image:
+        repeating-linear-gradient(23deg, transparent, transparent 3px, rgba(255, 255, 255, 0.015) 3px, rgba(255, 255, 255, 0.015) 4px),
+        repeating-linear-gradient(-67deg, transparent, transparent 2px, rgba(255, 255, 255, 0.02) 2px, rgba(255, 255, 255, 0.02) 5px),
+        repeating-linear-gradient(142deg, transparent, transparent 4px, rgba(255, 255, 255, 0.01) 4px, rgba(255, 255, 255, 0.01) 6px),
+        repeating-linear-gradient(-15deg, transparent, transparent 5px, rgba(255, 255, 255, 0.018) 5px, rgba(255, 255, 255, 0.018) 8px),
+        repeating-linear-gradient(78deg, transparent, transparent 3px, rgba(255, 255, 255, 0.012) 3px, rgba(255, 255, 255, 0.012) 7px),
+        linear-gradient(135deg, #0a1628 0%, #0d1d35 30%, #081222 60%, #0a1628 100%);
 }
 
 .site-header::before {
@@ -35,7 +42,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(247, 147, 26, 0.1) 0%, transparent 70%);
+    background:
+        radial-gradient(ellipse at center, rgba(247, 147, 26, 0.08) 0%, transparent 70%),
+        repeating-linear-gradient(33deg, transparent 0px, transparent 8px, rgba(255, 255, 255, 0.008) 8px, rgba(255, 255, 255, 0.008) 12px),
+        repeating-linear-gradient(-71deg, transparent 0px, transparent 6px, rgba(255, 255, 255, 0.012) 6px, rgba(255, 255, 255, 0.012) 11px),
+        repeating-linear-gradient(127deg, transparent 0px, transparent 9px, rgba(255, 255, 255, 0.01) 9px, rgba(255, 255, 255, 0.01) 13px);
     pointer-events: none;
 }
 
@@ -302,7 +313,7 @@ main {
 }
 
 .category-title.category-tokens::before {
-    content: "💰";
+    content: "🪙";
 }
 
 .category-title.category-ecash {
@@ -631,19 +642,6 @@ main {
     align-items: flex-start;
 }
 
-/* Container for filter pill + info box */
-.filter-with-infobox-container {
-    display: grid;
-    grid-template-columns: minmax(auto, 400px) 1fr;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-}
-
-.filter-with-infobox-container > .active-filter {
-    justify-self: start;
-}
-
 /* Filter Info Box */
 .filter-info-box {
     background-color: #ffffff;
@@ -655,10 +653,9 @@ main {
     font-family: 'Times New Roman', Times, serif;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     border: 2px solid #000000;
-    max-width: 600px;
-    flex: 1;
-    min-width: 300px;
+    width: 100%;
     position: relative;
+    margin-top: 0.5rem;
 }
 
 .info-box-close {
@@ -686,6 +683,24 @@ main {
     transform: scale(1.1);
 }
 
+/* Info box sections */
+.info-box-header {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-box-description {
+    color: #333;
+    line-height: 1.6;
+}
+
 .active-filter {
     background-color: #f7931a;
     color: black;
@@ -706,7 +721,7 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    margin-left: 0.75rem;
+    margin-left: 0.4rem;
 }
 
 .social-icon {
@@ -740,6 +755,40 @@ main {
 
 .social-icon:active {
     transform: scale(1.1);
+}
+
+/* Social icons label */
+.social-icons-label {
+    margin-left: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Platform icons label */
+.platform-icons-label {
+    margin-left: 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Platform icons container and styling */
+.platform-icons-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 0.4rem;
+}
+
+.platform-icon {
+    cursor: default !important;
+    pointer-events: none;
+}
+
+.platform-icon:hover {
+    transform: none !important;
+    opacity: 1 !important;
 }
 
 /* Active filter colors matching their categories */
@@ -796,6 +845,23 @@ main {
     padding: 12px 20px;
 }
 
+.info-icon {
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.info-icon:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.15);
+}
+
 .filter-remove {
     cursor: pointer;
     font-weight: bold;
@@ -840,7 +906,7 @@ main {
     align-items: center;
 }
 
-.sort-controls, .filter-controls, .import-export-controls, .search-controls {
+.sort-controls, .filter-controls, .import-export-controls, .search-controls, .csv-controls {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -855,7 +921,7 @@ main {
     gap: 1rem;
 }
 
-.import-export-controls {
+.import-export-controls, .csv-controls {
     gap: 0.5rem;
 }
 
@@ -887,7 +953,7 @@ select, button {
 }
 
 /* Import/Export Buttons */
-#import-btn, #export-btn, #import-filter-info-btn {
+#import-btn, #export-btn, #import-filter-info-btn, .csv-btn {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
     border: none;
@@ -897,15 +963,16 @@ select, button {
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-#import-btn:hover, #export-btn:hover, #import-filter-info-btn:hover {
+#import-btn:hover, #export-btn:hover, #import-filter-info-btn:hover, .csv-btn:hover {
     background: linear-gradient(135deg, #34495e, #2c3e50);
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#import-btn:active, #export-btn:active, #import-filter-info-btn:active {
+#import-btn:active, #export-btn:active, #import-filter-info-btn:active, .csv-btn:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -1314,14 +1381,7 @@ button:hover {
         gap: 1rem;
     }
 
-    .filter-with-infobox-container {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
-
     .filter-info-box {
-        max-width: 100%;
-        min-width: auto;
         font-size: 0.9rem;
         padding: 0.85rem 1.2rem;
     }
@@ -1575,6 +1635,11 @@ button:hover {
         padding: 4px 8px;
     }
 
+    .info-icon {
+        font-size: 14px;
+        padding: 0 2px;
+    }
+
     .filter-remove {
         width: 14px;
         height: 14px;
@@ -1586,7 +1651,7 @@ button:hover {
 .site-footer {
     background: linear-gradient(180deg, #000000 0%, #1a1a1a 80%, #000000 100%);
     color: #f0f0f0;
-    padding: 2rem 1.5rem;
+    padding: 2rem 3rem;
     border-top: 2px solid #f7931a;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -1603,7 +1668,7 @@ button:hover {
 }
 
 .site-footer p {
-    max-width: 700px;
+    max-width: 1200px;
     margin: 0.25rem auto 1rem;
     font-size: 1rem;
     color: #ccc;

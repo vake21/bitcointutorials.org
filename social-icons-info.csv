@@ -150,7 +150,7 @@ Tapsigner,tag,https://tapsigner.com/,,https://github.com/coinkite/coinkite-tap-p
 Trezor One,tag,https://trezor.io/trezor-model-one,,https://github.com/trezor/trezor-firmware,https://x.com/Trezor,,
 Trezor Safe(3/5),tag,https://trezor.io/,,https://github.com/trezor/trezor-firmware,https://x.com/Trezor,,
 Trezor T,tag,https://trezor.io/trezor-safe-5,,https://github.com/trezor/trezor-firmware,https://x.com/Trezor,,
-Aqua,tag,https://aquawallet.io/,,https://github.com/AquaWallet/aqua-wallet,https://x.com/AquaBitcoin,https://primal.net/p/nprofile1qqswe03hyye2jv3msylwkj8cml8d4m9qpc5g0tccrvrrcm86z0kcagg0zjv3w,iphone
+Aqua,tag,https://aquawallet.io/,,https://github.com/AquaWallet/aqua-wallet,https://x.com/AquaBitcoin,https://primal.net/p/nprofile1qqswe03hyye2jv3msylwkj8cml8d4m9qpc5g0tccrvrrcm86z0kcagg0zjv3w,"iphone,android"
 Ashigaru,tag,https://ashigaruwallet.app/,,,https://x.com/Ashigaruwallets,,android
 Bitcoin Core Wallet,tag,https://bitcoincore.org/,,https://github.com/bitcoin/bitcoin/,https://x.com/bitcoincoreorg,,"mac,windows,linux"
 Bitcoin Keeper,tag,https://bitcoinkeeper.app/,,https://github.com/bithyve/bitcoin-keeper,https://x.com/bitcoinKeeper_,,"mac,windows,linux,iphone,android"

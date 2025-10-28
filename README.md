@@ -30,7 +30,8 @@ The site is built around a **video grid**, populated from a simple CSV file of Y
   - 🏢 Services & Exchanges
   - 🪙 Tokens
   - 💵 Ecash
-  - 🛡️ Privacy & Security
+  - 🛡️ Security
+  - 🥷 Privacy
   - 🚀 Advanced Features  
 
 ---

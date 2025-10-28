@@ -282,12 +282,20 @@ main {
     content: "⚡";
 }
 
-.category-title.category-privacy---security {
+.category-title.category-security {
     background: #ff0000;
 }
 
-.category-title.category-privacy---security::before {
+.category-title.category-security::before {
     content: "🛡️";
+}
+
+.category-title.category-privacy {
+    background: #800000;
+}
+
+.category-title.category-privacy::before {
+    content: "🥷";
 }
 
 .category-title.category-advanced-features {
@@ -347,8 +355,12 @@ main {
     color: #000000;
 }
 
-.sidebar-tag.active.tag-privacy---security {
+.sidebar-tag.active.tag-security {
     background: #cc0000;
+}
+
+.sidebar-tag.active.tag-privacy {
+    background: #660000;
 }
 
 .sidebar-tag.active.tag-advanced-features {
@@ -533,8 +545,12 @@ main {
     background: #ffff00;
 }
 
-.suggestion-tag.tag-privacy---security {
+.suggestion-tag.tag-security {
     background: #ff0000;
+}
+
+.suggestion-tag.tag-privacy {
+    background: #800000;
 }
 
 .suggestion-tag.tag-advanced-features {
@@ -813,8 +829,12 @@ main {
     color: #000000;
 }
 
-.active-filter.tag-privacy---security {
+.active-filter.tag-security {
     background-color: #ff0000;
+}
+
+.active-filter.tag-privacy {
+    background-color: #800000;
 }
 
 .active-filter.tag-advanced-features {
@@ -1043,8 +1063,13 @@ select, button {
     color: #000000;
 }
 
-.suggestion-item.tag-suggestion.tag-privacy---security {
+.suggestion-item.tag-suggestion.tag-security {
     background: #ff0000 !important;
+    color: #ffffff;
+}
+
+.suggestion-item.tag-suggestion.tag-privacy {
+    background: #800000 !important;
     color: #ffffff;
 }
 
@@ -1134,9 +1159,14 @@ select option[value=""] {
     color: #000000 !important;
 }
 
-.category-privacy---security {
+.category-security {
     background: #ff0000 !important;
     color: #000000 !important;
+}
+
+.category-privacy {
+    background: #800000 !important;
+    color: #ffffff !important;
 }
 
 .category-advanced-features {
@@ -1311,9 +1341,14 @@ button:hover {
     color: #000000;
 }
 
-.tag-privacy---security {
+.tag-security {
     background: #ff0000;
     color: #000000;
+}
+
+.tag-privacy {
+    background: #800000;
+    color: #ffffff;
 }
 
 .tag-advanced-features {

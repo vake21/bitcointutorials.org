@@ -8,7 +8,8 @@ const tagCategories = {
     "Services & Exchanges": ["Bitcoin Well", "Hodl Hodl", "Kraken", "BTCPay Server", "Debifi", "Azteco", "Bisq", "Casa", "Unchained/Caravan", "Bittr", "Bitrefill", "Fountain", "Strike", "Spike to Spike", "Ledn", "Anchorwatch/Trident", "IBEXPay", "Robosats", "Peach", "Coinos", "Shakepay", "River", "Bull Bitcoin", "Bitaroo", "Mempool.space Accelerator"],
     "Tokens": ["Liquid", "USDT", "Testnet"],
     "Ecash": ["Fedimint", "Cashu"],
-    "Privacy & Security": ["Coinjoin (Wabisabi)", "Non-KYC", "Verifying Downloads", "Seed Phrases (General)", "UTXO Management", "SeedQR", "Coinjoin (Whirlpool)", "Coinjoin (JoinMarket)", "Silent Payments", "Payjoin", "Encrypted Backups", "Child Seeds (BIP 85)", "Multisig", "Paynyms (BIP 47)", "Seed XOR", "Shamir's Secret Sharing (SLIP-39)"],
+    "Security": ["Verifying Downloads", "Seed Phrases (General)", "UTXO Management", "SeedQR", "Encrypted Backups", "Child Seeds (BIP 85)", "Multisig", "Seed XOR", "Shamir's Secret Sharing (SLIP-39)"],
+    "Privacy": ["Coinjoin (JoinMarket)", "Coinjoin (Wabisabi)", "Coinjoin (Whirlpool)", "Non-KYC", "Payjoin", "Paynyms (BIP 47)", "Silent Payments"],
     "Advanced Features": ["Timelocks", "FROST", "Border Wallet", "Child Pays For Parent (CPFP)", "Replace By Fee (RBF)", "Gettxoutsetinfo (Audit Supply)", "Taproot Assets", "Partially Signed Bitcoin Transactions (PSBT)", "Statechains"]
 };
 
@@ -1428,6 +1429,36 @@ function populateTagSidebar() {
     });
 }
 
+// Parse date string from CSV - handles both YYYY-MM-DD and M/D/YY formats
+function parseDateString(dateStr) {
+    if (!dateStr) return null;
+
+    // Try ISO format first (YYYY-MM-DD)
+    if (dateStr.match(/^\d{4}-\d{1,2}-\d{1,2}$/)) {
+        return new Date(dateStr + 'T00:00:00');
+    }
+
+    // Try M/D/YY or MM/DD/YY format
+    const parts = dateStr.split('/');
+    if (parts.length === 3) {
+        let month = parseInt(parts[0], 10);
+        let day = parseInt(parts[1], 10);
+        let year = parseInt(parts[2], 10);
+
+        // Convert 2-digit year to 4-digit year
+        // Assume years 00-49 are 2000-2049, 50-99 are 1950-1999
+        if (year < 100) {
+            year += (year < 50) ? 2000 : 1900;
+        }
+
+        // JavaScript months are 0-indexed
+        return new Date(year, month - 1, day);
+    }
+
+    // Fallback to standard Date parsing
+    return new Date(dateStr);
+}
+
 // Update video count display
 function updateVideoCount(count) {
     videoCountNumber.textContent = count;
@@ -1464,7 +1495,8 @@ function getCategoryIcon(tag) {
         "Nodes & Servers": "🖥️",
         "Mining": "⛏️",
         "Lightning Network": "⚡",
-        "Privacy & Security": "🛡️",
+        "Security": "🛡️",
+        "Privacy": "🥷",
         "Advanced Features": "🚀",
         "Services & Exchanges": "🏢",
         "Tokens": "🪙",
@@ -1590,11 +1622,16 @@ function createVideoCard(video) {
 
     let formattedDate;
     try {
-        formattedDate = new Date(video.date + 'T00:00:00').toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
+        const dateObj = parseDateString(video.date);
+        if (dateObj && !isNaN(dateObj.getTime())) {
+            formattedDate = dateObj.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        } else {
+            formattedDate = video.date; // fallback to original
+        }
     } catch (error) {
         console.warn('Invalid date format:', video.date);
         formattedDate = video.date; // fallback to original
@@ -1685,8 +1722,8 @@ function sortVideos(videos, sortBy, ascending = true) {
         
         switch(sortBy) {
             case 'date':
-                valueA = new Date(a.date);
-                valueB = new Date(b.date);
+                valueA = parseDateString(a.date);
+                valueB = parseDateString(b.date);
                 break;
             case 'creator':
                 valueA = a.creator.toLowerCase();
@@ -1850,6 +1887,31 @@ function setupEventListeners() {
             hideSuggestions();
         }
     });
+
+    // Import/Export CSV buttons
+    const importBtn = document.getElementById('import-btn');
+    const exportBtn = document.getElementById('export-btn');
+    const fileInput = document.getElementById('file-input');
+    const importFilterInfoBtn = document.getElementById('import-filter-info-btn');
+    const filterInfoInput = document.getElementById('filter-info-input');
+
+    if (importBtn && fileInput) {
+        importBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+        fileInput.addEventListener('change', handleFileImport);
+    }
+
+    if (exportBtn) {
+        exportBtn.addEventListener('click', exportToCSV);
+    }
+
+    if (importFilterInfoBtn && filterInfoInput) {
+        importFilterInfoBtn.addEventListener('click', () => {
+            filterInfoInput.click();
+        });
+        filterInfoInput.addEventListener('change', handleFilterInfoImport);
+    }
 
     // Initialize dropdown filter state
     updateDropdownFiltersState();

@@ -1888,31 +1888,6 @@ function setupEventListeners() {
         }
     });
 
-    // Import/Export CSV buttons
-    const importBtn = document.getElementById('import-btn');
-    const exportBtn = document.getElementById('export-btn');
-    const fileInput = document.getElementById('file-input');
-    const importFilterInfoBtn = document.getElementById('import-filter-info-btn');
-    const filterInfoInput = document.getElementById('filter-info-input');
-
-    if (importBtn && fileInput) {
-        importBtn.addEventListener('click', () => {
-            fileInput.click();
-        });
-        fileInput.addEventListener('change', handleFileImport);
-    }
-
-    if (exportBtn) {
-        exportBtn.addEventListener('click', exportToCSV);
-    }
-
-    if (importFilterInfoBtn && filterInfoInput) {
-        importFilterInfoBtn.addEventListener('click', () => {
-            filterInfoInput.click();
-        });
-        filterInfoInput.addEventListener('change', handleFilterInfoImport);
-    }
-
     // Initialize dropdown filter state
     updateDropdownFiltersState();
 }

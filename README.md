@@ -17,10 +17,11 @@ Our goals:
 ---
 
 ## 🏗 Structure
-The site is built around a **video grid**, populated from a simple CSV file of YouTube links and tags.  
+The site is built around a **video grid**, populated from a simple CSV file of YouTube links and tags.
 
-- **Sorting** – Tutorials can be sorted by **date, creator, or title**  
-- **Filtering** – Users can filter videos by **creator** or by **tag**  
+- **Sorting** – Tutorials can be sorted by **date, creator, or title**
+- **Filtering** – Users can filter videos by **creator** or by **tag**
+- **Favorites** – Users can bookmark videos for later viewing using the 🔖 button on each video card. Favorites are saved locally in the browser, and users can filter to show only their favorited videos
 - **Tag Categories** – Tutorials are grouped into clear categories such as:
   - 🔐 Signing Devices
   - 💳 Wallets

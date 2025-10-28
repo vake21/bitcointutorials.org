@@ -95,6 +95,12 @@ const videoModalTitle = document.getElementById('video-modal-title');
 const videoModalCreator = document.getElementById('video-modal-creator');
 const videoModalClose = document.querySelector('.video-modal-close');
 const headerBanner = document.getElementById('header-banner');
+const showFavoritesBtn = document.getElementById('show-favorites-btn');
+
+// Favorites functionality
+let favorites = [];
+let showingFavoritesOnly = false;
+const FAVORITES_STORAGE_KEY = 'bitcoinTutorialsFavorites';
 
 // Bitcoin API functions
 async function fetchBitcoinPrice() {
@@ -156,8 +162,109 @@ function initBitcoinData() {
     }, 5 * 60 * 1000);
 }
 
+// Favorites functions
+function loadFavorites() {
+    try {
+        const stored = localStorage.getItem(FAVORITES_STORAGE_KEY);
+        favorites = stored ? JSON.parse(stored) : [];
+        console.log(`Loaded ${favorites.length} favorites from localStorage`);
+    } catch (error) {
+        console.error('Error loading favorites:', error);
+        favorites = [];
+    }
+}
+
+function saveFavorites() {
+    try {
+        localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
+        console.log(`Saved ${favorites.length} favorites to localStorage`);
+    } catch (error) {
+        console.error('Error saving favorites:', error);
+    }
+}
+
+function isFavorited(youtubeId) {
+    return favorites.includes(youtubeId);
+}
+
+function toggleFavorite(youtubeId) {
+    const index = favorites.indexOf(youtubeId);
+    if (index === -1) {
+        // Add to favorites
+        favorites.push(youtubeId);
+    } else {
+        // Remove from favorites
+        favorites.splice(index, 1);
+    }
+    saveFavorites();
+    updateFavoritesButton();
+
+    // Update the favorite button on the card
+    const favoriteBtn = document.querySelector(`.favorite-button[data-youtube-id="${youtubeId}"]`);
+    if (favoriteBtn) {
+        favoriteBtn.classList.toggle('active', isFavorited(youtubeId));
+    }
+
+    // If showing favorites only, re-filter to remove unfavorited videos
+    if (showingFavoritesOnly) {
+        updateActiveFiltersDisplay();
+        applyActiveFilters();
+    }
+}
+
+function toggleFavoritesView() {
+    showingFavoritesOnly = !showingFavoritesOnly;
+    updateFavoritesButton();
+    updateActiveFiltersDisplay();
+
+    // Use the unified filter system which now respects favorites
+    applyActiveFilters();
+}
+
+function updateFavoritesButton() {
+    if (!showFavoritesBtn) return;
+
+    if (showingFavoritesOnly) {
+        showFavoritesBtn.textContent = '🔖 Show All';
+        showFavoritesBtn.classList.add('active');
+    } else {
+        showFavoritesBtn.textContent = `🔖 Show Favorites (${favorites.length})`;
+        showFavoritesBtn.classList.remove('active');
+    }
+}
+
+function clearAllFavorites() {
+    if (favorites.length === 0) {
+        alert('You have no favorites to clear.');
+        return;
+    }
+
+    const confirmed = confirm(`Are you sure you want to clear all ${favorites.length} favorites? This cannot be undone.`);
+    if (!confirmed) return;
+
+    // Clear favorites array
+    favorites = [];
+    saveFavorites();
+
+    // If currently showing favorites only, switch back to all videos
+    if (showingFavoritesOnly) {
+        showingFavoritesOnly = false;
+    }
+
+    // Update UI
+    updateFavoritesButton();
+    updateActiveFiltersDisplay(); // Update filter pills to remove favorites pill
+    applyActiveFilters(); // Use unified filter system
+
+    // Update all favorite buttons on cards
+    document.querySelectorAll('.favorite-button.active').forEach(btn => {
+        btn.classList.remove('active');
+    });
+}
+
 // Initialize the application
 function init() {
+    loadFavorites(); // Load favorites from localStorage
     loadDefaultCSV();
     loadFilterInfo();
     initBitcoinData();
@@ -1124,6 +1231,29 @@ function buildInfoBoxContent(filterText, filterType, filterKey) {
 function updateActiveFiltersDisplay() {
     activeFiltersContainer.innerHTML = '';
 
+    // Add favorites filter pill if showing favorites only
+    if (showingFavoritesOnly) {
+        const favoritesFilter = document.createElement('div');
+        favoritesFilter.className = 'active-filter active-filter-favorites';
+        favoritesFilter.style.backgroundColor = '#f7931a';
+        favoritesFilter.style.color = 'black';
+        const favCount = favorites.length;
+        favoritesFilter.innerHTML = `
+            <span>🔖 Favorites (${favCount})</span>
+            <span class="filter-remove favorites-remove">×</span>
+        `;
+        activeFiltersContainer.appendChild(favoritesFilter);
+
+        // Add event listener to the favorites remove button
+        const favRemoveBtn = favoritesFilter.querySelector('.favorites-remove');
+        favRemoveBtn.addEventListener('click', () => {
+            showingFavoritesOnly = false;
+            updateFavoritesButton();
+            updateActiveFiltersDisplay();
+            applyActiveFilters();
+        });
+    }
+
     // Sort all filters
     const sortFunction = (a, b) => {
         const orderA = getFilterSortOrder(a);
@@ -1311,6 +1441,11 @@ function applyActiveFilters() {
         });
     }
 
+    // Apply favorites filter if showing favorites only
+    if (showingFavoritesOnly) {
+        currentVideos = currentVideos.filter(video => isFavorited(video.youtubeId));
+    }
+
     currentVideos = sortVideos(currentVideos, sortBy.value, sortAscending);
     renderVideos(currentVideos);
 }
@@ -1350,6 +1485,12 @@ function clearAllFilters() {
 
     // Clear sidebar tag selections
     document.querySelectorAll('.sidebar-tag.active').forEach(el => el.classList.remove('active'));
+
+    // Turn off favorites-only mode
+    if (showingFavoritesOnly) {
+        showingFavoritesOnly = false;
+        updateFavoritesButton();
+    }
 
     updateActiveFiltersDisplay();
     currentVideos = [...videoData];
@@ -1644,6 +1785,7 @@ function createVideoCard(video) {
     }).join('');
 
     const creatorIcon = getCreatorIcon(video.creator);
+    const isFavorite = isFavorited(video.youtubeId);
 
     card.innerHTML = `
         <div class="video-thumbnail" data-youtube-id="${video.youtubeId}">
@@ -1657,6 +1799,7 @@ function createVideoCard(video) {
             <div class="video-title">${video.title}</div>
             <div class="video-creator">${creatorIcon}<span class="clickable-creator" data-creator="${video.creator}">${video.creator}</span></div>
             <div class="video-date">${formattedDate}</div>
+            <button class="favorite-button ${isFavorite ? 'active' : ''}" data-youtube-id="${video.youtubeId}" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">🔖</button>
             <div class="video-tags">${tagsHTML}</div>
         </div>
     `;
@@ -1711,7 +1854,15 @@ function createVideoCard(video) {
             behavior: 'smooth'
         });
     });
-    
+
+    // Add click listener to favorite button
+    const favoriteButton = card.querySelector('.favorite-button');
+    favoriteButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent triggering video modal
+        toggleFavorite(video.youtubeId);
+    });
+
     return card;
 }
 
@@ -1887,6 +2038,18 @@ function setupEventListeners() {
             hideSuggestions();
         }
     });
+
+    // Show Favorites button
+    if (showFavoritesBtn) {
+        showFavoritesBtn.addEventListener('click', toggleFavoritesView);
+        updateFavoritesButton(); // Initialize button text
+    }
+
+    // Clear All Favorites button
+    const clearFavoritesBtn = document.getElementById('clear-favorites-btn');
+    if (clearFavoritesBtn) {
+        clearFavoritesBtn.addEventListener('click', clearAllFavorites);
+    }
 
     // Initialize dropdown filter state
     updateDropdownFiltersState();

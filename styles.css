@@ -241,7 +241,7 @@ main {
 
 /* Category Colors for Sidebar */
 .category-title.category-signing-devices {
-    background: #ff7f00;
+    background: #008000;
     color: #000000;
 }
 
@@ -250,7 +250,7 @@ main {
 }
 
 .category-title.category-wallets {
-    background: #5dade2;
+    background: #007bff;
 }
 
 .category-title.category-wallets::before {
@@ -266,7 +266,7 @@ main {
 }
 
 .category-title.category-mining {
-    background: #008000;
+    background: #00dd00;
 }
 
 .category-title.category-mining::before {
@@ -308,7 +308,7 @@ main {
 }
 
 .category-title.category-services---exchanges {
-    background: #007bff;
+    background: #5dade2;
 }
 
 .category-title.category-services---exchanges::before {
@@ -334,12 +334,12 @@ main {
 
 /* Active tag colors matching their categories (darker versions) */
 .sidebar-tag.active.tag-signing-devices {
-    background: #cc5a00;
+    background: #004400;
     color: #000000;
 }
 
 .sidebar-tag.active.tag-wallets {
-    background: #3498db;
+    background: #004080;
 }
 
 .sidebar-tag.active.tag-nodes---servers {
@@ -347,7 +347,7 @@ main {
 }
 
 .sidebar-tag.active.tag-mining {
-    background: #004400;
+    background: #00bb00;
 }
 
 .sidebar-tag.active.tag-lightning-network {
@@ -369,7 +369,7 @@ main {
 }
 
 .sidebar-tag.active.tag-services---exchanges {
-    background: #004080;
+    background: #3498db;
 }
 
 .sidebar-tag.active.tag-tokens {
@@ -526,11 +526,11 @@ main {
 }
 
 .suggestion-tag.tag-signing-devices {
-    background: #ff7f00;
+    background: #008000;
 }
 
 .suggestion-tag.tag-wallets {
-    background: #007bff;
+    background: #5dade2;
 }
 
 .suggestion-tag.tag-nodes---servers {
@@ -538,7 +538,7 @@ main {
 }
 
 .suggestion-tag.tag-mining {
-    background: #008000;
+    background: #00dd00;
 }
 
 .suggestion-tag.tag-lightning-network {
@@ -558,7 +558,7 @@ main {
 }
 
 .suggestion-tag.tag-services---exchanges {
-    background: #5dade2;
+    background: #007bff;
 }
 
 .suggestion-tag.tag-tokens {
@@ -809,11 +809,11 @@ main {
 
 /* Active filter colors matching their categories */
 .active-filter.tag-signing-devices {
-    background-color: #ff7f00;
+    background-color: #008000;
 }
 
 .active-filter.tag-wallets {
-    background-color: #5dade2;
+    background-color: #007bff;
 }
 
 .active-filter.tag-nodes---servers {
@@ -821,7 +821,7 @@ main {
 }
 
 .active-filter.tag-mining {
-    background-color: #008000;
+    background-color: #00dd00;
 }
 
 .active-filter.tag-lightning-network {
@@ -843,7 +843,7 @@ main {
 }
 
 .active-filter.tag-services---exchanges {
-    background-color: #007bff;
+    background-color: #5dade2;
 }
 
 .active-filter.tag-tokens {
@@ -926,7 +926,7 @@ main {
     align-items: center;
 }
 
-.sort-controls, .filter-controls, .import-export-controls, .search-controls, .csv-controls {
+.sort-controls, .filter-controls, .search-controls, .favorites-controls {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -939,10 +939,6 @@ main {
 
 .filter-controls {
     gap: 1rem;
-}
-
-.import-export-controls, .csv-controls {
-    gap: 0.5rem;
 }
 
 .template-link {
@@ -972,9 +968,49 @@ select, button {
     font-size: 1rem;
 }
 
-/* Import/Export Buttons */
-#import-btn, #export-btn, #import-filter-info-btn, .csv-btn {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
+/* Show Favorites Button */
+#show-favorites-btn {
+    background: linear-gradient(135deg, #f7931a, #ff9f3a);
+    border-color: #f7931a;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0 2px 8px rgba(247, 147, 26, 0.3);
+    border: 2px solid #f7931a;
+}
+
+#show-favorites-btn:hover {
+    background: linear-gradient(135deg, #ff9f3a, #f7931a);
+    box-shadow: 0 4px 12px rgba(247, 147, 26, 0.4);
+    transform: translateY(-1px);
+}
+
+#show-favorites-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(247, 147, 26, 0.3);
+}
+
+#show-favorites-btn.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#show-favorites-btn.active:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: #f7931a;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Clear All Favorites Button */
+#clear-favorites-btn {
+    background: linear-gradient(135deg, #dc3545, #c82333);
     color: white;
     border: none;
     padding: 0.6rem 1rem;
@@ -984,17 +1020,18 @@ select, button {
     transition: all 0.3s ease;
     font-weight: 500;
     font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
 
-#import-btn:hover, #export-btn:hover, #import-filter-info-btn:hover, .csv-btn:hover {
-    background: linear-gradient(135deg, #34495e, #2c3e50);
+#clear-favorites-btn:hover {
+    background: linear-gradient(135deg, #c82333, #bd2130);
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
 }
 
-#import-btn:active, #export-btn:active, #import-filter-info-btn:active, .csv-btn:active {
+#clear-favorites-btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
 }
 
 /* Icon container in search suggestions */
@@ -1039,12 +1076,12 @@ select, button {
 
 /* Tag suggestion background colors */
 .suggestion-item.tag-suggestion.tag-signing-devices {
-    background: #ff7f00 !important;
-    color: #000000;
+    background: #008000 !important;
+    color: #ffffff;
 }
 
 .suggestion-item.tag-suggestion.tag-wallets {
-    background: #5dade2 !important;
+    background: #007bff !important;
     color: #ffffff;
 }
 
@@ -1054,8 +1091,8 @@ select, button {
 }
 
 .suggestion-item.tag-suggestion.tag-mining {
-    background: #008000 !important;
-    color: #ffffff;
+    background: #00dd00 !important;
+    color: #000000;
 }
 
 .suggestion-item.tag-suggestion.tag-lightning-network {
@@ -1079,7 +1116,7 @@ select, button {
 }
 
 .suggestion-item.tag-suggestion.tag-services---exchanges {
-    background: #007bff !important;
+    background: #5dade2 !important;
     color: #ffffff;
 }
 
@@ -1135,12 +1172,12 @@ select option[value=""] {
 }
 
 .category-signing-devices {
-    background: #ff7f00 !important;
+    background: #008000 !important;
     color: #000000 !important;
 }
 
 .category-wallets {
-    background: #5dade2 !important;
+    background: #007bff !important;
     color: #000000 !important;
 }
 
@@ -1150,7 +1187,7 @@ select option[value=""] {
 }
 
 .category-mining {
-    background: #008000 !important;
+    background: #00dd00 !important;
     color: #000000 !important;
 }
 
@@ -1175,7 +1212,7 @@ select option[value=""] {
 }
 
 .category-services---exchanges {
-    background: #007bff !important;
+    background: #5dade2 !important;
     color: #000000 !important;
 }
 
@@ -1269,6 +1306,39 @@ button:hover {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
+.favorite-button {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 0.4rem 0.25rem;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+}
+
+.favorite-button:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    border-color: #f7931a;
+}
+
+.favorite-button.active {
+    background: rgba(247, 147, 26, 0.95);
+    border-color: #f7931a;
+    color: white;
+}
+
+.favorite-button.active:hover {
+    background: rgba(247, 147, 26, 1);
+    transform: scale(1.05);
+}
+
 .video-info {
     padding: 1.5rem;
 }
@@ -1317,12 +1387,12 @@ button:hover {
 
 /* Category-based tag colors */
 .tag-signing-devices {
-    background: #ff7f00;
+    background: #008000;
     color: #000000;
 }
 
 .tag-wallets {
-    background: #5dade2;
+    background: #007bff;
     color: #000000;
 }
 
@@ -1332,7 +1402,7 @@ button:hover {
 }
 
 .tag-mining {
-    background: #008000;
+    background: #00dd00;
     color: #000000;
 }
 
@@ -1357,7 +1427,7 @@ button:hover {
 }
 
 .tag-services---exchanges {
-    background: #007bff;
+    background: #5dade2;
     color: #000000;
 }
 
@@ -1479,7 +1549,7 @@ button:hover {
         min-width: auto;
     }
 
-    .sort-controls, .filter-controls, .import-export-controls {
+    .sort-controls, .filter-controls {
         flex-wrap: wrap;
         justify-content: center;
     }

@@ -1922,7 +1922,7 @@ function parseCSV(csvContent) {
                 title: values[0].replace(/"/g, '').trim(),
                 creator: values[1].replace(/"/g, '').trim(),
                 date: values[2].replace(/"/g, '').trim(),
-                youtubeId: values[3].replace(/"/g, '').trim(),
+                youtubeId: values[3].replace(/"/g, '').trim().replace(/^ID:/, ''),
                 tags: values[4] ? values[4].replace(/"/g, '').split(',').map(tag => tag.trim()).filter(tag => tag) : []
             };
             videos.push(video);

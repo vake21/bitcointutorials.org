@@ -234,7 +234,7 @@ Gettxoutsetinfo (Audit Supply),tag,https://developer.bitcoin.org/reference/rpc/g
 Mempool.space Accelerator,tag,https://mempool.space/accelerator,,,https://x.com/mempool,https://primal.net/mempool,
 Partially Signed Bitcoin Transactions (PSBT),tag,https://bitcoinops.org/en/topics/psbt/,,https://github.com/bitcoin/bips/blob/master/bip-0370.mediawiki,,,
 Paynyms (BIP 47),tag,,,https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki,,,
-Replace By Fee (RBF),tag,https://bitcoinops.org/en/topics/replace-by-fee/,,https://github.com/bitcoin/bips/blob/master/bip-0113.mediawiki,,,
+Replace By Fee (RBF),tag,https://bitcoinops.org/en/topics/replace-by-fee/,,https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki,,,
 Seed XOR,tag,https://seedxor.com/,,https://github.com/Coldcard/firmware/blob/master/docs/seed-xor.md,,,
 Shamir's Secret Sharing (SLIP-39),tag,https://content.trezor.io/slip-39,,https://github.com/satoshilabs/slips/blob/master/slip-0039.md,,,
 Taproot Assets,tag,https://docs.lightning.engineering/the-lightning-network/taproot-assets,,https://github.com/lightninglabs/taproot-assets,https://x.com/lightning,,

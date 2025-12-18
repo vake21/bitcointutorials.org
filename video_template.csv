@@ -347,7 +347,7 @@ Bisq: Bitcoin Peer-to-Peer Trading Network,Bitcoin Learning,1/27/24,ID:-EZVFzBHP
 How to Consolidate Bitcoin UTXOs,Rhett Reisman,1/23/24,BPZSbmFj_lI,"UTXO Management,Sparrow"
 Minibits BTC Wallet: Near Perfect Privacy and Low Fees,BTC Sessions,1/19/24,igJF8ccMnbQ,"Minibits,Cashu,Lightning"
 Understanding UTXOs and How to Manage Them,BTC Sessions,1/9/24,Mqe0QCxjKpI,"UTXO Management,Sparrow"
-Bitcoin Seed Phrases & Backups: Harden Your Security,Ian Major,1/8/24,4Xre23cp5Bw,Seed Phrases (General)
+Bitcoin Seed Phrases & Backups: Harden Your Security,Ian Major,1/18/24,4Xre23cp5Bw,Seed Phrases (General)
 Bitcoin Safety: Why 12 Words are Better than 24,Rhett Reisman,1/8/24,pTyAeXZvi1g,Seed Phrases (General)
 Blockstream Jade Hardware Wallet for Bitcoin and Liquid Network,theBTCcourse,1/6/24,rmB1VJ4nMXw,"Jade,Liquid,Blockstream App,Lightning"
 CoinJoin and PayJoin using BTCPay Server,BTCPay Server,1/6/24,ID:Qwo8qcfnZ14,"BTCPay Server,Coinjoin (Wabisabi),Payjoin"
@@ -412,7 +412,7 @@ Why Bull Bitcoin is a Game-Changer (No KYC!),BTC Sessions,8/7/23,UBRZKsIOpS8,"Bu
 Envoy Wallet Manual Backups Explained,Foundation,8/1/23,VqJUFuxTa3M,"Envoy,Encrypted Backups"
 Mutiny Wallet Tutorial- Bitcoin Lightning Wallet,theBTCcourse,7/25/23,OQ2o5LUgOqE,"Mutiny,Lightning"
 Unlocking Nunchuk's Advanced Features,BTC Sessions,7/24/23,ugzdX0Q0Cgs,"Nunchuk,Child Pays For Parent (CPFP),Start9,Multisig"
-Mastering Blockstream Green Wallet,BTC Sessions,7/21/23,DesN85bWmGA,"Blockstream App,Lightning,Jade,Liquid"
+Mastering Blockstream Green Wallet,BTC Sessions,7/31/23,DesN85bWmGA,"Blockstream App,Lightning,Jade,Liquid"
 How to Run a Bitcoin Node,Kahoobb,7/19/23,iuPEra17PtY,Bitcoin Core
 How to Use a ColdCard Hard Wallet for Bitcoin Self Custody,Natalie Brunell,7/18/23,IJbog_k5XWE,"ColdCard MK(1-4),Sparrow"
 Child Pays for Parent Bitcoin Tutorial,Rhett Reisman,7/17/23,Q62NoR2qhiw,"Child Pays For Parent (CPFP),Sparrow,BlueWallet"
@@ -478,7 +478,7 @@ Setting Up SeedQR with Blockstream Jade,Blockstream,4/4/23,Kx7fHgfUZ6w,"Jade,See
 Keystone Hardware Wallet Tutorial,theBTCcourse,4/4/23,r-gzk6laFH4,"Keystone,Sparrow"
 DIY Bitcoin Hardware Wallet Running Blockstream Jade Firmware (ESP 32),Crypto Guide,4/2/23,PeqP6oVnlIs,Jade
 IBEXPay: The Easiest Way to Accept Bitcoin Lightning Payments,Ian Major,3/31/23,q_maOYxBtbs,"IBEXPay,Lightning"
-Keystone Wallet Review & Tutorial,Darren Honeysett,3/30/23,Y32m1B8YcvY,Keystone
+Keystone Wallet Review & Tutorial,Darren Honeysett,5/30/23,Y32m1B8YcvY,Keystone
 How to Buy Bitcoin on the Bisq Network (Non-KYC),theBTCcourse,3/30/23,nU1s1Rk3no8,"Bisq,Non-KYC"
 Exploring the Blockstream Jade QR Scan,Blockstream,3/23/23,Cvm0zUCvfMo,"Jade,SeedQR,Nunchuk"
 How to Buy & Sell Bitcoin on Robosats (Non-KYC),theBTCcourse,3/21/23,52snf3x2KKA,"Robosats,Non-KYC"
@@ -549,7 +549,7 @@ DIY Trezor One,Crypto Guide,9/26/22,t9zNOsTXjvo,"Trezor One,Verifying Downloads"
 Umbrel- How to Use Your Bitcoin and Lightning Node,BTC Sessions,9/23/22,Fa9AvF4jk1o,"Umbrel,Sparrow,Bitcoin Core,Electrum Rust Server (Electrs),Lightning Network Daemon (LND),Zeus"
 Passport Hardware Wallet- Manual Setup,Foundation,9/23/22,UKzMHsjJFYU,Passport Core
 Satscard Tabletop Guide w/ Nunchuk,Coinkite,9/22/22,h-hJz9hZgLQ,"Satscard,Nunchuk"
-Foundation Passport: Bitcoin Hardware Wallet/Signing Device Tutorial,BTC Sessions,9/22/22,_uGZHg64wwA,"Passport Core,Envoy,BlueWallet,Encrypted Backups"
+Foundation Passport: Bitcoin Hardware Wallet/Signing Device Tutorial,BTC Sessions,9/9/22,_uGZHg64wwA,"Passport Core,Envoy,BlueWallet,Encrypted Backups"
 Tapsigner Tabletop Guide w/ Nunchuk,Coinkite,9/21/22,NJkCcnpne9Q,"Tapsigner,Nunchuk"
 Unchained Capital Review and Multisig Vault Tutorial,Rhett Reisman,9/19/22,V1Krw5dZc28,"Unchained/Caravan,Multisig,Ledger Nano(S/X),ColdCard MK(1-4)"
 Raspiblitz,BTC Sessions,9/18/22,DTHlSPMz3ns,"Raspiblitz,Ride The Lightning"
@@ -760,13 +760,13 @@ How to Show Your ColdCard Balance on iPhone,Nico Moran,2/19/20,xWeQwOyEDhI,"Cold
 ColdCard Bitcoin Wallet + Electrum- How to Create Multiple Accounts,BTC Sessions,2/7/20,52pjqUzGxDg,"ColdCard MK(1-4),Electrum"
 Ubuntu Node Box: JoinMarket,Ministry of Nodes,1/3/20,zTCC86IUzWo,"Ubuntu Node Box,Coinjoin (JoinMarket)"
 Bitcoin Core: Import Private Key,Bitcoin Daytrader,12/29/19,8Ev33XGCH8M,Bitcoin Core Wallet
-How to Embed Bitcoin Payment Donation Button on a Website,BTCPay Server,12/12/19,MIWGvl6_WzI,BTCPay Server
+How to Embed Bitcoin Payment Donation Button on a Website,BTCPay Server,12/12/18,MIWGvl6_WzI,BTCPay Server
 Caravan Demo,Unchained,11/25/19,9pZaFVF-XbA,"Unchained/Caravan,Multisig"
 Caravan Create Address,Unchained,11/14/19,RHpqj-WfIzA,"Unchained/Caravan,Multisig"
 Caravan Sign and Broadcast Transaction,Unchained,11/14/19,i6eWbBPuSxs,"Unchained/Caravan,Multisig"
 Connecting ColdCard to BTCPay Server,BTCPay Server,9/24/19,N0eVwdP_7EQ,"ColdCard MK(1-4), BTCPay Server"
 TFTC Guides: ColdCard + Wasabi Basic Setup and Usage,TFTC,7/23/19,sM2uhyROpAQ,"ColdCard MK(1-4),Wasabi"
-How to Use a Bitcoin Wallet: Blockstream Green,BTC Sessions,5/25/19,uO3Zi9D5b0Y,Blockstream App
+How to Use a Bitcoin Wallet: Blockstream Green,BTC Sessions,3/25/19,uO3Zi9D5b0Y,Blockstream App
 JoinMarket by Adam Gibson DEMO,Understanding Bitcoin,5/7/19,hwmvZVQ4C4M,"Coinjoin (JoinMarket),Verifying Downloads"
 Raspiblitz- Lightning Network Node Setup Tutorial,Explore Crypto,4/1/19,77BBQWg1n8w,"Lightning Network Daemon (LND),Raspiblitz"
 How to Create Bitcoin and Lightning Point of Sale,BTCPay Server,12/27/18,Mz4uajz0z9Y,"BTCPay Server,Lightning"

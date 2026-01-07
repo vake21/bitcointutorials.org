@@ -78,7 +78,7 @@ Ginger Wallet in 2 Minutes,Ginger Wallet,4/30/25,Bzfp8m4KFFs,Ginger
 Multisig Recovery Trick,Pioneering Freedom,4/30/25,WUcH4ljfhs8,"Sparrow,Multisig,ColdCard Q,Keystone"
 Create a Multisig Wallet with Sparrow and BTCPay Server,BTCPay Server,4/30/25,oTvgIBlLW44,"BTCPay Server,Multisig,Trezor T,Sparrow"
 How to Set Up a Bitcoin Node with Raspberry Pi & MyNode,Andrew with Laser Eyes,4/29/25,9FE4mTr_6EI,"MyNode,Sparrow"
-How to Secure Your Company's Bitcoin Treasury with Theya for Business,Theya,4/28/25,mgJktCL-iNU,"Theya,Trezor Safe(3/5),Ledger Nano(S/X),Multisig"
+How to Secure Your Company's Bitcoin Treasury with Theya for Business,Theya,4/28/25,mgJktCL-iNU,"Theya,Trezor Safe,Ledger Nano(S/X),Multisig"
 Bitcoin Multisig Guide: 2-of-3 ColdCard + Keystone Setup with Sparrow Wallet,Pioneering Freedom,4/24/25,wloTHcNmzJU,"Multisig,Sparrow,ColdCard Q"
 "NerdAxe Gamma Unboxing, Setup and Review",Avoidbit,4/23/25,pMCuopM-1D0,NerdAxe
 "Wasabi Wallet: How to Install, Backup Funds, Send Bitcoin",Wasabi Wallet,4/23/25,tKwGkR3EcJY,"Wasabi,Coinjoin (Wabisabi)"
@@ -100,7 +100,7 @@ How to Lock Down Your Bitcoin for the Future with Liana Wallet,BTC Sessions,3/17
 Avalon Nano 3S Bitcoin Miner/Heater: Setup & Review,Vortex Bitcoin,3/12/25,rW56bdY5DEY,Avalon Nano
 Ledger Flex Tutorial + Review,BTC Sessions,3/10/25,V3wnS9_Ieyc,"Ledger Flex,Sparrow"
 How to Setup a Bitcoin Hardware Wallet: ColdCard Q,Kahoobb,3/8/25,4k5EyfZuUgU,ColdCard Q
-Theya Bitcoin Wallet: Complete Review & Demo,Sovereign Money,3/7/25,ID:-SJkcVTpuPU,"Theya,Multisig,Trezor T,Trezor Safe(3/5)"
+Theya Bitcoin Wallet: Complete Review & Demo,Sovereign Money,3/7/25,ID:-SJkcVTpuPU,"Theya,Multisig,Trezor T,Trezor Safe"
 "Blockstream Jade Plus: Unboxing, Setup and Review",Crypto Guide,3/6/25,Jy_9-9InLL8,"Jade Plus,Blockstream App,Sparrow"
 Proton Wallet Tutorial- The Easiest Bitcoin Wallet?,Darren Honeysett,3/3/25,QiZEip54SG4,"Proton,Replace By Fee (RBF)"
 Build Your Own Bitcoin Hardware Security Device: Krux,BTC Sessions,3/3/25,WiwmpO1k2zA,"Krux,Verifying Downloads,SeedQR,BlueWallet,Sparrow,Multisig"
@@ -112,7 +112,7 @@ The Bitcoin Miner's Guide to Total Control with Bitaxe,BTC Sessions,2/24/25,QAwS
 Lnbits v1 Features: A Quick Overview,lnbits,2/24/25,PFAHKxvgI9Y,LNbits
 "Bitcoin UTXOs 101- Management, Consolidation, Fees, and Privacy",Darren Honeysett,2/22/25,tyah8SB9vhc,UTXO Management
 "Verify Wallet Integrity: SHA256 Checksums, Social Verification, GPG + Sparrow",Crypto Guide,2/21/25,OWazO3nzUPI,"Sparrow,Verifying Downloads,Passport Core,Electrum"
-Trezor Safe 5 Bitcoin-Only: Full Setup & Security Guide,BTC Sessions,2/17/25,LI_EMXn6_Ss,"Trezor Safe(3/5),Bitcoin Well,Shamir's Secret Sharing (SLIP-39),Sparrow"
+Trezor Safe 5 Bitcoin-Only: Full Setup & Security Guide,BTC Sessions,2/17/25,LI_EMXn6_Ss,"Trezor Safe,Bitcoin Well,Shamir's Secret Sharing (SLIP-39),Sparrow"
 How to Set Up a Mini Bitcoin Miner for Solo BTC Mining,VoskCoin,2/16/25,qwKCb_lnbL0,Braiins Mini Miner
 Bitaxe Gamma 601: Bitcoin Miner Introduction Configuration Tutorial,BITSOLOPLAYER Official,2/13/25,mqfb-H8xNjM,Bitaxe
 5 Mind Blowing Features for ColdCard,BTC Sessions,2/10/25,6L2hhT0J27s,"ColdCard Q,Child Seeds (BIP 85)"
@@ -133,9 +133,9 @@ Coinkite MK4 Setup Beginner Tutorial,Ryan Matta,1/27/25,JHHfhxFp_lc,ColdCard MK(
 Aqua: Bitcoin Lightning and Liquid Wallet,Pioneering Freedom,1/27/25,RTMj3tvIOsQ,"Aqua,Liquid"
 AnchorWatch Custody: Vault Configuration,AnchorWatch,1/22/25,L8QuHwsgbCQ,"Anchorwatch/Trident,Timelocks,Multisig"
 Jade Plus Bitcoin Wallet (Tutorial + Review),BTC Sessions,1/22/25,rv_cN7F7-TM,"Jade Plus,Blockstream App,Sparrow"
-Trezor Safe 5- Full Setup Tutorial,Satoshi Radio Global,1/17/25,2nhYjCAdIug,"Trezor Safe(3/5),Umbrel"
+Trezor Safe 5- Full Setup Tutorial,Satoshi Radio Global,1/17/25,2nhYjCAdIug,"Trezor Safe,Umbrel"
 Futurebit: Mine Bitcoin at Home,BTC Sessions,1/16/25,t4DbRDJ3p50,Futurebit
-How to Restore from Backup Phrase on Trezor Safe 5,The CryptoDad,1/14/25,hyqDPbcHg78,Trezor Safe(3/5)
+How to Restore from Backup Phrase on Trezor Safe 5,The CryptoDad,1/14/25,hyqDPbcHg78,Trezor Safe
 Blockstream Jade Plus: Full Setup & Honest Review,Ian Major,1/13/25,gLHsMC7aJj4,"Jade Plus,Sparrow"
 Buying non-KYC Peer to Peer Bitcoin,DaireBTC,1/13/25,AS3nQYQnEZs,"Peach,Non-KYC"
 Blue Wallet Bitcoin Mobile Wallet Beginner Tutorial,Ryan Matta,1/11/25,ID:-ZJ1DeB6VWw,BlueWallet
@@ -157,8 +157,8 @@ Part 4: How to Overclock Your Bitaxe,Vortex Bitcoin,12/16/24,7WqqKGaiTSc,Bitaxe
 How to Live on the Bitcoin Standard: Blitz Wallet,DaireBTC,12/15/24,uEUfIt0GqDI,"Blitz,Liquid,Cashu"
 Cashu.me How-To,crrdlx,12/14/24,JwDZd1o6xdE,"Cashu.me,Cashu"
 How to Set Up Your Own Lightning Node Using Umbrel,Satoshi Radio Global,12/10/24,i9VTtDPQeZs,"Umbrel,Ride The Lightning,Boltz"
-Wallet Recovery with Seed Phrase on Trezor Safe 3,Bitcoin Unlocked,12/9/24,k2O74LM67FA,Trezor Safe(3/5)
-Wallet Setup with Trezor Safe 3 in Sparrow Using a Passphrase,Bitcoin Unlocked,12/5/24,ayGNKXcyUAs,"Trezor Safe(3/5),Sparrow"
+Wallet Recovery with Seed Phrase on Trezor Safe 3,Bitcoin Unlocked,12/9/24,k2O74LM67FA,Trezor Safe
+Wallet Setup with Trezor Safe 3 in Sparrow Using a Passphrase,Bitcoin Unlocked,12/5/24,ayGNKXcyUAs,"Trezor Safe,Sparrow"
 Bitcoin Core Wallet: Digital Privacy Masterclass,Sovereign Money,12/4/24,5XgucdLE3gg,Bitcoin Core Wallet
 Using Miniscript with the Jade Hardware Wallet and Liana,Blockstream,12/3/24,b1Ti2Yd0OEI,"Jade,Liana,Timelocks,Multisig"
 How to Fix a Stuck Bitcoin Transaction with Sparrow Wallet and RBF,Andrew with Laser Eyes,11/20/24,K9W2r_4tKvs,"Sparrow,Replace By Fee (RBF)"
@@ -173,7 +173,7 @@ Ashigaru- Bitcoin Privacy Wallet Tutorial,BTC Sessions,11/5/24,aykJ4eP-Veo,"Ashi
 Adding Trezor as a Signing Device in Bitcoin Keeper,Bithyve,11/4/24,7LrAcTLvBhU,"Bitcoin Keeper,Trezor One"
 Buy Your First Bitcoin in 10 Minutes with River App,BitBagger,11/1/24,Kuf2XV0M-XA,River
 Miniscript on Blockstream Jade,Blockstream,10/30/24,ARl3dMDVjTA,"Blockstream App,Jade,Liana,Multisig,Timelocks"
-Trezor Safe 3 Installation and Setup,Bitcoin Unlocked,10/29/24,2j-WS5bbyvk,Trezor Safe(3/5)
+Trezor Safe 3 Installation and Setup,Bitcoin Unlocked,10/29/24,2j-WS5bbyvk,Trezor Safe
 Bitaxe Gamma 601 Solo Bitcoin Miner Setup,Rabid Mining,10/29/24,mRA61fHI5Kc,Bitaxe
 Bitcoin Node Box: Electrum Rust Server,Ministry of Nodes,10/27/24,fRLsyD4t4w8,"Bitcoin Node Box,Electrum Rust Server (Electrs)"
 Bitcoin Node Box: Ashigaru Dojo,Ministry of Nodes,10/27/24,8_It4xEIwRA,"Bitcoin Node Box,Ashigaru Dojo,Verifying Downloads"
@@ -184,7 +184,7 @@ How to Buy Bitcoin Directly into the Keystone,GetBittr,10/21/24,EjpbII2Ds4M,"Bit
 How to Buy and Withdraw Bitcoin from Coinbase,Andrew with Laser Eyes,10/17/24,_xaRw8Cn0Yg,"Coinbase,Sparrow"
 The Blockstream Jade Bitcoin Cold Wallet: Full Setup and Review,Sovereign Money,10/12/24,mX6ERYT7790,"Jade,SeedQR,Blockstream App"
 Blitz- Cutting Edge Bitcoin Wallet Tutorial,BTC Sessions,10/11/24,Ka60AHkfrPE,"Blitz,Cashu,Lightning"
-Introducing the Theya Web App: Simple & Robust Bitcoin Multisig,Theya,10/8/24,pGm-I0lUSZo,"Theya,Multisig,Ledger Nano(S/X),Trezor Safe(3/5)"
+Introducing the Theya Web App: Simple & Robust Bitcoin Multisig,Theya,10/8/24,pGm-I0lUSZo,"Theya,Multisig,Ledger Nano(S/X),Trezor Safe"
 How to Use a Coldcard Air-Gapped Bitcoin Wallet,Andrew with Laser Eyes,10/7/24,BEwWInJ5Ldo,"ColdCard MK(1-4),Sparrow"
 Build a KeepKey DIY Hardware Wallet,Crypto Guide,10/3/24,athvFw5eypA,"KeepKey,Verifying Downloads"
 ColdCard Q: Disable NFC and USB,Coinkite,10/2/24,GGqJNTUycs4,ColdCard Q
@@ -201,7 +201,7 @@ How to Buy Bitcoin on Your Smartphone to BlueWallet,GetBittr,9/17/24,58U0JpyO-lo
 How to Buy Bitcoin on Your Smarthphone into the Bitbox02,GetBittr,9/17/24,h3dcfdPJqmY,"Bittr,BitBox"
 How to Buy Bitcoin into Blockstream Jade with Green Wallet,GetBittr,9/16/24,AQzzTPL8Ubw,"Bittr,Jade,Blockstream App"
 How to Buy Bitcoin on Your Smartphone to Blockstream Green,GetBittr,9/16/24,3XtrJwilqvM,"Bittr,Blockstream App"
-Trezor Shamir Backup Setup Warning,Darren Honeysett,9/14/24,C1pAyiEfvy0,"Trezor One,Trezor T,Trezor Safe(3/5),Shamir's Secret Sharing (SLIP-39)"
+Trezor Shamir Backup Setup Warning,Darren Honeysett,9/14/24,C1pAyiEfvy0,"Trezor One,Trezor T,Trezor Safe,Shamir's Secret Sharing (SLIP-39)"
 Restoring SeedXOR using Seed Vault,Coinkite,9/13/24,4F47j9raTvU,"ColdCard Q,Seed XOR"
 How to Set Up the Avalon Nano 3 Bitcoin Miner for Solo Mining,JBINZALA,9/13/24,RIB914k_sQI,Avalon Nano
 Alby Hub- Run a Bitcoin Lightning Node Tutorial,BTC Sessions,9/12/24,2Z1BzwxdP4I,Alby
@@ -211,7 +211,7 @@ Setting up a Theya Vault with Passport Hardware Wallet,Theya,9/11/24,u4bTKrrKohY
 Alby Hub: The Easy Way to Self-Custody on the Lightning Network,Ian Major,9/11/24,8BHagtIX0rc,Alby
 BitBox02 Tutorial,Southern Bitcoiner,9/10/24,sMG6KIB7x2Q,BitBox
 How to Buy Bitcoin into the Foundation Passport Wallet,GetBittr,9/10/24,ZzquPXQVeeo,"Bittr,Passport Core,Sparrow"
-Sparrow Wallet Multisig,Sovereign Money,9/7/24,7y7rxqib78g,"Sparrow,Multisig,Ledger Nano(S/X),Trezor Safe(3/5)"
+Sparrow Wallet Multisig,Sovereign Money,9/7/24,7y7rxqib78g,"Sparrow,Multisig,Ledger Nano(S/X),Trezor Safe"
 Ledger Flex: Unboxing and Setup,Unchained,9/6/24,YmIIZTIE68o,Ledger Flex
 Wasabi- Coinjoin Wallet for Bitcoin Privacy,BTC Sessions,9/6/24,52pSd3I1nac,"Wasabi,Coinjoin (Wabisabi),Verifying Downloads"
 Tapsigner: A Smartcard-Based Bitcoin Hardware Wallet,Crypto Guide,9/6/24,isUqUL1qfBk,"Tapsigner,Nunchuk,Sparrow,ColdCard Q"
@@ -225,7 +225,7 @@ How to Buy Bitcoin into BlueWallet,GetBittr,8/27/24,Xg6M4Z1mVQw,"Bittr,BlueWalle
 How to Buy Bitcoin into Sparrow Wallet,GetBittr,8/26/24,Ai_7SbMojfU,"Bittr,Sparrow"
 How to Buy Bitcoin into Blockstream Green,GetBittr,8/26/24,7XdiRfXC6Ls,"Bittr,Blockstream App"
 How to Buy Bitcoin into Ledger Wallet,GetBittr,8/26/24,SJITka38JZM,"Bittr,Ledger Nano(S/X)"
-How to Buy Bitcoin into the Trezor Hardware Wallet,GetBittr,8/26/24,4yrYtrEMKqw,"Bittr,Trezor Safe(3/5)"
+How to Buy Bitcoin into the Trezor Hardware Wallet,GetBittr,8/26/24,4yrYtrEMKqw,"Bittr,Trezor Safe"
 How to Buy Bitcoin into Electrum,GetBittr,8/26/24,E71lA_3ETCE,"Bittr,Electrum"
 Bitaxe 401 Supra,Pioneering Freedom,8/25/24,58fJc2PEtAc,Bitaxe
 Blue Wallet: Multi-Hardware Multisig Wallet,Sovereign Money,8/23/24,tDBNwUIOxe4,"BlueWallet,Multisig"
@@ -243,8 +243,8 @@ Bitcoin Silent Payments & Cake Wallet Tutorial,Ian Major,8/2/24,payDPlHzp58,"Sil
 Proton Bitcoin Wallet,BTC Sessions,7/30/24,tpEh5Bx-n_o,Proton
 Mine Bitcoin at Home with NerdAxe,BTC Sessions,7/27/24,jC-Wp4J4Jb4,NerdAxe
 The Bitaxe Supra: Start Mining Bitcoin Today!,Satoshi Radio Global,7/22/24,InfDHmFQcsE,Bitaxe
-Trezor Safe 5 Tutorial,Southern Bitcoiner,7/16/24,c016Vn6_fRI,Trezor Safe(3/5)
-"Trezor Safe 5 Unboxing, Setup and Review",Crypto Guide,7/12/24,H57nl-1O65Y,Trezor Safe(3/5)
+Trezor Safe 5 Tutorial,Southern Bitcoiner,7/16/24,c016Vn6_fRI,Trezor Safe
+"Trezor Safe 5 Unboxing, Setup and Review",Crypto Guide,7/12/24,H57nl-1O65Y,Trezor Safe
 ColdCard Q- Secure Offline Password Manager,BTC Sessions,7/11/24,SFCqMJIT5PM,"ColdCard Q,Child Seeds (BIP 85)"
 Consolidating UTXOs with ColdCard and Keystone 3 Pro,Pioneering Freedom,7/10/24,VtV2ToHPeBc,"Sparrow,UTXO Management,Keystone,ColdCard MK(1-4)"
 UTXO Management,Pioneering Freedom,7/10/24,DiFKzGR--ng,"UTXO Management,Sparrow"
@@ -268,7 +268,7 @@ How to Buy Anything with Bitcoin: Bitrefill Tutorial,Southern Bitcoiner,6/23/24,
 Using Passport Hardware Wallet with Sparrow- Multisig,Foundation,6/18/24,zaJS1TVGDeQ,"Passport Core,Sparrow,Multisig,Jade"
 How to Save Your Multisig File to Blockstream Jade,Blockstream,6/17/24,8zpRMMCcetA,"Jade,Multisig,Specter Desktop"
 "ColdCard Q Unboxing, Setup and Review",Crypto Guide,6/13/24,2m5K0RageOI,"ColdCard Q,Sparrow,SeedQR"
-ColdCard and Trezor: Setting Up a Multisig Vault in Theya,Theya,6/12/24,dA4yK__4-M8,"Theya,Multisig,ColdCard MK(1-4),Trezor Safe(3/5)"
+ColdCard and Trezor: Setting Up a Multisig Vault in Theya,Theya,6/12/24,dA4yK__4-M8,"Theya,Multisig,ColdCard MK(1-4),Trezor Safe"
 Cashu.me: Bitcoin Wallet for Privacy + Low Fees,BTC Sessions,6/12/24,LIPw1c74LBU,"Cashu,Phoenix,Lightning,Minibits,Cashu.me"
 Use Joinmarket JAM App to Increase Privacy,Corner Culture,6/12/24,xtE1knEcqr8,"JAM,Coinjoin (JoinMarket)"
 How to Swap L-BTC and USDT Using a Hardware Wallet,Blockstream,6/5/24,X616PCJ1-qQ,"Jade,Liquid,USDT"
@@ -294,7 +294,7 @@ Restore Peach Wallet in Sparrow,Peach,5/7/24,_kTYegiDK2Q,"Peach,Sparrow"
 ColdCard Q: Unboxing and Setup,Unchained,5/3/24,vrKSFbnmrrI,ColdCard Q
 Bitcoin 10-of-10 Multisig Testing with Sparrow and Nunchuk Wallet,Wicked Smart Bitcoin,4/29/24,CNkgi1DU7xc,"Nunchuk,Sparrow,Multisig"
 Atomic Swaps on Blockstream Jade,Blockstream,4/29/24,Cm2XQWH2SRc,"Jade,Liquid,USDT"
-Trezor Safe 3: The Ultimate Bitcoin Hardware Wallet?,Sovereign Money,4/29/24,I2D-eChB_zc,Trezor Safe(3/5)
+Trezor Safe 3: The Ultimate Bitcoin Hardware Wallet?,Sovereign Money,4/29/24,I2D-eChB_zc,Trezor Safe
 "Fedi: Bitcoin Made Simple, Fast and Cheap",BTC Sessions,4/26/24,um2VL22R-J0,"Fedi,Fedimint,Lightning,Boltz,Mutiny"
 "Aqua: Non-Custodial Bitcoin, Lightning, Liquid",Ian Major,4/26/24,xmup5ETXI7M,"Aqua,Liquid,Lightning"
 Foundation Passport with Envoy and Sparrow,Crypto Guide,4/26/24,n9EPXCJWTB0,"Passport Core,Envoy,Sparrow,Encrypted Backups"
@@ -323,7 +323,7 @@ How to Verify Bitcoin Software Using Sparrow Wallet,Southern Bitcoiner,3/21/24,y
 Krux DIY: Build From Source and Verify (with Windows + WSL2 + Docker),Crypto Guide,3/21/24,Vmr_TFy2TfQ,"Krux,Verifying Downloads"
 Bitcoin Self Custody: Passphrases,Wicked Smart Bitcoin,3/17/24,RLxi0jU-AXE,"ColdCard MK(1-4),Passport Core,SeedSigner,Sparrow"
 Joltz Wallet: First Non-Custodial Bitcoin and Taproot Assets Wallet,Ian Major,3/14/24,ID:-wVv4R5u9P4,"Joltz,Taproot Assets"
-Trezor Wallet: Simple Bitcoin Security,BTC Sessions,3/13/24,1rrP7QqgcuI,Trezor Safe(3/5)
+Trezor Wallet: Simple Bitcoin Security,BTC Sessions,3/13/24,1rrP7QqgcuI,Trezor Safe
 Boost or Cancel Your Bitcoin Transaction with Envoy,Foundation,3/8/24,JuiB76jA8Eo,"Envoy,Replace By Fee (RBF),Child Pays For Parent (CPFP)"
 SeedSigner + SeedKeeper: Adding Affordable Secure Element Storage to DIY Bitcoin Hardware Wallet,Crypto Guide,2/27/24,Rhs9z5uL7qg,"SeedSigner,Verifying Downloads"
 What is Shamir's Secret Sharing,Blockstream,2/26/24,O2Wx0B-prSU,Shamir's Secret Sharing (SLIP-39)
@@ -358,8 +358,8 @@ Getting Started on the Liquid Network (Bitcoin/L-BTC/USDT),theBTCcourse,12/22/23
 Lightning on Blockstream Green,Blockstream,12/21/23,gkxIbihwfEc,"Lightning,Blockstream App"
 Create & Verify Your Bitcoin Seed Phrase Using Dice + ColdCard + SeedSigner,Wicked Smart Bitcoin,12/18/23,qxOhCvot77I,"Seed Phrases (General),ColdCard MK(1-4),SeedSigner"
 "Download, Verify & Flash SeedSigner v0.7.0 Software",Wicked Smart Bitcoin,12/15/23,M5-yY2XWdKM,"SeedSigner,Verifying Downloads"
-Trezor Safe 3: Unboxing and Setup,Unchained,12/15/23,mhLXeM1oupI,Trezor Safe(3/5)
-"Trezor Safe 3: Unboxing, Setup Guide, Demo and Review",Crypto Guide,12/8/23,qWRI4VTHiuI,Trezor Safe(3/5)
+Trezor Safe 3: Unboxing and Setup,Unchained,12/15/23,mhLXeM1oupI,Trezor Safe
+"Trezor Safe 3: Unboxing, Setup Guide, Demo and Review",Crypto Guide,12/8/23,qWRI4VTHiuI,Trezor Safe
 "Using Tags, Notes, and Coin Control in Envoy Bitcoin Wallet",Foundation,12/4/23,Jvtcfb9HqWg,Envoy
 DIY Hardware Wallet Running Satochip on Javacard,Crypto Guide,11/24/23,1zeZa-gNjnM,Satochip
 "Liana Wallet Tutorial- Timelocked Bitcoin Wallet, Decaying Multisig, Inheritance",Bitcoin Education,11/16/23,Brn5aSGeVec,"Liana,Multisig,Timelocks"
@@ -521,7 +521,7 @@ Multisig Demo using Tapsigner + Ledger + Seedsigner + ColdCard,Bithyve,12/30/22,
 BTCPayServer and ColdCard Wallet,BTCPay Server,12/28/22,XyqvYaXMfNU,"BTCPay Server,ColdCard MK(1-4)"
 Keeper Demo: Tapsigner + Signing Server + Mobile Key,Bithyve,12/14/22,P3-dXCSypBs,"Bitcoin Keeper,Tapsigner,Multisig"
 Bitcoin Keeper Demo: SeedSigner + Jade + Tapsigner,Bithyve,12/14/22,Wp5K4TO04u4,"Bitcoin Keeper,SeedSigner,Jade,Tapsigner"
-Non-KYC Bitcoin Direct to Your Trezor (Hodl Hodl Integration),BTC Sessions,12/14/22,8S7fvl1X07k,"Hodl Hodl,Trezor One,Trezor T,Trezor Safe(3/5),Non-KYC"
+Non-KYC Bitcoin Direct to Your Trezor (Hodl Hodl Integration),BTC Sessions,12/14/22,8S7fvl1X07k,"Hodl Hodl,Trezor One,Trezor T,Trezor Safe,Non-KYC"
 Krux on Maix Amigo + Blue Wallet,Crypto Guide,12/9/22,EtV_Iw6a0O0,"Krux,BlueWallet,Verifying Downloads"
 Start9 Embassy: Bitcoin Node and Personal Server Tutorial,BTC Sessions,12/6/22,DKBJ3_3ZomU,"Start9,Bitcoin Core,Sparrow,Specter Desktop,Ride The Lightning"
 How to Setup and Use Electrum Wallet,Tech Express,12/4/22,ZGLWPFmYwrY,Electrum
@@ -773,3 +773,14 @@ How to Create Bitcoin and Lightning Point of Sale,BTCPay Server,12/27/18,Mz4uajz
 LND Lightning Raspiblitz Basics,IMineBlocks,12/14/18,3beWiV-Phxk,"Lightning Network Daemon (LND),Raspiblitz"
 BTCPay Server- Interface Walkthrough,BTCPay Server,12/11/18,ZIfJyq9RimM,BTCPay Server
 Getting Your Private Keys from the Bitcoin Core Wallet,Bitcoin Daytrader,12/4/17,OX71C9DP3NE,Bitcoin Core Wallet
+Trezor Safe 7: Full Mobile Setup Guide,The CryptoDad,12/3/25,yUxan7xqwjU,Trezor Safe
+Trezor Safe 7 Full Tutorial,The CryptoDad,11/12/25,dELBs1f3RqM,Trezor Safe
+How to Build and Use a SeedSigner,BTC Sessions,12/29/25,qLCt4RFmtNQ,"SeedSigner,SeedQR,Sparrow"
+"Blockstream Jade: Firmware Update, Factory Reset and Vulnerability Fix",Bitcoin Not Crypto,12/25/25,r5Hpfnvas1s,"Jade,Blockstream App"
+Seedphrase-only to Passphrase Wallet,Bitcoin Not Crypto,12/24/25,osa3znhlS1c,"Sparrow,ColdCard Q"
+Bitcoin Border Wallet Guide,Bitcoin Not Crypto,12/22/25,1MYdCsNySa0,"Sparrow,Border Wallet"
+Seedphrase Binary Encoding,Sovereign Money,10/3/25,gyB-QB-qhKg,Seed Phrases (General)
+SeedSigner Complete Assembly Tutorial,Sovereign Money,10/9/25,EgjCzdCwxEA,"SeedSigner,Verifying Downloads"
+How to Use DIY SeedSigner,Sovereign Money,10/15/25,XQLTwU4u4hk,"SeedSigner,SeedQR,BlueWallet,Sparrow"
+Seedphrase Security: Seedkeeper meets SeedSigner,Sovereign Money,10/21/25,_g9dPbCbiPQ,"Seedkeeper,SeedSigner,Verifying Downloads"
+SeedSigner + Satochip: No-Compromise Bitcoin Security,Sovereign Money,10/27/25,7EzxrQ3ryxo,"SeedSigner,Satochip,Sparrow"

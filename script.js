@@ -1,6 +1,6 @@
 // Tag categories definition
 const tagCategories = {
-    "Signing Devices": ["ColdCard Q", "ColdCard MK(1-4)", "Jade", "Jade Plus", "Krux", "Trezor One", "Trezor T", "Trezor Safe(3/5)", "Ledger Flex", "KeepKey", "SeedSigner", "Passport Core", "Keystone", "Tapsigner", "Seedkeeper", "Satochip", "Specter DIY", "KeyFlint", "BitBox", "Bitkey", "Ledger Nano(S/X)", "Satodime", "Satscard", "OneKey", "Signing Devices (General)", "Opendime", "Frostsnap"],
+    "Signing Devices": ["ColdCard Q", "ColdCard MK(1-4)", "Jade", "Jade Plus", "Krux", "Trezor One", "Trezor T", "Trezor Safe", "Ledger Flex", "KeepKey", "SeedSigner", "Passport Core", "Keystone", "Tapsigner", "Seedkeeper", "Satochip", "Specter DIY", "KeyFlint", "BitBox", "Bitkey", "Ledger Nano(S/X)", "Satodime", "Satscard", "OneKey", "Signing Devices (General)", "Opendime", "Frostsnap"],
     "Wallets": ["Sparrow", "Electrum", "BlueWallet", "Ginger", "Wasabi", "Phoenix", "Zeus", "Muun", "Nunchuk", "Liana", "Blockstream App", "Ashigaru", "Aqua", "Bitcoin Core Wallet", "Bitcoin Keeper", "JAM", "Envoy", "Fedi", "Minibits", "Mercury", "Nutstash", "Samourai", "Proton", "Specter Desktop", "Blitz", "Blixt", "Breez", "Cake", "Joltz", "Mutiny", "Theya", "Speed", "Yeti", "Zebedee", "Lily", "Wallet of Satoshi", "Cashu.me", "Spark", "eNuts"],
     "Nodes & Servers": ["Bitcoin Core", "Bitcoin Knots", "Umbrel", "Start9", "Bitcoin Core Node", "Citadel", "Fully Noded", "Raspiblitz", "RoninDojo", "Parmanode", "Electrum Rust Server (Electrs)", "Ubuntu Node Box", "MyNode", "Ashigaru Dojo", "Fulcrum", "Bitcoin Node Box"],
     "Mining": ["Avalon Nano", "NerdAxe", "Bitaxe", "Braiins Mini Miner", "DATUM", "Futurebit", "Braiins Pool"],
@@ -31,7 +31,7 @@ const availableTagIcons = new Set([
     "pool", "proton", "raspiblitz", "ride-the-lightning", "river", "robosats", "ronindojo", "satochip",
     "satodime", "satscard", "seedkeeper", "seedsigner", "shakepay", "spark", "sparrow", "specter-desktop",
     "specter-diy", "speed", "spike-to-spike", "start9", "strike", "tapsigner", "testnet", "theya",
-    "thunderhub", "trezor-one", "trezor-safe35", "trezor-t", "ubuntu-node-box", "umbrel",
+    "thunderhub", "trezor-one", "trezor-safe", "trezor-t", "ubuntu-node-box", "umbrel",
     "unchainedcaravan", "usdt", "voltage", "wasabi", "yeti", "zebedee", "zeus"
 ]);
 
@@ -789,6 +789,217 @@ function filterHasInfoBox(filterText, filterType) {
     if (filterType === 'tag' && filterText === "RoninDojo") {
         return true;
     }
+    // Signing Devices
+    if (filterType === 'tag' && filterText === "ColdCard Q") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "ColdCard MK(1-4)") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Jade") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Jade Plus") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Krux") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Trezor One") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Trezor T") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Trezor Safe") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Ledger Flex") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "KeepKey") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "SeedSigner") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Passport Core") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Keystone") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Tapsigner") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Seedkeeper") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Satochip") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Specter DIY") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "KeyFlint") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "BitBox") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Bitkey") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Ledger Nano(S/X)") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Satodime") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Satscard") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "OneKey") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Opendime") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Frostsnap") {
+        return true;
+    }
+    // Mining
+    if (filterType === 'tag' && filterText === "Avalon Nano") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "NerdAxe") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Bitaxe") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Braiins Mini Miner") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "DATUM") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Futurebit") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Braiins Pool") {
+        return true;
+    }
+    // Lightning Network
+    if (filterType === 'tag' && filterText === "Thunderhub") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Alby") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Lightning Network Daemon (LND)") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Lightning Node Connect") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "LNbits") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Ride The Lightning") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Voltage") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Core Lightning") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Bolt Ring") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Pool") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Loop") {
+        return true;
+    }
+    // Services & Exchanges
+    if (filterType === 'tag' && filterText === "Bitcoin Well") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Hodl Hodl") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Kraken") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "BTCPay Server") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Debifi") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Azteco") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Bisq") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Casa") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Unchained/Caravan") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Bittr") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Bitrefill") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Fountain") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Strike") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Spike to Spike") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Ledn") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Anchorwatch/Trident") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "IBEXPay") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Robosats") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Peach") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Coinos") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Shakepay") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "River") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Bull Bitcoin") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Bitaroo") {
+        return true;
+    }
+    if (filterType === 'tag' && filterText === "Mempool.space Accelerator") {
+        return true;
+    }
     // Add more filters with info boxes here in the future
     return false;
 }
@@ -960,7 +1171,7 @@ function buildInfoBoxContent(filterText, filterType, filterKey) {
         customText = `The Trezor One is one of the most trusted and widely used Bitcoin and cryptocurrency signing devices, designed to make self-custody simple, secure, and transparent. As the world's first hardware wallet, it introduced the idea of keeping private keys offline while still allowing easy access to manage your funds through the Trezor Suite app. The device features two physical buttons and a clear OLED screen for securely verifying transactions, ensuring you always know exactly what you're signing. With open-source firmware and hardware, PIN protection, and recovery seed backups, users can verify and trust how their keys are handled. Compact, affordable, and compatible with a wide range of wallets, the Trezor One remains a reliable entry point for anyone starting their journey into safe Bitcoin ownership.`;
     } else if (filterText === 'Trezor T') {
         customText = `The Trezor Model T is a premium Bitcoin and cryptocurrency signing device that combines advanced security with an intuitive, modern interface. It features a full-color touchscreen, allowing users to securely enter PINs, passphrases, and confirm transactions directly on the device—keeping sensitive information completely isolated from potentially compromised computers or phones. The Model T supports Bitcoin and a wide range of other cryptocurrencies, integrates seamlessly with Trezor Suite and popular third-party wallets, and offers microSD encryption, Shamir backups, and open-source firmware and hardware for full transparency. Designed and manufactured in Europe by SatoshiLabs, the Trezor T provides top-tier security and ease of use, making it a trusted choice for users who want both power and peace of mind in managing their Bitcoin securely.`;
-    } else if (filterText === 'Trezor Safe(3/5)') {
+    } else if (filterText === 'Trezor Safe') {
         customText = `The Trezor Safe 3 and Trezor Safe 5 are the latest generation of Bitcoin and cryptocurrency signing devices from Trezor, designed to deliver enhanced security and usability in a sleek, modern form. Both models feature secure element chips for stronger key protection, open-source firmware, and PIN and passphrase support to keep your funds safe from online threats. The Safe 3 offers a compact, button-based design ideal for everyday users, while the Safe 5 upgrades to a vibrant color touchscreen, allowing intuitive navigation and easy on-device transaction confirmation. They integrate seamlessly with Trezor Suite, support Bitcoin and multiple other assets, and include features like Shamir backups and encrypted seed storage for extra redundancy. With their blend of transparency, security, and user-friendly design, the Safe 3 and Safe 5 make self-custody more accessible than ever while maintaining Trezor's long-standing commitment to open-source trust.`;
     } else if (filterText === 'Aqua') {
         customText = `Aqua Wallet, developed by Blockstream, is a simple and beginner-friendly Bitcoin and Liquid Network wallet designed for mobile users who want both convenience and advanced privacy options. It lets you hold Bitcoin as well as Liquid assets like L-BTC and stablecoins such as USDt on the same app, offering faster and cheaper transactions on the Liquid sidechain. Aqua emphasizes self-custody, meaning you control your own keys, and it provides strong privacy features like confidential transactions that hide amounts and asset types. It also includes Lightning Network support for instant, low-fee payments. For Bitcoiners who want a secure, easy-to-use mobile wallet that bridges on-chain, Lightning, and Liquid use cases, Aqua offers a clean and modern gateway into the broader Bitcoin ecosystem.`;
@@ -1722,7 +1933,8 @@ function getCategoryOrder(tag) {
         "Services & Exchanges",
         "Tokens",
         "Ecash",
-        "Privacy & Security",
+        "Security",
+        "Privacy",
         "Advanced Features"
     ];
 

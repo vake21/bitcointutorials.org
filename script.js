@@ -278,7 +278,7 @@ function loadDefaultCSV() {
         .then(csvContent => {
             const newVideos = parseCSV(csvContent);
             videoData.push(...newVideos);
-            currentVideos = [...videoData];
+            currentVideos = sortVideos([...videoData], sortBy.value, sortAscending);
 
             initializeSearchData();
             populateTagSidebar();

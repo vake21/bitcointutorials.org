@@ -32,7 +32,7 @@ const availableTagIcons = new Set([
     "satodime", "satscard", "seedkeeper", "seedsigner", "shakepay", "spark", "sparrow", "specter-desktop",
     "specter-diy", "speed", "spike-to-spike", "start9", "strike", "tapsigner", "testnet", "theya",
     "thunderhub", "trezor-one", "trezor-safe", "trezor-t", "ubuntu-node-box", "umbrel",
-    "unchainedcaravan", "usdt", "voltage", "wasabi", "yeti", "zebedee", "zeus"
+    "unchainedcaravan", "usdt", "voltage", "wallet-of-satoshi", "wasabi", "yeti", "zebedee", "zeus"
 ]);
 
 // Available creator icons - update this list when adding new icon files
@@ -278,7 +278,8 @@ function loadDefaultCSV() {
         .then(csvContent => {
             const newVideos = parseCSV(csvContent);
             videoData.push(...newVideos);
-            currentVideos = sortVideos([...videoData], sortBy.value, sortAscending);
+            // Always sort by date descending (newest first) on initial load
+            currentVideos = sortVideos([...videoData], 'date', false);
 
             initializeSearchData();
             populateTagSidebar();
@@ -1243,6 +1244,8 @@ function buildInfoBoxContent(filterText, filterType, filterKey) {
         customText = `Speed Wallet is a mobile-and-web wallet app that supports both on-chain and Lightning-network transactions of Bitcoin—alongside stablecoins like USDT-L and USDC—making it a "one-stop" payment solution for digital assets. It offers features such as a unique Lightning address for easy receipt of payments, built-in gift-card shopping via integrations such as Bitrefill, tiered rewards ("Speed Rewards") redeemable in sats when you make transactions, and cross-platform availability (Android, iOS, browser extension). The app emphasizes ease of use and accessibility, so a Bitcoiner might choose it if they want fast, low-fee payments, multi-asset support, and a consumer-friendly UX rather than a bare-bones self-custody wallet. However, it is custodial in nature (you don't directly hold the private keys) and thus offers less sovereignty than fully self-custodial wallets—which is important to keep in mind if you prioritise full control over your Bitcoin.`;
     } else if (filterText === 'Theya') {
         customText = `Theya Wallet is a modern, self-custody Bitcoin wallet designed for both individuals and businesses that want strong security without sacrificing usability. It offers multi-signature vaults (for example 2-of-3 setups) where you distribute keys between your hardware wallet, a trusted co-signer, and Theya's service—giving you protection from single points of failure. It integrates with popular hardware wallets such as Ledger, Trezor, Coldcard and Foundation Passport. Theya also supports streamlined features like direct-to-wallet Bitcoin purchases in the U.S., so you can buy BTC and have it land straight into your self-custody vault rather than a custodial exchange first. For a Bitcoiner, Theya makes self-custody accessible: you still hold the keys and control the funds, but gain the convenience of a polished app, role-based access (for families or teams), and modern security practices (passkeys, hardware support, backup key rotation). On the "other helpful information" side: Theya currently focuses on vault/multisig setups rather than just simple single-key wallets; some features require a subscription or are aimed at business use; and as with any self-custody solution you should still maintain your own backups, store hardware devices securely, and understand the vault policy you choose.`;
+    } else if (filterText === 'Wallet of Satoshi') {
+        customText = `Wallet of Satoshi is a simple, beginner-friendly Bitcoin wallet designed to make using the Lightning Network feel as easy as a regular payment app. Users can download it and start sending or receiving Lightning payments instantly, with the app handling invoices, channels, and liquidity automatically in the background. In addition to its long-standing custodial mode, Wallet of Satoshi now also offers a self-custodial option for users who want more control over their bitcoin, while still keeping the experience straightforward. For this self-custodial mode, the wallet includes encrypted backups to help users safely recover their funds if they lose their device. This combination of ease of use, fast Lightning payments, and flexible custody options makes Wallet of Satoshi appealing both to newcomers and to users who want a simple path toward self-custody.`;
     } else if (filterText === 'Wasabi') {
         customText = `Wasabi Wallet is a privacy-focused, open-source Bitcoin wallet that uses the WabiSabi protocol—an advanced form of CoinJoin that enables smaller, more efficient, and more private collaborative transactions by allowing unequal input and output amounts. Fully non-custodial and connected through Tor by default, it ensures users retain control of their keys while hiding both transaction and network data. Wasabi supports SegWit (bech32) addresses, detailed coin control, labeling, and integrates with hardware wallets for secure signing. It also includes PayJoin (P2EP) support and recently added Silent Payments, allowing users to receive Bitcoin privately without exposing static addresses. A Bitcoiner should choose Wasabi if they value cutting-edge privacy tools built directly into a polished, easy-to-use desktop wallet—ideal for anyone who wants strong on-chain privacy while maintaining full self-custody and transparency through open-source code.`;
     } else if (filterText === 'Yeti') {
@@ -2315,7 +2318,8 @@ function importFromCSV(file) {
             if (newVideos.length > 0) {
                 // Add new videos to existing data
                 videoData.push(...newVideos);
-                currentVideos = [...videoData];
+                // Sort videos according to current sort settings
+                currentVideos = sortVideos([...videoData], sortBy.value, sortAscending);
 
                 // Reinitialize the application with new data
                 initializeSearchData();

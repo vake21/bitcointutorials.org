@@ -570,33 +570,6 @@ main {
 }
 
 /* Info Bar with Video Count and Bitcoin Data */
-.csv-load-controls {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.csv-load-btn {
-    background: #f7931a;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.csv-load-btn:hover {
-    background: #e8820f;
-}
-
-.csv-load-btn.loaded {
-    background: #28a745;
-    cursor: default;
-}
 
 .info-bar {
     display: flex;

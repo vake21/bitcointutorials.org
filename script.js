@@ -267,58 +267,6 @@ function init() {
     loadDefaultCSV();
     loadFilterInfo();
     initBitcoinData();
-    setupCSVLoadButtons();
-}
-
-// Setup manual CSV load buttons for local file:// usage
-function setupCSVLoadButtons() {
-    const loadVideosBtn = document.getElementById('load-videos-btn');
-    const loadSocialBtn = document.getElementById('load-social-btn');
-    const videosFileInput = document.getElementById('videos-file-input');
-    const socialFileInput = document.getElementById('social-file-input');
-
-    if (loadVideosBtn && videosFileInput) {
-        loadVideosBtn.addEventListener('click', () => videosFileInput.click());
-        videosFileInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (file && file.name.endsWith('.csv')) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const newVideos = parseCSV(e.target.result);
-                    if (newVideos.length > 0) {
-                        videoData.push(...newVideos);
-                        currentVideos = sortVideos([...videoData], 'date', false);
-                        initializeSearchData();
-                        populateTagSidebar();
-                        renderVideos(currentVideos);
-                        setupEventListeners();
-                        loadVideosBtn.textContent = 'Videos Loaded';
-                        loadVideosBtn.classList.add('loaded');
-                    }
-                };
-                reader.readAsText(file);
-            }
-            event.target.value = '';
-        });
-    }
-
-    if (loadSocialBtn && socialFileInput) {
-        loadSocialBtn.addEventListener('click', () => socialFileInput.click());
-        socialFileInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (file && file.name.endsWith('.csv')) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    parseFilterInfo(e.target.result);
-                    updateActiveFiltersDisplay();
-                    loadSocialBtn.textContent = 'Social Icons Loaded';
-                    loadSocialBtn.classList.add('loaded');
-                };
-                reader.readAsText(file);
-            }
-            event.target.value = '';
-        });
-    }
 }
 
 
@@ -1358,7 +1306,7 @@ function buildInfoBoxContent(filterText, filterType, filterKey) {
     } else if (filterText === 'Braiins Pool') {
         customText = `Braiins Pool, formerly known as Slush Pool, is the world's first Bitcoin mining pool and remains one of the most trusted and transparent platforms for miners today. It allows individual miners to combine their hash power and earn steadier, more predictable payouts, reducing the variance that comes with solo mining. Operated by the creators of Braiins OS, it offers advanced monitoring tools, open-source firmware integration, detailed performance analytics, and customizable payout options. Bitcoiners choose Braiins Pool for its long-standing reputation, technical transparency, and commitment to decentralization and open-source principles—values that align closely with Bitcoin's ethos.`;
     } else if (filterText === 'Ocean Pool/DATUM') {
-        customText = `DATUM is a transparency service from Ocean mining that provides verifiable, on-chain records of all mining pool activity, giving miners full insight into how blocks and payouts are handled. Instead of trusting a pool's internal reporting, DATUM lets anyone independently confirm the distribution of rewards, block templates, and transaction selections directly on the Bitcoin blockchain. This ensures accountability, eliminates hidden fees or censorship concerns, and empowers miners to verify that their hash power is being used honestly. Bitcoiners value DATUM because it brings transparency and trustlessness to the mining pool process—helping align pooled mining with Bitcoin's core principles of openness and verifiability.`;
+        customText = `Ocean Pool is a Bitcoin mining pool focused on decentralization and censorship resistance. Instead of the pool operator choosing which transactions go into each block, Ocean lets individual miners build their own block templates. This means miners—not the pool—decide what gets included, helping reduce the risk of transaction censorship. Ocean also pays miners directly from the coinbase transaction, increasing transparency and reducing custodial risk. DATUM (Decentralized Alternative Templates for Universal Mining) is the open-source protocol that makes this possible. It allows miners to construct and submit their own block templates while still collaborating in a pool, combining the efficiency of pooled mining with the independence of solo mining.`;
     } else if (filterText === 'Anchorwatch/Trident') {
         customText = `AnchorWatch is a Bitcoin insurance and custody company that offers regulated, insured multi-signature storage through its flagship wallet, Trident. Trident combines the security of self-custody with institutional-grade protection by using a 3-of-5 multisig setup, where keys are distributed between the user, AnchorWatch, and trusted third parties—reducing single points of failure while maintaining user control. Unlike traditional custodians, AnchorWatch provides insured self-custody, meaning Bitcoin holders can protect their holdings against key loss or theft without giving up ownership. Bitcoiners may choose Trident for its combination of technical security, regulatory compliance, and insurance coverage—ideal for individuals, businesses, or family offices who want self-custody assurance with professional backup and peace of mind.`;
     } else if (filterText === 'Azteco') {

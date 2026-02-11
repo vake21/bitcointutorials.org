@@ -570,6 +570,34 @@ main {
 }
 
 /* Info Bar with Video Count and Bitcoin Data */
+.csv-load-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.csv-load-btn {
+    background: #f7931a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.csv-load-btn:hover {
+    background: #e8820f;
+}
+
+.csv-load-btn.loaded {
+    background: #28a745;
+    cursor: default;
+}
+
 .info-bar {
     display: flex;
     gap: 1rem;
@@ -602,27 +630,30 @@ main {
 }
 
 .clear-all-filters-btn {
-    background-color: #dc3545;
+    background: linear-gradient(135deg, #dc3545, #c82333);
     color: white;
     border: none;
-    border-radius: 8px;
-    padding: 0.75rem 1.5rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 900;
     cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
     white-space: nowrap;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    line-height: 1.6;
 }
 
 .clear-all-filters-btn:hover {
-    background-color: #c82333;
+    background: linear-gradient(135deg, #c82333, #bd2130);
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
 }
 
 .clear-all-filters-btn:active {
     transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
 }
 
 .bitcoin-price, .bitcoin-block {
@@ -655,7 +686,7 @@ main {
     flex-wrap: wrap;
     gap: 6px;
     min-height: 20px;
-    align-items: flex-start;
+    align-items: center;
 }
 
 /* Filter Info Box */

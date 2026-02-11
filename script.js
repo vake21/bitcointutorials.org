@@ -3,12 +3,12 @@ const tagCategories = {
     "Signing Devices": ["ColdCard Q", "ColdCard MK(1-4)", "Jade", "Jade Plus", "Krux", "Trezor One", "Trezor T", "Trezor Safe", "Ledger Flex", "KeepKey", "SeedSigner", "Passport Core", "Keystone", "Tapsigner", "Seedkeeper", "Satochip", "Specter DIY", "KeyFlint", "BitBox", "Bitkey", "Ledger Nano(S/X)", "Satodime", "Satscard", "OneKey", "Signing Devices (General)", "Opendime", "Frostsnap"],
     "Wallets": ["Sparrow", "Electrum", "BlueWallet", "Ginger", "Wasabi", "Phoenix", "Zeus", "Muun", "Nunchuk", "Liana", "Blockstream App", "Ashigaru", "Aqua", "Bitcoin Core Wallet", "Bitcoin Keeper", "JAM", "Envoy", "Fedi", "Minibits", "Mercury", "Nutstash", "Samourai", "Proton", "Specter Desktop", "Blitz", "Blixt", "Breez", "Cake", "Joltz", "Mutiny", "Theya", "Speed", "Yeti", "Zebedee", "Lily", "Wallet of Satoshi", "Cashu.me", "Spark", "eNuts", "Bull Bitcoin Wallet"],
     "Nodes & Servers": ["Bitcoin Core", "Bitcoin Knots", "Umbrel", "Start9", "Bitcoin Core Node", "Citadel", "Fully Noded", "Raspiblitz", "RoninDojo", "Parmanode", "Electrum Rust Server (Electrs)", "Ubuntu Node Box", "MyNode", "Ashigaru Dojo", "Fulcrum", "Bitcoin Node Box"],
-    "Mining": ["Avalon Nano", "NerdAxe", "Bitaxe", "Braiins Mini Miner", "Braiins Deck", "DATUM", "Futurebit", "Braiins Pool"],
+    "Mining": ["Avalon Nano", "NerdAxe", "Bitaxe", "Braiins Mini Miner", "Braiins Deck", "Ocean Pool/DATUM", "Futurebit", "Braiins Pool"],
     "Lightning Network": ["Lightning", "Thunderhub", "Alby", "Lightning Network Daemon (LND)", "Lightning Node Connect", "LNbits", "Ride The Lightning", "Voltage", "Core Lightning", "Bolt Ring", "Boltz", "Pool", "Loop"],
     "Services & Exchanges": ["Bitcoin Well", "Hodl Hodl", "Kraken", "BTCPay Server", "Debifi", "Azteco", "Bisq", "Casa", "Unchained/Caravan", "Bittr", "Bitrefill", "Fountain", "Strike", "Spike to Spike", "Ledn", "Anchorwatch/Trident", "IBEXPay", "Robosats", "Peach", "Coinos", "Shakepay", "River", "Bull Bitcoin", "Bitaroo", "Mempool.space Accelerator"],
     "Tokens": ["Liquid", "USDT", "Testnet"],
     "Ecash": ["Fedimint", "Cashu"],
-    "Security": ["Verifying Downloads", "Seed Phrases (General)", "UTXO Management", "SeedQR", "Encrypted Backups", "Child Seeds (BIP 85)", "Multisig", "Seed XOR", "Shamir's Secret Sharing (SLIP-39)"],
+    "Security": ["Verifying Downloads", "Seed Phrases (General)", "UTXO Management", "SeedQR", "Encrypted Backups", "Child Seeds (BIP 85)", "Multisig", "Seed XOR", "Shamir's Secret Sharing (SLIP-39)", "Derivation Paths"],
     "Privacy": ["Coinjoin (JoinMarket)", "Coinjoin (Wabisabi)", "Coinjoin (Whirlpool)", "Non-KYC", "Payjoin", "Paynyms (BIP 47)", "Silent Payments"],
     "Advanced Features": ["Timelocks", "FROST", "Border Wallet", "Child Pays For Parent (CPFP)", "Replace By Fee (RBF)", "Gettxoutsetinfo (Audit Supply)", "Taproot Assets", "Partially Signed Bitcoin Transactions (PSBT)", "Statechains"]
 };
@@ -21,7 +21,7 @@ const availableTagIcons = new Set([
     "bitcoin-knots", "bitcoin-node-box", "bitcoin-well", "bitkey", "bitrefill", "bittr", "blitz",
     "blixt", "blockstream-app", "bluewallet", "bolt-ring", "boltz", "braiins-deck", "braiins-mini-miner", "braiins-pool",
     "breez", "btcpay-server", "bull-bitcoin", "bull-bitcoin-wallet", "cake", "casa", "cashu", "cashume", "citadel", "coinos",
-    "coldcard-mk1-4", "coldcard-q", "core-lightning", "datum", "debifi", "electrum",
+    "coldcard-mk1-4", "coldcard-q", "core-lightning", "ocean-pooldatum", "debifi", "electrum",
     "electrum-rust-server-electrs", "enuts", "envoy", "fedi", "fedimint", "fountain", "frostsnap",
     "fulcrum", "fully-noded", "futurebit", "ginger", "hodl-hodl", "ibexpay", "jade", "jade-plus",
     "jam", "joltz", "keepkey", "keystone", "kraken", "krux", "ledger-flex", "ledger-nanosx", "ledn",
@@ -83,7 +83,6 @@ const sortOrderBtn = document.getElementById('sort-order');
 const searchInput = document.getElementById('search-input');
 const searchSuggestions = document.getElementById('search-suggestions');
 const clearSearchBtn = document.getElementById('clear-search');
-const clearAllFiltersBtn = document.getElementById('clear-all-filters-btn');
 const activeFiltersContainer = document.getElementById('active-filters');
 const tagCategoriesContainer = document.getElementById('tag-categories');
 const videoCountNumber = document.getElementById('video-count-number');
@@ -268,6 +267,58 @@ function init() {
     loadDefaultCSV();
     loadFilterInfo();
     initBitcoinData();
+    setupCSVLoadButtons();
+}
+
+// Setup manual CSV load buttons for local file:// usage
+function setupCSVLoadButtons() {
+    const loadVideosBtn = document.getElementById('load-videos-btn');
+    const loadSocialBtn = document.getElementById('load-social-btn');
+    const videosFileInput = document.getElementById('videos-file-input');
+    const socialFileInput = document.getElementById('social-file-input');
+
+    if (loadVideosBtn && videosFileInput) {
+        loadVideosBtn.addEventListener('click', () => videosFileInput.click());
+        videosFileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file && file.name.endsWith('.csv')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const newVideos = parseCSV(e.target.result);
+                    if (newVideos.length > 0) {
+                        videoData.push(...newVideos);
+                        currentVideos = sortVideos([...videoData], 'date', false);
+                        initializeSearchData();
+                        populateTagSidebar();
+                        renderVideos(currentVideos);
+                        setupEventListeners();
+                        loadVideosBtn.textContent = 'Videos Loaded';
+                        loadVideosBtn.classList.add('loaded');
+                    }
+                };
+                reader.readAsText(file);
+            }
+            event.target.value = '';
+        });
+    }
+
+    if (loadSocialBtn && socialFileInput) {
+        loadSocialBtn.addEventListener('click', () => socialFileInput.click());
+        socialFileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file && file.name.endsWith('.csv')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    parseFilterInfo(e.target.result);
+                    updateActiveFiltersDisplay();
+                    loadSocialBtn.textContent = 'Social Icons Loaded';
+                    loadSocialBtn.classList.add('loaded');
+                };
+                reader.readAsText(file);
+            }
+            event.target.value = '';
+        });
+    }
 }
 
 
@@ -610,6 +661,9 @@ function filterHasInfoBox(filterText, filterType) {
     if (filterType === 'tag' && filterText === "Nunchuk") {
         return true;
     }
+    if (filterType === 'tag' && filterText === "Derivation Paths") {
+        return true;
+    }
     if (filterType === 'tag' && filterText === "Signing Devices (General)") {
         return true;
     }
@@ -888,7 +942,7 @@ function filterHasInfoBox(filterText, filterType) {
     if (filterType === 'tag' && filterText === "Braiins Deck") {
         return true;
     }
-    if (filterType === 'tag' && filterText === "DATUM") {
+    if (filterType === 'tag' && filterText === "Ocean Pool/DATUM") {
         return true;
     }
     if (filterType === 'tag' && filterText === "Futurebit") {
@@ -1039,7 +1093,8 @@ function getInfoBoxContent(filterText, filterType) {
         "Statechains": "Statechains are a Bitcoin layer-2 protocol that allow ownership of a UTXO to be transferred off-chain without broadcasting new transactions to the blockchain. They enable fast, low-fee transfers by passing control of the private key between users under the coordination of a statechain server, while maintaining Bitcoin's self-custody model.",
         "Taproot Assets": "Taproot Assets is a protocol that allows users to issue and transfer digital assets—like stablecoins or tokens—directly on the Bitcoin blockchain using Taproot's smart contract features. It can also operate over the Lightning Network, enabling instant, low-fee transactions of these assets while remaining nearly indistinguishable from regular Bitcoin payments.",
         "Timelocks": "Bitcoin timelocks are a feature that restricts when a transaction or output can be spent until a certain time or block height is reached. They enable advanced uses like payment delays, escrows, and smart contracts by enforcing spending conditions directly in the Bitcoin protocol.",
-        "Nunchuk": "Nunchuk is a powerful Bitcoin wallet designed around collaborative multisig security, offering a balance of advanced protection and ease of use. It stands out for its team-based key management, allowing families, businesses, or inheritance planners to coordinate shared custody without trusting a single device or person. Users can mix hardware, mobile, and offline keys, create custom spending policies, and even use encrypted in-app chat to coordinate cosigning securely. Nunchuk also offers features like inheritance planning, policy templates, and emergency recovery options, making it one of the most complete multisig solutions available. By combining privacy, flexibility, and strong cryptographic control, Nunchuk turns complex multisig setups into a smooth, user-friendly experience."
+        "Nunchuk": "Nunchuk is a powerful Bitcoin wallet designed around collaborative multisig security, offering a balance of advanced protection and ease of use. It stands out for its team-based key management, allowing families, businesses, or inheritance planners to coordinate shared custody without trusting a single device or person. Users can mix hardware, mobile, and offline keys, create custom spending policies, and even use encrypted in-app chat to coordinate cosigning securely. Nunchuk also offers features like inheritance planning, policy templates, and emergency recovery options, making it one of the most complete multisig solutions available. By combining privacy, flexibility, and strong cryptographic control, Nunchuk turns complex multisig setups into a smooth, user-friendly experience.",
+        "Derivation Paths": "Derivation paths are standardized instructions used by Bitcoin wallets to deterministically generate large numbers of private keys and addresses from a single master seed. They define how a wallet derives specific keys\u2014for example, separating accounts, address types (Legacy, SegWit, Taproot), or purposes\u2014so the same seed always recreates the same wallet structure. Bitcoiners use derivation paths to ensure reliable wallet recovery, compatibility across different wallets, and clean organization of funds without managing multiple seeds. Their unique features include hierarchical structure, standardization through BIPs like BIP-44, BIP-49, BIP-84, and BIP-86, support for multiple accounts and address formats, and the ability to fully restore a wallet\u2019s addresses and balances using just the seed phrase and the correct path."
     };
 
     return infoBoxTexts[filterText] || '';
@@ -1302,7 +1357,7 @@ function buildInfoBoxContent(filterText, filterType, filterKey) {
         customText = `The Futurebit Apollo miner is a compact, all-in-one Bitcoin mining device designed for home users who want to mine and run a Bitcoin node easily and quietly. Unlike industrial ASICs, it combines a built-in controller, full Bitcoin node software, and efficient hashboards in a sleek desktop unit that connects directly to your network—no extra hardware required. Producing modest hashrate with relatively low noise and power draw, its role is to make solo or pool mining accessible to everyday users while helping decentralize the network. Bitcoiners are drawn to the Futurebit miner for its plug-and-play simplicity, integrated full node support, and the ability to participate in proof-of-work and network validation from home without the heat, noise, or complexity of datacenter-grade rigs.`;
     } else if (filterText === 'Braiins Pool') {
         customText = `Braiins Pool, formerly known as Slush Pool, is the world's first Bitcoin mining pool and remains one of the most trusted and transparent platforms for miners today. It allows individual miners to combine their hash power and earn steadier, more predictable payouts, reducing the variance that comes with solo mining. Operated by the creators of Braiins OS, it offers advanced monitoring tools, open-source firmware integration, detailed performance analytics, and customizable payout options. Bitcoiners choose Braiins Pool for its long-standing reputation, technical transparency, and commitment to decentralization and open-source principles—values that align closely with Bitcoin's ethos.`;
-    } else if (filterText === 'DATUM') {
+    } else if (filterText === 'Ocean Pool/DATUM') {
         customText = `DATUM is a transparency service from Ocean mining that provides verifiable, on-chain records of all mining pool activity, giving miners full insight into how blocks and payouts are handled. Instead of trusting a pool's internal reporting, DATUM lets anyone independently confirm the distribution of rewards, block templates, and transaction selections directly on the Bitcoin blockchain. This ensures accountability, eliminates hidden fees or censorship concerns, and empowers miners to verify that their hash power is being used honestly. Bitcoiners value DATUM because it brings transparency and trustlessness to the mining pool process—helping align pooled mining with Bitcoin's core principles of openness and verifiability.`;
     } else if (filterText === 'Anchorwatch/Trident') {
         customText = `AnchorWatch is a Bitcoin insurance and custody company that offers regulated, insured multi-signature storage through its flagship wallet, Trident. Trident combines the security of self-custody with institutional-grade protection by using a 3-of-5 multisig setup, where keys are distributed between the user, AnchorWatch, and trusted third parties—reducing single points of failure while maintaining user control. Unlike traditional custodians, AnchorWatch provides insured self-custody, meaning Bitcoin holders can protect their holdings against key loss or theft without giving up ownership. Bitcoiners may choose Trident for its combination of technical security, regulatory compliance, and insurance coverage—ideal for individuals, businesses, or family offices who want self-custody assurance with professional backup and peace of mind.`;
@@ -1440,6 +1495,8 @@ function buildInfoBoxContent(filterText, filterType, filterKey) {
         customText = `Taproot Assets is a protocol that enables the issuance and transfer of tokenized assets on Bitcoin, such as stablecoins or digital collectibles, by embedding them within Taproot outputs in a highly efficient and private way. It's designed to let users create and transact these assets without bloating the blockchain, using off-chain transfers anchored to Bitcoin's existing infrastructure. Bitcoiners use Taproot Assets to leverage Bitcoin's security, decentralization, and liquidity while enabling new use cases like stablecoin payments or tokenized representations of real-world assets. Its unique features include single-sig Taproot compatibility, scalable off-chain updates, Lightning Network integration for instant asset transfers, and on-chain privacy, since asset-related data is indistinguishable from normal Bitcoin transactions.`;
     } else if (filterText === 'Timelocks') {
         customText = `Miniscript timelocks are a structured way to include time-based spending conditions in Bitcoin transactions using the Miniscript language, which simplifies the creation and analysis of complex scripts. They allow coins to be spendable only after a certain time or block height—for example, to enforce a delay before withdrawal or enable an automatic fallback to another key after a set period. Bitcoiners use Miniscript timelocks in vaults, inheritance plans, and multisig setups to add predictable, auditable security conditions without writing raw script code. Their unique features include human-readable syntax, automatic policy verification, compatibility with hardware wallets and descriptors, and the ability to combine timelocks with other rules (like multisig or recovery paths) in a transparent, composable, and secure way.`;
+    } else if (filterText === 'Derivation Paths') {
+        customText = `Derivation paths are standardized instructions used by Bitcoin wallets to deterministically generate large numbers of private keys and addresses from a single master seed. They define how a wallet derives specific keys\u2014for example, separating accounts, address types (Legacy, SegWit, Taproot), or purposes\u2014so the same seed always recreates the same wallet structure. Bitcoiners use derivation paths to ensure reliable wallet recovery, compatibility across different wallets, and clean organization of funds without managing multiple seeds. Their unique features include hierarchical structure, standardization through BIPs like BIP-44, BIP-49, BIP-84, and BIP-86, support for multiple accounts and address formats, and the ability to fully restore a wallet\u2019s addresses and balances using just the seed phrase and the correct path.`;
     }
 
     // Add more custom text for other tags here as needed
@@ -1556,6 +1613,16 @@ function updateActiveFiltersDisplay() {
         // Append the filter pill directly to the container
         activeFiltersContainer.appendChild(filterElement);
     });
+
+    // Show "Clear All Filters" button inline with filter pills (before info boxes)
+    if (activeFilters.size > 0 || showingFavoritesOnly) {
+        const clearBtn = document.createElement('button');
+        clearBtn.className = 'clear-all-filters-btn';
+        clearBtn.id = 'clear-all-filters-btn';
+        clearBtn.textContent = 'Clear All Filters';
+        clearBtn.addEventListener('click', clearAllFilters);
+        activeFiltersContainer.appendChild(clearBtn);
+    }
 
     // SECOND PASS: Render info boxes for open filters (in same order)
     sortedFilters.forEach(filterKey => {
@@ -2234,8 +2301,6 @@ function setupEventListeners() {
     // Clear search button
     clearSearchBtn.addEventListener('click', clearAllFilters);
 
-    // Clear all filters button
-    clearAllFiltersBtn.addEventListener('click', clearAllFilters);
 
     // Header banner click - clear all filters and refresh
     headerBanner.addEventListener('click', clearAllFilters);

@@ -74,6 +74,13 @@
                             <button id="clear-favorites-btn">🗑️ Clear All Favorites</button>
                         </div>
 
+                        <div class="csv-load-controls">
+                            <button id="load-videos-btn" class="csv-load-btn">Load Videos CSV</button>
+                            <button id="load-social-btn" class="csv-load-btn">Load Social Icons CSV</button>
+                            <input type="file" id="videos-file-input" accept=".csv" style="display:none">
+                            <input type="file" id="social-file-input" accept=".csv" style="display:none">
+                        </div>
+
                     </div>
 
                     <!-- VIDEO COUNT AND BITCOIN DATA -->
@@ -81,7 +88,6 @@
                         <div class="video-count" id="video-count">
                             <span id="video-count-number">0</span> videos available
                         </div>
-                        <button id="clear-all-filters-btn" class="clear-all-filters-btn">Clear All Filters</button>
                         <div class="bitcoin-price" id="bitcoin-price">
                             <span class="bitcoin-symbol">₿</span>
                             $<span id="price-value">Loading...</span>

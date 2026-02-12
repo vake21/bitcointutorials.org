@@ -53,7 +53,7 @@ const availableCreatorIcons = new Set([
     "money-reimagined", "moneyzg", "mynode", "natalie-brunell", "nico-moran", "ocean", "paul-lamb", "peach",
     "piecover-btc", "pioneering-freedom", "plan-b-network", "rabid-mining", "red-panda-mining", "rhett-reisman",
     "robotechy", "ronindojo", "ryan-matta", "ryan-scribner", "saniexp", "satashi21", "satoshi-radio-global",
-    "seedsigner", "southern-bitcoiner", "sovereign-money", "specter", "tanleybench", "tech-express", "tftc",
+    "seedsigner", "southern-bitcoiner", "sovereign-money", "sterling", "specter", "tanleybench", "tech-express", "tftc",
     "the-bitcoin-hardware-store", "the-cryptodad", "the-hobbyist-miner", "the-social-guide", "the-space",
     "thebtccourse", "theya", "tj-free", "trezor", "unchained", "understanding-bitcoin", "vasker-media",
     "voltage", "vortex-bitcoin", "voskcoin", "wandering-maverick", "wantclue", "wasabi-wallet",

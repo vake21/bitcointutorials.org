@@ -739,7 +739,9 @@ How to Switch from Bitcoin Core to Knots on the Command Line,Satashi21,6/22/25,J
 Bitcoin Self-Custody for Beginners,The Bitcoin Hardware Store,6/23/25,ert6T0V1_l4,"BlueWallet,Blockstream App"
 Ashigaru Terminal,Ministry of Nodes,6/23/25,5MnIo786dYQ,"Ashigaru,Coinjoin (Whirlpool)"
 The Frostsnap Frontier,Frostsnap,6/27/25,LD99xHqRW8k,"Frostsnap,FROST,Multisig"
+How to Install an SSD into a Start9 and Recover a Backup,ForrestHODL,6/28/25,EX_2Iya1Hhg,Start9
 Blockstream Jade Plus Tutorial,The Bitcoin Hardware Store,7/1/25,wP9fBUbFH5g,"Jade Plus,Blockstream App"
+Derivation Paths in Bitcoin,Unchained,7/1/25,8ptIVNo7zuU,Derivation Paths
 How to Set Up the Canaan Avalon Nano 3S,Altair Technology,7/10/25,AmBN0cKUAvs,Avalon Nano
 SeedSigner + SeedKeeper Smartcard Hat,Crypto Guide,7/11/25,KXHVs1-oIdk,"SeedSigner,Seedkeeper"
 ColdCard Calculator Mode,TanleyBench,7/12/25,Ipd2VF6p7oI,ColdCard MK(1-4)
@@ -784,54 +786,55 @@ ColdCard Spending Policy & 2FA,Coinkite,9/29/25,Qd8ymRwrokg,"ColdCard Q,Nunchuk"
 "What Are UTXOs, and How to Consolidate Them",ForrestHODL,9/30/25,fH-mGZU_CI8,"UTXO Management,Sparrow"
 Decoy Wallets and Pin Safety with ColdCard Q Bitcoin Wallet,ForrestHODL,10/1/25,ICt3zVItA2s,ColdCard Q
 How to Make Parent and Child Seed Phrases with ColdCard Q,ForrestHODL,10/2/25,7mI4QATw-Bc,"ColdCard Q,Child Seeds (BIP 85)"
+Liana Wallet v13: Encrypted Descriptors & UX Upgrades,Liana Wallet,10/2/25,Fqi39yOIRKQ,"Liana,Ledger Nano(S/X)"
 Seedphrase Binary Encoding,Sovereign Money,10/3/25,gyB-QB-qhKg,Seed Phrases (General)
 Wallet of Satoshi Tutorial,BTC Sessions,10/6/25,3yQUhHdjNuc,"Wallet of Satoshi,Bitcoin Well,Lightning,Encrypted Backups"
+Bitcoin Inheritance Guide (v13),Liana Wallet,10/6/25,EigPpzUaGFs,"Liana,Ledger Nano(S/X),BitBox,Timelocks"
 SeedSigner Complete Assembly Tutorial,Sovereign Money,10/9/25,EgjCzdCwxEA,"SeedSigner,Verifying Downloads"
 How to Use DIY SeedSigner,Sovereign Money,10/15/25,XQLTwU4u4hk,"SeedSigner,SeedQR,BlueWallet,Sparrow"
+Bitkey Setup & Review,Darren Honeysett,10/16/25,rEidKOSZncw,Bitkey
+2-of-2 Multisig with 1 Year Recovery in Liana Wallet,Liana Wallet,10/17/25,Lu0cRiAUJUk,"Liana,Multisig,Timelocks,BitBox,Ledger Nano(S/X)"
 Seedphrase Security: Seedkeeper meets SeedSigner,Sovereign Money,10/21/25,_g9dPbCbiPQ,"Seedkeeper,SeedSigner,Verifying Downloads"
 Generate a Seedphrase Using Dice Rolls and ColdCard Q,ForrestHODL,10/21/25,aToKeArNIuo,"ColdCard Q, Seed Phrases (General)"
 SeedSigner + Satochip: No-Compromise Bitcoin Security,Sovereign Money,10/27/25,7EzxrQ3ryxo,"SeedSigner,Satochip,Sparrow"
 Bull Bitcoin Wallet: Full Tutorial,BTC Sessions,10/27/25,6b0xTB2sE8E,"Bull Bitcoin Wallet,Lightning,Liquid,ColdCard Q,Payjoin,Start9,Umbrel,Electrum Rust Server (Electrs),Encrypted Backups"
+ColdCard + Bull Bitcoin,Coinkite,10/27/25,pJF_PAki4N8,"ColdCard Q,Bull Bitcoin Wallet"
+"Send a Transaction on Liana (Sign, Review, Broadcast)",Liana Wallet,10/28/25,qk460-5TcqA,"Liana,BitBox,Ledger Nano(S/X)"
 OneKey Pro Review,Sovereign Money,11/2/25,L2mpGTS8pe8,"OneKey,Lightning"
 BitBox02 Nova Full Review,Sovereign Money,11/8/25,2Wjo37oBdCQ,BitBox
+"Generate, Label & Verify Addresses in Liana Wallet",Liana Wallet,11/10/25,tsjIY0mkXzI,Liana
 Trezor Safe 7 Full Tutorial,The CryptoDad,11/12/25,dELBs1f3RqM,Trezor Safe
+Trezor Safe 7 Setup Guide,Trezor,11/20/25,CQpH6y745NQ,Trezor Safe
 Braiins Deck Mining Dashboard,BTC Sessions,11/24/25,GPbpI-S7C5I,"Braiins Deck,Braiins Pool"
+Let Liana Wallet Run a Bitcoin Node For You,Liana Wallet,11/24/25,6mZ91vwFtQQ,"Liana,Bitcoin Core"
+How to Backup and Register Your Descriptors on Liana Wallet,Liana Wallet,11/25/25,W_7A3e-WLxk,"Liana,Encrypted Backups"
+ColdCard Q Quick Tutorial with Bull Wallet,Bull Bitcoin,11/27/25,cu6uELnGp2Q,"ColdCard Q,Bull Bitcoin Wallet"
 Trezor Safe 7: Full Mobile Setup Guide,The CryptoDad,12/3/25,yUxan7xqwjU,Trezor Safe
+Jade Plus Unboxing & Tutorial with Bull Wallet,Bull Bitcoin,12/5/25,pvTTQRpujYI,"Jade Plus,Bull Bitcoin Wallet"
+Install Edge Firmware on ColdCard,Liana Wallet,12/12/25,OimkF9OSw-E,ColdCard MK(1-4)
+How to Use ColdCard with Liana Wallet,Liana Wallet,12/13/25,mUMVr4HSzvY,"Liana,ColdCard MK(1-4)"
+SeedSigner Multisig: 2-of-3 Setup (Sparrow + Nunchuk),Satoshi Radio Global,12/15/25,4TDwC3LwITw,"SeedSigner,Multisig,Sparrow,Nunchuk,SeedQR,Boltz"
+How to Use BitBox02 with Liana Wallet,Liana Wallet,12/16/25,HSiXRPdg-mA,"Liana,BitBox"
+How to Use Your Ledger Device with Liana Wallet,Liana Wallet,12/19/25,ajAE0cijl1s,"Liana,Ledger Nano(S/X)"
+Is Your 12-Word Crypto Seed Really Secure? ,Sovereign Money,12/20/25,u4S-s2b0ZpU,Seed Phrases (General)
 Bitcoin Border Wallet Guide,ForrestHODL,12/22/25,1MYdCsNySa0,"Sparrow,Border Wallet"
 Seedphrase-only to Passphrase Wallet,ForrestHODL,12/24/25,osa3znhlS1c,"Sparrow,ColdCard Q"
+NerdOctAxe Unboxing and Setup,Sterling,12/24/25,MOHl8LTWOEQ,NerdAxe
 "Blockstream Jade: Firmware Update, Factory Reset and Vulnerability Fix",ForrestHODL,12/25/25,r5Hpfnvas1s,"Jade,Blockstream App"
-How to Build and Use a SeedSigner,BTC Sessions,12/29/25,qLCt4RFmtNQ,"SeedSigner,SeedQR,Sparrow"
-ColdCard + Bull Bitcoin,Coinkite,10/27/25,pJF_PAki4N8,"ColdCard Q,Bull Bitcoin Wallet"
-Is Your 12-Word Crypto Seed Really Secure? ,Sovereign Money,12/20/25,u4S-s2b0ZpU,Seed Phrases (General)
-Derivation Paths,Sovereign Money,1/14/26,kl3nuPGfoOw,Derivation Paths
-"Umbrel Home Review, Unboxing and Setup",ForrestHODL,1/13/26,iRf3zl6ayHY,"Umbrel,Bitcoin Core,Bitcoin Knots"
-"How to Have Multiple Bitcoin ""Accounts"" in One Hardware Wallet",ForrestHODL,1/1/26,i3eWzsDxfLo,"Sparrow,ColdCard Q,Derivation Paths"
 Bull Wallet Secret Features Explained,Bull Bitcoin,12/26/25,KqlIuhrVTFA,"Bull Bitcoin,Bull Bitcoin Wallet,Liquid"
-SeedSigner Multisig: 2-of-3 Setup (Sparrow + Nunchuk),Satoshi Radio Global,12/15/25,4TDwC3LwITw,"SeedSigner,Multisig,Sparrow,Nunchuk,SeedQR,Boltz"
-Jade Plus Unboxing & Tutorial with Bull Wallet,Bull Bitcoin,12/5/25,pvTTQRpujYI,"Jade Plus,Bull Bitcoin Wallet"
-ColdCard Q Quick Tutorial with Bull Wallet,Bull Bitcoin,11/27/25,cu6uELnGp2Q,"ColdCard Q,Bull Bitcoin Wallet"
-Trezor Safe 7 Setup Guide,Trezor,11/20/25,CQpH6y745NQ,Trezor Safe
-Liana Wallet v13: Encrypted Descriptors & UX Upgrades,Liana Wallet,10/2/25,Fqi39yOIRKQ,"Liana,Ledger Nano(S/X)"
-Derivation Paths in Bitcoin,Unchained,7/1/25,8ptIVNo7zuU,Derivation Paths
-How to Install an SSD into a Start9 and Recover a Backup,ForrestHODL,6/28/25,EX_2Iya1Hhg,Start9
-How to Connect Your Node to a Nunchuk Mobile,ForrestHODL,2/11/26,QkjKbHxhuM4,"Nunchuk,Umbrel,Electrum Rust Server (Electrs),ColdCard Q"
-How to Mine to Ocean Pool without Running a Node,ForrestHODL,2/3/26,upIHJbPEgFU,"Bitaxe,Ocean Pool/DATUM"
-Maix Amigo with Krux Firmware,Sovereign Money,1/30/26,RiWM6JfzJv0,"Krux,Verifying Downloads,Sparrow"
-How to Timelock a Transaction Easily in Sparrow,ForrestHODL,1/28/26,cyu1zwm4vJY,"Sparrow,Timelocks,ColdCard Q"
-Bitcoin Inheritance with Liana Wallet,Sovereign Money,1/25/26,xe1-8gw-PK8,"Liana,Timelocks,Jade"
-Bitaxe Unboxing and Setup,Joe Nakamoto,1/23/26,2Cq6b8SrSUU,"Bitaxe,BlueWallet"
+How to Build and Use a SeedSigner,BTC Sessions,12/29/25,qLCt4RFmtNQ,"SeedSigner,SeedQR,Sparrow"
+How to Do a Replace-By-Fee (RBF) Transaction on Sparrow,ForrestHODL,12/31/25,SfwAN-WTDrk,"Sparrow,Replace By Fee (RBF),ColdCard Q"
+"How to Have Multiple Bitcoin ""Accounts"" in One Hardware Wallet",ForrestHODL,1/1/26,i3eWzsDxfLo,"Sparrow,ColdCard Q,Derivation Paths"
 The Heater That Pays You in Bitcoin: Heatbit Trio Test,BTC Sessions,1/8/26,ZHra0NnKSzw,"Heatbit,Wallet of Satoshi,Lightning"
 Nunchuk Zen HODL Wallet with Timelocks,Sovereign Money,1/8/26,_ohqt1GUnAE,"Nunchuk,Timelocks,Jade"
-How to Do a Replace-By-Fee (RBF) Transaction on Sparrow,ForrestHODL,12/31/25,SfwAN-WTDrk,"Sparrow,Replace By Fee (RBF),ColdCard Q"
-NerdOctAxe Unboxing and Setup,Sterling,12/24/25,MOHl8LTWOEQ,NerdAxe
-How to Use Your Ledger Device with Liana Wallet,Liana Wallet,12/19/25,ajAE0cijl1s,"Liana,Ledger Nano(S/X)"
-How to Use BitBox02 with Liana Wallet,Liana Wallet,12/16/25,HSiXRPdg-mA,"Liana,BitBox"
-How to Use ColdCard with Liana Wallet,Liana Wallet,12/13/25,mUMVr4HSzvY,"Liana,ColdCard MK(1-4)"
-Install Edge Firmware on ColdCard,Liana Wallet,12/12/25,OimkF9OSw-E,ColdCard MK(1-4)
-How to Backup and Register Your Descriptors on Liana Wallet,Liana Wallet,11/25/25,W_7A3e-WLxk,"Liana,Encrypted Backups"
-Let Liana Wallet Run a Bitcoin Node For You,Liana Wallet,11/24/25,6mZ91vwFtQQ,"Liana,Bitcoin Core"
-"Generate, Label & Verify Addresses in Liana Wallet",Liana Wallet,11/10/25,tsjIY0mkXzI,Liana
-"Send a Transaction on Liana (Sign, Review, Broadcast)",Liana Wallet,10/28/25,qk460-5TcqA,"Liana,BitBox,Ledger Nano(S/X)"
-2-of-2 Multisig with 1 Year Recovery in Liana Wallet,Liana Wallet,10/17/25,Lu0cRiAUJUk,"Liana,Multisig,Timelocks,BitBox,Ledger Nano(S/X)"
-Bitcoin Inheritance Guide (v13),Liana Wallet,10/6/25,EigPpzUaGFs,"Liana,Ledger Nano(S/X),BitBox,Timelocks"
-Bitkey Setup & Review,Darren Honeysett,10/16/25,rEidKOSZncw,Bitkey
+"Umbrel Home Review, Unboxing and Setup",ForrestHODL,1/13/26,iRf3zl6ayHY,"Umbrel,Bitcoin Core,Bitcoin Knots"
+Derivation Paths,Sovereign Money,1/14/26,kl3nuPGfoOw,Derivation Paths
+Bitaxe Unboxing and Setup,Joe Nakamoto,1/23/26,2Cq6b8SrSUU,"Bitaxe,BlueWallet"
+Bitcoin Inheritance with Liana Wallet,Sovereign Money,1/25/26,xe1-8gw-PK8,"Liana,Timelocks,Jade"
+How to Timelock a Transaction Easily in Sparrow,ForrestHODL,1/28/26,cyu1zwm4vJY,"Sparrow,Timelocks,ColdCard Q"
+Maix Amigo with Krux Firmware,Sovereign Money,1/30/26,RiWM6JfzJv0,"Krux,Verifying Downloads,Sparrow"
+How to Mine to Ocean Pool without Running a Node,ForrestHODL,2/3/26,upIHJbPEgFU,"Bitaxe,Ocean Pool/DATUM"
+How to Connect Your Node to a Nunchuk Mobile,ForrestHODL,2/11/26,QkjKbHxhuM4,"Nunchuk,Umbrel,Electrum Rust Server (Electrs),ColdCard Q"
+"Mempool.Space: Track Bitcoin Addresses, Transactions & Fees",Southern Bitcoiner,2/16/26,SoMtMc0DqsY,"Mempool.space,"
+This Heater Pays You Bitcoin: Heatbit Maxi,Joe Nakamoto,2/5/26,-zLyEh_BKxI,Heatbit
+"ColdCard Q Setup, Tutorial & Review",Darren Honeysett,12/9/25,1UbxcoiQQhE,"ColdCard Q,Cove"

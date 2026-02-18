@@ -23,7 +23,7 @@ const availableTagIcons = new Set([
     "breez", "btcpay-server", "bull-bitcoin", "bull-bitcoin-wallet", "cake", "casa", "cashu", "cashume", "citadel", "coinos",
     "coldcard-mk1-4", "coldcard-q", "core-lightning", "ocean-pooldatum", "debifi", "electrum",
     "electrum-rust-server-electrs", "enuts", "envoy", "fedi", "fedimint", "fountain", "frostsnap",
-    "fulcrum", "fully-noded", "futurebit", "ginger", "hodl-hodl", "ibexpay", "jade", "jade-plus",
+    "fulcrum", "fully-noded", "futurebit", "ginger", "heatbit", "hodl-hodl", "ibexpay", "jade", "jade-plus",
     "jam", "joltz", "keepkey", "keystone", "kraken", "krux", "ledger-flex", "ledger-nanosx", "ledn",
     "liana", "lightning-network-daemon-lnd", "lightning-node-connect", "lily", "liquid", "lnbits",
     "loop", "mempoolspace-accelerator", "mercury", "minibits", "mutiny", "muun", "mynode", "nerdaxe",
@@ -1009,6 +1009,9 @@ function filterHasInfoBox(filterText, filterType) {
     if (filterType === 'tag' && filterText === "Mempool.space Accelerator") {
         return true;
     }
+    if (filterType === 'tag' && filterText === "Heatbit") {
+        return true;
+    }
     // Add more filters with info boxes here in the future
     return false;
 }
@@ -1446,6 +1449,8 @@ function buildInfoBoxContent(filterText, filterType, filterKey) {
         customText = `Miniscript timelocks are a structured way to include time-based spending conditions in Bitcoin transactions using the Miniscript language, which simplifies the creation and analysis of complex scripts. They allow coins to be spendable only after a certain time or block height—for example, to enforce a delay before withdrawal or enable an automatic fallback to another key after a set period. Bitcoiners use Miniscript timelocks in vaults, inheritance plans, and multisig setups to add predictable, auditable security conditions without writing raw script code. Their unique features include human-readable syntax, automatic policy verification, compatibility with hardware wallets and descriptors, and the ability to combine timelocks with other rules (like multisig or recovery paths) in a transparent, composable, and secure way.`;
     } else if (filterText === 'Derivation Paths') {
         customText = `Derivation paths are standardized instructions used by Bitcoin wallets to deterministically generate large numbers of private keys and addresses from a single master seed. They define how a wallet derives specific keys\u2014for example, separating accounts, address types (Legacy, SegWit, Taproot), or purposes\u2014so the same seed always recreates the same wallet structure. Bitcoiners use derivation paths to ensure reliable wallet recovery, compatibility across different wallets, and clean organization of funds without managing multiple seeds. Their unique features include hierarchical structure, standardization through BIPs like BIP-44, BIP-49, BIP-84, and BIP-86, support for multiple accounts and address formats, and the ability to fully restore a wallet\u2019s addresses and balances using just the seed phrase and the correct path.`;
+    } else if (filterText === 'Heatbit') {
+        customText = `Heatbit is a home space heater that doubles as a Bitcoin miner, turning the heat generated from mining into usable warmth for your room. Instead of wasting the energy that traditional mining rigs produce, Heatbit captures that heat and uses it to warm your home, while automatically mining Bitcoin in the background. You simply plug it in, connect it to Wi-Fi, and control it through an app\u2014no technical mining setup required. It looks like a modern heater, runs quietly, and is designed for people who want to support the Bitcoin network and potentially earn small amounts of bitcoin while heating their space.`;
     }
 
     // Add more custom text for other tags here as needed

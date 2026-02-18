@@ -237,7 +237,7 @@ Statechains,tag,https://medium.com/@RubenSomsen/statechains-non-custodial-off-ch
 Border Wallet,tag,https://www.borderwallets.com/,,https://github.com/microchad/borderwallets,https://x.com/BorderWallets,,
 Child Pays For Parent (CPFP),tag,https://bitcoinops.org/en/topics/cpfp/,,https://github.com/bitcoin/bitcoin/pull/7600,,,
 Gettxoutsetinfo (Audit Supply),tag,https://developer.bitcoin.org/reference/rpc/gettxoutsetinfo.html,,,,,
-Mempool.space Accelerator,tag,https://mempool.space/accelerator,,,https://x.com/mempool,https://primal.net/mempool,
+Mempool.space,tag,https://mempool.space/accelerator,,,https://x.com/mempool,https://primal.net/mempool,
 Partially Signed Bitcoin Transactions (PSBT),tag,https://bitcoinops.org/en/topics/psbt/,,https://github.com/bitcoin/bips/blob/master/bip-0370.mediawiki,,,
 Paynyms (BIP 47),tag,,,https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki,,,
 Replace By Fee (RBF),tag,https://bitcoinops.org/en/topics/replace-by-fee/,,https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki,,,

@@ -5,7 +5,7 @@ const tagCategories = {
     "Nodes & Servers": ["Bitcoin Core", "Bitcoin Knots", "Umbrel", "Start9", "Bitcoin Core Node", "Citadel", "Fully Noded", "Raspiblitz", "RoninDojo", "Parmanode", "Electrum Rust Server (Electrs)", "Ubuntu Node Box", "MyNode", "Ashigaru Dojo", "Fulcrum", "Bitcoin Node Box"],
     "Mining": ["Avalon Nano", "NerdAxe", "Bitaxe", "Braiins Mini Miner", "Braiins Deck", "Ocean Pool/DATUM", "Futurebit", "Braiins Pool", "Heatbit"],
     "Lightning Network": ["Lightning", "Thunderhub", "Alby", "Lightning Network Daemon (LND)", "Lightning Node Connect", "LNbits", "Ride The Lightning", "Voltage", "Core Lightning", "Bolt Ring", "Boltz", "Pool", "Loop"],
-    "Services & Exchanges": ["Bitcoin Well", "Hodl Hodl", "Kraken", "BTCPay Server", "Debifi", "Azteco", "Bisq", "Casa", "Unchained/Caravan", "Bittr", "Bitrefill", "Fountain", "Strike", "Spike to Spike", "Ledn", "Anchorwatch/Trident", "IBEXPay", "Robosats", "Peach", "Coinos", "Shakepay", "River", "Bull Bitcoin", "Bitaroo", "Mempool.space Accelerator"],
+    "Services & Exchanges": ["Bitcoin Well", "Hodl Hodl", "Kraken", "BTCPay Server", "Debifi", "Azteco", "Bisq", "Casa", "Unchained/Caravan", "Bittr", "Bitrefill", "Fountain", "Strike", "Spike to Spike", "Ledn", "Anchorwatch/Trident", "IBEXPay", "Robosats", "Peach", "Coinos", "Shakepay", "River", "Bull Bitcoin", "Bitaroo", "Mempool.space"],
     "Tokens": ["Liquid", "USDT", "Testnet"],
     "Ecash": ["Fedimint", "Cashu"],
     "Security": ["Verifying Downloads", "Seed Phrases (General)", "UTXO Management", "SeedQR", "Encrypted Backups", "Child Seeds (BIP 85)", "Multisig", "Seed XOR", "Shamir's Secret Sharing (SLIP-39)", "Derivation Paths"],
@@ -26,7 +26,7 @@ const availableTagIcons = new Set([
     "fulcrum", "fully-noded", "futurebit", "ginger", "heatbit", "hodl-hodl", "ibexpay", "jade", "jade-plus",
     "jam", "joltz", "keepkey", "keystone", "kraken", "krux", "ledger-flex", "ledger-nanosx", "ledn",
     "liana", "lightning-network-daemon-lnd", "lightning-node-connect", "lily", "liquid", "lnbits",
-    "loop", "mempoolspace-accelerator", "mercury", "minibits", "mutiny", "muun", "mynode", "nerdaxe",
+    "loop", "mempoolspace", "mercury", "minibits", "mutiny", "muun", "mynode", "nerdaxe",
     "nunchuk", "nutstash", "onekey", "opendime", "parmanode", "passport-core", "peach", "phoenix",
     "pool", "proton", "raspiblitz", "ride-the-lightning", "river", "robosats", "ronindojo", "satochip",
     "satodime", "satscard", "seedkeeper", "seedsigner", "shakepay", "spark", "sparrow", "specter-desktop",
@@ -1006,7 +1006,7 @@ function filterHasInfoBox(filterText, filterType) {
     if (filterType === 'tag' && filterText === "Bitaroo") {
         return true;
     }
-    if (filterType === 'tag' && filterText === "Mempool.space Accelerator") {
+    if (filterType === 'tag' && filterText === "Mempool.space") {
         return true;
     }
     if (filterType === 'tag' && filterText === "Heatbit") {
@@ -1345,7 +1345,7 @@ function buildInfoBoxContent(filterText, filterType, filterKey) {
         customText = `Kraken is one of the longest-running and most trusted cryptocurrency exchanges, offering secure Bitcoin trading, staking, and custody services for individuals and institutions worldwide. Known for its strong security record, regulatory compliance, and transparency, Kraken provides access to both spot and futures markets, advanced trading tools, and Lightning Network support for fast Bitcoin deposits and withdrawals. It also offers proof-of-reserves audits, giving users verifiable confidence that their funds are fully backed. Bitcoiners may choose Kraken for its reliability, liquidity, and professional-grade platform, making it a popular choice for those who want a regulated, secure, and feature-rich exchange while still focusing on Bitcoin as their primary asset.`;
     } else if (filterText === 'Ledn') {
         customText = `Ledn is a Bitcoin and digital asset lending platform that allows users to earn interest on their Bitcoin or USDC, and access loans backed by Bitcoin—all while maintaining transparency through regular proof-of-reserves attestations. Its Bitcoin-backed loans let users borrow cash without selling their BTC, helping them unlock liquidity while avoiding taxable events. Ledn also offers savings accounts with competitive yields, B2X loans to double Bitcoin exposure, and a focus on regulatory compliance and security. Bitcoiners may choose Ledn for its trustworthy, transparent approach to Bitcoin-collateralized lending and savings, making it appealing to those who want to put their Bitcoin to work while retaining ownership and peace of mind.`;
-    } else if (filterText === 'Mempool.space Accelerator') {
+    } else if (filterText === 'Mempool.space') {
         customText = `Mempool.space's Bitcoin transaction accelerator is a tool that helps users speed up stuck or low-fee Bitcoin transactions by allowing them to pay a competitive fee through a partnered mining pool to prioritize their transaction in the next block. Integrated directly within the mempool.space block explorer interface, it gives users clear visibility into current network congestion, fee rates, and confirmation times, making it easy to choose the right fee for fast confirmation. Unlike third-party accelerators, Mempool.space's service is transparent, non-custodial, and privacy-respecting, aligning with Bitcoin's open-source ethos. Bitcoiners may use this accelerator to ensure timely confirmations without relying on centralized exchanges or custodians, especially during periods of high network demand.`;
     } else if (filterText === 'Peach') {
         customText = `Peach Bitcoin is a peer-to-peer Bitcoin exchange app that enables users to buy and sell Bitcoin privately and directly with one another, without KYC or intermediaries. Designed with privacy and usability in mind, Peach uses encrypted, escrow-based trades and supports multiple payment methods, allowing users to transact safely while keeping control of their funds. The app is mobile-friendly, easy to use, and helps connect buyers and sellers globally through a decentralized matching system. Bitcoiners may choose Peach for its focus on self-custody, privacy, and censorship resistance, making it a great choice for those who want to acquire or sell Bitcoin securely without revealing personal information or relying on centralized exchanges.`;

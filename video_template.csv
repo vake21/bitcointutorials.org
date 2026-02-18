@@ -160,7 +160,6 @@ Start and Manage a Bitcoin Lightning Node,theBTCcourse,3/25/22,4cRCkhqvUYc,"Thun
 BlueWallet + SeedSigner: Single Sig Bitcoin Cold Wallet,Robotechy,3/27/22,CQrBlzZAbjs,"BlueWallet,SeedSigner,SeedQR"
 How to Set Up Your Bitcoin Blue Wallet,Plan B Network,4/5/22,QwEOgRzBJHw,"BlueWallet,Lightning"
 Robosats- Buy and Sell Bitcoin with No ID,BTC Sessions,4/13/22,XW_wzRz_BDI,"Robosats,Non-KYC,Lightning"
-BTCPay Server- Accept Bitcoin Payments in Minutes,BTC Sessions,4/18/22,KqsM-n-e4aY,"BTCPay Server,Lightning Network Daemon (LND)"
 Coin Control in Blockstream Green,Blockstream,4/18/22,Ddin_1ymaBc,"Blockstream App,UTXO Management"
 BitBox Tutorial 02,Plan B Network,4/19/22,UTqCxssV-54,BitBox
 Fountain: Podcasting 2.0,BTC Sessions,4/27/22,IxuCGPGgMZg,"Fountain,Lightning"
@@ -838,3 +837,25 @@ How to Connect Your Node to a Nunchuk Mobile,ForrestHODL,2/11/26,QkjKbHxhuM4,"Nu
 "Mempool.Space: Track Bitcoin Addresses, Transactions & Fees",Southern Bitcoiner,2/16/26,SoMtMc0DqsY,"Mempool.space,"
 This Heater Pays You Bitcoin: Heatbit Maxi,Joe Nakamoto,2/5/26,-zLyEh_BKxI,Heatbit
 "ColdCard Q Setup, Tutorial & Review",Darren Honeysett,12/9/25,1UbxcoiQQhE,"ColdCard Q,Cove"
+Bull Bitcoin Wallet: RecoverBull Backup,Bull Bitcoin,11/17/25,0KYDk0Nanhk,"Bull Bitcoin Wallet,Encrypted Backups"
+How to Buy Bitcoin On-Chain on Bitcoin Well,ForrestHODL,5/9/25,jpNwALez-s4,Bitcoin Well
+ColdCard Co-Sign,Coinkite,4/17/25,MjMPDUWWegw,"ColdCard Q,Sparrow"
+ColdCard C-Sign- Automated Multisig with Spending Policies,Coinkite,5/20/25,EDd6HYh7XbU,"ColdCard Q,Sparrow"
+How to Recover a Hardware Wallet from a Seed Phrase (and Passphrase),ForrestHODL,4/10/25,3ZKc6rY4hJc,"BitBox,Sparrow,Seed Phrases (General)"
+How to Send and Receive Bitcoin on a BitBox02 (Buy & Sell),ForrestHODL,4/9/25,mTND_i-E-Zk,"BitBox,Bitcoin Well"
+How to Set Up a BitBox02,ForrestHODL,4/8/25,tVlAioSwbso,"BitBox,Encrypted Backups"
+Bitcoin Recovery Requires More Than Your Seed Phrase!,Darren Honeysett,4/7/25,zdw-5oloLQw,"Seed Phrases (General),Derivation Paths,Multisig"
+Bitcoin UTXOs Explained: Save on Fees & Boost Privacy,Trezor,2/21/25,YV4vVryXD4w,UTXO Management
+Bitaxe Solo Mining Difficulty Explained,Sterling,2/18/25,L67es0ydJjE,Bitaxe
+Strike: Buying Bitcoin,blockdyor,1/5/25,6zcb-0z86Bo,Strike
+How to Keep Your Wallet Backup (Recovery Seed) Safe: Do's and Don’ts,Trezor,12/17/25,ypneAE9gb_o,Seed Phrases (General)
+BTCPayServer: Accept Bitcoin Payment Tutorial,BTC Sessions,11/24/24,-GJr4XjRCPo,"BTCPay Server,Sparrow,Lightning,Ride The Lightning,Strike"
+Setting Up and Using Jade with Green Wallet App via Bluetooth,Bitcoin Quickies,10/31/24,-mMQH7r2nHU,"Jade,Blockstream App"
+Trezor Hardware Wallet Tutorial,Money Reimagined,10/28/24,oVL9UDm5MbQ,Trezor One
+How to Bump Transaction Fees in Sparrow Wallet,Bitcoin Quickies,7/30/24,fO3efOnjxq8,"Sparrow,Replace By Fee (RBF),Child Pays For Parent (CPFP),ColdCard Q"
+Sign Bitcoin Transactions with ColdCard Q- 3 Airgapped Methods,Bitcoin Quickies,7/25/24,yeSUFhT8tsE,"Sparrow,ColdCard Q"
+How to Set Up Your Trezor Safe 5,Trezor,7/23/24,xrDpH6Dr3L0,Trezor Safe
+How to Migrate Your Bitcoin Wallet from Ledger to ColdCard Q,Bitcoin Quickies,7/14/24,j8ovDHyRoD8,"Sparrow,Ledger Nano(S/X),ColdCard Q"
+Bitcoin UTXO Consolidation,Bitcoin Quickies,7/9/24,T9tQOJqu_IA,"UTXO Management,Sparrow"
+Multisig Security: Seamless Key Changes with Nunchuk Wallet,Bitcoin Quickies,8/4/24,YoTts5jQl0A,"Nunchuk,Multisig,ColdCard Q,Tapsigner"
+Backup Your Tapsigner Using ColdCard Q,Bitcoin Quickies,7/8/24,8Oy38g_RoCo,"Tapsigner,ColdCard Q,Nunchuk"
